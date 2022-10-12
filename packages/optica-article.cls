@@ -182,7 +182,7 @@
 \renewcommand\figurename{Fig.}
 \def\fps@table{h}%\def\fps@table{!htb}
 \renewcommand\refname{References}
-\bibliographystyle{opticajnl}
+\bibliographystyle{./packages/opticajnl}
 \AtBeginDocument{\pretocmd{\bibliography}{\typeout{}}{}{}}
 
 % Table style
@@ -248,7 +248,7 @@
 \let\endReferences\endthebibliography
 
 %% 2017/12/06 Automatically abbreviate journal titles
-\RequirePackage{jabbrv}
+\RequirePackage{./packages/jabbrv}
 
 %% New section parameters 4/28/2003 sdinee
 %% Authors may now use \cite \ref for section numbers
