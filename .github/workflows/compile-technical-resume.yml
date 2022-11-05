@@ -8,13 +8,23 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v1
-      - name: Compile LaTeX document
+      - name: Compile Practica1 document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: report.tex
-          working_directory: ./
+          root_file: report1.tex
+          working_directory: ./practica1
+      - name: Compile Practica2 document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: report2.tex
+          working_directory: ./practica2
       - uses: actions/upload-artifact@v2
         name: Upload artifact
         with:
-          name: Report
-          path: ./report.pdf
+          name: Report1
+          path: ./practica1/report1.pdf
+      - uses: actions/upload-artifact@v2
+        name: Upload artifact
+        with:
+          name: Report2
+          path: ./practica2/report2.pdf
