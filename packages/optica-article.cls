@@ -12,8 +12,8 @@
 
 %% Disable twocolumn
 \DeclareOption{twocolumn}{%
-  \ClassWarning{optica-article}{twocolumn option ignored.}
-  \AtBeginDocument{\onecolumn}
+	\ClassWarning{optica-article}{twocolumn option ignored.}
+	\AtBeginDocument{\onecolumn}
 }
 
 %% Toggle for displaying copyright
@@ -44,22 +44,22 @@
 %% 13 Jul 2016: ifpdf not available by default
 \RequirePackage{ifpdf}
 \ifpdf
-  \RequirePackage[tracking = true, letterspace = 16]{microtype}
+	\RequirePackage[tracking = true, letterspace = 16]{microtype}
 \else
-  \RequirePackage{microtype}
-  \RequirePackage{soul}
-  \soulregister\hspace7
-  \sodef\lscaps{}{.1em}{.4em plus.08em minus.06em}{.4em plus.15em minus.83em}%
-  \sodef\lsbold{}{.02em}{.3em plus.08em minus.06em}{.3em plus.15em minus.83em}%
+	\RequirePackage{microtype}
+	\RequirePackage{soul}
+	\soulregister\hspace7
+	\sodef\lscaps{}{.1em}{.4em plus.08em minus.06em}{.4em plus.15em minus.83em}%
+	\sodef\lsbold{}{.02em}{.3em plus.08em minus.06em}{.3em plus.15em minus.83em}%
 \fi
 
 % Set journal type
 \newcommand*{\journal}[1]{%
-  \IfFileExists{styles/#1.sty}{%
-    \RequirePackage{styles/#1}
-  }{%
-    \ClassError{optica-article}{You've specified an unsupported journal '#1'. Was that a typo, or are you using a copy of the template without the complete set of style files?}{Was that a typo, or are you using a copy of the template without the complete set of style files?}
-  }
+	\IfFileExists{../styles/#1.sty}{%
+		\RequirePackage{../styles/#1}
+	}{%
+		\ClassError{optica-article}{You've specified an unsupported journal '#1'. Was that a typo, or are you using a copy of the template without the complete set of style files?}{Was that a typo, or are you using a copy of the template without the complete set of style files?}
+	}
 }
 
 %% 17 Apr 2016: colors for author list
@@ -88,26 +88,26 @@
 % \newcommand\OEtitle[1]{\LARGE \bf \hskip2.25pc \parbox{.8\textwidth}{ \noindent%
 %    \LARGE \bf \begin{center} #1 \end{center}\rm } \vskip.1in \rm\normalsize }
 \ifpdf
-  % microtype only works in pdflatex
-  \newcommand\OEtitle[1]{%
-    {\fontsize{16pt}{18.5pt}\sffamily\bfseries\selectfont\raggedright\textls{#1}\par\vskip.15in}
-  }
+	% microtype only works in pdflatex
+	\newcommand\OEtitle[1]{%
+		{\fontsize{16pt}{18.5pt}\sffamily\bfseries\selectfont\raggedright\textls{#1}\par\vskip.15in}
+	}
 \else
-  \newcommand\OEtitle[1]{%
-    {\fontsize{16pt}{18.5pt}\sffamily\bfseries\selectfont\raggedright\lsbold{#1}\par\vskip.15in}
-  }
+	\newcommand\OEtitle[1]{%
+		{\fontsize{16pt}{18.5pt}\sffamily\bfseries\selectfont\raggedright\lsbold{#1}\par\vskip.15in}
+	}
 \fi
 
 % \newcommand\OEauthor[1]{\hskip2.25pc \parbox{.8\textwidth}{ \noindent%
 %    \normalsize \bf \begin{center} #1 \end{center}\rm } \vskip-1pc }
 \newcommand\OEauthor[1]{%
-{\raggedright\sffamily\bfseries\scshape\large \boldmath\color{authorcolor}#1\vskip1ex\par}%
+	{\raggedright\sffamily\bfseries\scshape\large \boldmath\color{authorcolor}#1\vskip1ex\par}%
 }
 
 % \newcommand\OEaddress[1]{\hskip2.25pc \parbox{.8\textwidth}{ \noindent%
 %    \footnotesize \it \begin{center} #1 \end{center}\rm }  \normalsize \vskip-.2cm }
 \newcommand\OEaddress[1]{%
-  {\raggedright\small\itshape #1\par}
+	{\raggedright\small\itshape #1\par}
 }
 
 %% 2 July 2016: fix the superscripts in author
@@ -120,13 +120,13 @@
 % \newcommand\OEemail[1]{\vskip-.3cm \parskip0pc\hskip2.25pc \footnotesize%
 %    \parbox{.8\textwidth}{\begin{center}\it \textcolor{blue}{\underline{#1}} \rm \end{center} } \normalsize  \vskip-.2cm}
 \newcommand\OEemail[1]{%
-  {\raggedright\footnotesize\itshape\color{urlblue}#1\par}
+	{\raggedright\footnotesize\itshape\color{urlblue}#1\par}
 }
 
 \newcommand\url[1]{\textcolor{urlblue}{\underline{#1}}}
 
 \newcommand\homepage[1]{%
-  {\raggedright\footnotesize\itshape\color{urlblue}#1\par}
+	{\raggedright\footnotesize\itshape\color{urlblue}#1\par}
 }
 
 \let\title\OEtitle
@@ -140,11 +140,11 @@
 \setcopyright{Optica Publishing Group}
 
 \AtBeginDocument{%
-   \ifoptica@openaccess
-     \appto{\@copyrighttext}{%
-     \space under the terms of the \href{https://opg.optica.org/library/license_v2.cfm\#VOR-OA}{Optica Open Access Publishing Agreement}
-     }
-   \fi%
+	\ifoptica@openaccess
+		\appto{\@copyrighttext}{%
+			\space under the terms of the \href{https://opg.optica.org/library/license_v2.cfm\#VOR-OA}{Optica Open Access Publishing Agreement}
+		}
+	\fi%
 }
 
 %% 29 August 2017: Updated the copyright text to OA
@@ -173,16 +173,16 @@
 \renewcommand{\headrule}{}
 % Headers
 \fancyhead[L]{\headerfont \begin{tabular*}{\textwidth}{!{\color{black}\vrule}c!{\color{black}\vrule} @{\extracolsep{\fill}} c!{\color{black}\vrule}}\arrayrulecolor{black}
-      \hline
-      \cellcolor{black}\textcolor{white}{\@articletype} & \@journalname\hspace{21pt}\thepage \\
-      \hline
-    \end{tabular*}}
+		\hline
+		\cellcolor{black}\textcolor{white}{\@articletype} & \@journalname\hspace{21pt}\thepage \\
+		\hline
+	\end{tabular*}}
 
 %% Various customizations
 \renewcommand\figurename{Fig.}
 \def\fps@table{h}%\def\fps@table{!htb}
 \renewcommand\refname{References}
-\bibliographystyle{./packages/opticajnl}
+\bibliographystyle{../packages/opticajnl}
 \AtBeginDocument{\pretocmd{\bibliography}{\typeout{}}{}{}}
 
 % Table style
@@ -212,33 +212,33 @@
 %% 13 Jul 2016: no indent
 % \setlength\bibindent{.2in}
 \renewenvironment{thebibliography}[1]
-     {\section*{\refname
-        \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}}%
-        \list{\@arabic\c@enumiv .\hfill}%      \list{\@biblabel{\@arabic\c@enumiv .}}%
-           {\settowidth\labelwidth{\footnotesize 99.}%{.25in}
-%               \leftmargin\labelwidth
-  \setlength{\parsep}{-0.05in}
-  \setlength{\labelsep}{.25em}%{0.5em}
-  \setlength{\itemsep}{0.05in}%{-0.06in}
-  \setlength{\listparindent}{0in}
-  \setlength{\itemindent}{0in}
-%   \setlength{\leftmargin}{.2in}
-  \setlength{\leftmargin}{\labelwidth}
-  \addtolength{\leftmargin}{\labelsep}
-  \setlength{\rightmargin}{0in}
-%             \advance\leftmargin\labelsep
-            \@openbib@code
-            \usecounter{enumiv}%
-            \let\p@enumiv\@empty
-            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
-      \sloppy
-      \clubpenalty4000
-      \@clubpenalty \clubpenalty
-      \widowpenalty4000%
-      \sfcode`\.\@m \footnotesize}
-     {\def\@noitemerr
-       {\@latex@warning{Empty `thebibliography' environment}}%
-      \endlist}
+{\section*{\refname
+	  \@mkboth{\MakeUppercase\refname}{\MakeUppercase\refname}}%
+	\list{\@arabic\c@enumiv .\hfill}%      \list{\@biblabel{\@arabic\c@enumiv .}}%
+	{\settowidth\labelwidth{\footnotesize 99.}%{.25in}
+		%               \leftmargin\labelwidth
+		\setlength{\parsep}{-0.05in}
+		\setlength{\labelsep}{.25em}%{0.5em}
+		\setlength{\itemsep}{0.05in}%{-0.06in}
+		\setlength{\listparindent}{0in}
+		\setlength{\itemindent}{0in}
+		%   \setlength{\leftmargin}{.2in}
+		\setlength{\leftmargin}{\labelwidth}
+		\addtolength{\leftmargin}{\labelsep}
+		\setlength{\rightmargin}{0in}
+		%             \advance\leftmargin\labelsep
+		\@openbib@code
+		\usecounter{enumiv}%
+		\let\p@enumiv\@empty
+		\renewcommand\theenumiv{\@arabic\c@enumiv}}%
+	\sloppy
+	\clubpenalty4000
+	\@clubpenalty \clubpenalty
+	\widowpenalty4000%
+	\sfcode`\.\@m \footnotesize}
+{\def\@noitemerr
+	{\@latex@warning{Empty `thebibliography' environment}}%
+	\endlist}
 %\newcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
 \let\@openbib@code\@empty
 \newcommand\OEReflinks{\thebibliography{}}
@@ -248,7 +248,7 @@
 \let\endReferences\endthebibliography
 
 %% 2017/12/06 Automatically abbreviate journal titles
-\RequirePackage{./packages/jabbrv}
+\RequirePackage{../packages/jabbrv}
 
 %% New section parameters 4/28/2003 sdinee
 %% Authors may now use \cite \ref for section numbers
@@ -259,89 +259,89 @@
 
 %% 17 Apr 2016: headings are now sans serif
 \renewcommand\section{\@startsection {section}{1}{0pt}%
-                                     {-2.5ex plus -1ex minus -.2ex}%
-                                     {1.3ex plus .2ex}%
-                                     {\normalsize\bfseries\sffamily}}
+  {-2.5ex plus -1ex minus -.2ex}%
+  {1.3ex plus .2ex}%
+  {\normalsize\bfseries\sffamily}}
 \renewcommand\subsection{\@startsection{subsection}{2}{0pt}%
-                                     {-2.25ex plus -1ex minus -.2ex}%
-                                     {1ex plus .2ex}%
-                                     {\normalsize\itshape\sffamily}}
+	{-2.25ex plus -1ex minus -.2ex}%
+	{1ex plus .2ex}%
+	{\normalsize\itshape\sffamily}}
 \renewcommand\subsubsection{\@startsection{subsubsection}{3}{0pt}%
-                                     {-2.25ex plus -1ex minus -.2ex}%
-                                     {1ex plus .2ex}%
-                                     {\small\upshape\sffamily}}
+	{-2.25ex plus -1ex minus -.2ex}%
+	{1ex plus .2ex}%
+	{\small\upshape\sffamily}}
 
 % 2020-12-22: Backmatter sections should use smaller font
 % size, including run-in headings \bmsection.
 \newenvironment{backmatter}{%
-  \small%
-  \newcommand{\bmsection}[1]{\par\medskip\noindent{\bfseries ##1.\enspace}}%
+	\small%
+	\newcommand{\bmsection}[1]{\par\medskip\noindent{\bfseries ##1.\enspace}}%
 }{}
 
 \RequirePackage[colorlinks=true,urlcolor=urlblue,linkcolor=black,citecolor=black,breaklinks=true,bookmarks=false]{hyperref}
 
 \hyphenation {ac-cord-ing
-           allow
-           back-scat-ter
-           back-scat-te-ring
-           back-scat-tered
-           scat-te-ring
-           Based based
-           cases
-           cen-tered
-           changed
-           co-incide
-           con-cerning
-           con-ven-tional
-           de-creased
-           de-po-lar-iz-ation
-           de-tector de-tectors
-           de-vi-ation
-           dis-cussion
-           dis-tribu-tion
-           dis-tribu-tions
-           dis-trib-ute
-           dis-trib-uted
-           Ehhalt
-           extinc-tion
-           found
-           Geest-hacht
-           ground
-           Hink-ley
-           il-lus-trated
-           il-lus-trate
-           Intro-ducing
-           Klap-heck
-           lati-tude
-           measure-ment
-           measure-ments
-           meas-ured
-           measuring
-           mixing
-           north-east
-           orig-inated
-           op-er-ating
-           out-flow
-           pres-ence
-           primary
-           rather
-           rela-tive
-           sig-nal
-           sig-nals
-           solid
-           tem-pera-ture
-           Tem-pera-ture
-           trans-ported
-           tropo-pause
-           Tropo-pause
-           tropo-sphere
-           Tropo-sphere
-           tube
-           tubes
-           Values
-           varies
-           Weather
-           re}
+	allow
+	back-scat-ter
+	back-scat-te-ring
+	back-scat-tered
+	scat-te-ring
+	Based based
+	cases
+	cen-tered
+	changed
+	co-incide
+	con-cerning
+	con-ven-tional
+	de-creased
+	de-po-lar-iz-ation
+	de-tector de-tectors
+	de-vi-ation
+	dis-cussion
+	dis-tribu-tion
+	dis-tribu-tions
+	dis-trib-ute
+	dis-trib-uted
+	Ehhalt
+	extinc-tion
+	found
+	Geest-hacht
+	ground
+	Hink-ley
+	il-lus-trated
+	il-lus-trate
+	Intro-ducing
+	Klap-heck
+	lati-tude
+	measure-ment
+	measure-ments
+	meas-ured
+	measuring
+	mixing
+	north-east
+	orig-inated
+	op-er-ating
+	out-flow
+	pres-ence
+	primary
+	rather
+	rela-tive
+	sig-nal
+	sig-nals
+	solid
+	tem-pera-ture
+	Tem-pera-ture
+	trans-ported
+	tropo-pause
+	Tropo-pause
+	tropo-sphere
+	Tropo-sphere
+	tube
+	tubes
+	Values
+	varies
+	Weather
+	re}
 
 %% Journal abbreviation macros
 \def\opex{ Opt.\ Express }

@@ -3,29 +3,29 @@
 %%
 %% Copyright 2010 Erich Hoover
 %% E-mail: ehoover@mines.edu
-%% 
+%%
 %% =============================================
 %% IMPORTANT NOTICE:
-%% 
+%%
 %% This work may be distributed and/or modified under the conditions
 %% of the LaTeX Project Public License, either version 1.3c of this
 %% license or (at your option) any later version.
 %% The latest version of this license is available at
 %%   http://www.latex-project.org/lppl.txt
 %% =============================================
-%% 
+%%
 %% This package provides the "\JournalTitle{<title>}" command, where
 %% "<title>" is a journal title that you wish to have automatically
 %% abbreviated.  For example,
 %%   \JournalTitle{Journal of the Optical Society of America}
 %% will be replaced to read
 %%   J. Opt. Soc. Am.
-%% 
+%%
 %% The default behavior of this package is to place a period after
 %% each abbreviation.  For publications that require period-less
 %% abbreviations simply include the package option "noperiod":
 %%   \usepackage[noperiod]{jabbrv}
-%% 
+%%
 %% The default behavior of this package is to not abbreviate a
 %% journal title that only contains one word.  You can disable this
 %% behavior (still abbreviate one word titles) by including the
@@ -40,15 +40,15 @@
 %% Please note that this option outputs a LaTeX warning for each
 %% title word that does not have an abbreviation, possibly resulting
 %% in a large number of warnings in the output log.
-%% 
-%% To change the language used for the set of abbreviations (english 
+%%
+%% To change the language used for the set of abbreviations (english
 %% by default), use the  ``lang=<value>'' option with the Unix
 %% language code for <value>; for example:
 %%   \usepackage[lang=es]{jabbrv}
 %% sets the abbreviation language to Spanish.
-%% 
+%%
 %% In order to add customize abbreviations this package provides
-%% three additional commands: \DefineJournalAbbreviation, 
+%% three additional commands: \DefineJournalAbbreviation,
 %% \DefineJournalPartialAbbreviation and \DefineSpuriousJournalWord.
 %% \DefineSpuriousJournalWord simply takes a single case-sensitive
 %% parameter, this parameter will be added to the list of words to
@@ -65,13 +65,13 @@
 %% will match longer words such as ``Communications'' and
 %% abbreviate any such word with the given abbreviated form. Please
 %% note that care should be taken with creating custom partial
-%% abbreviations, as such abbreviations that are not approved by 
+%% abbreviations, as such abbreviations that are not approved by
 %% the ISSN may match unintended title words.
-%% 
+%%
 %% Please note that this package is still very much in the beta
 %% stage, while it should work just fine it has not yet been
 %% extensively tested.
-%% 
+%%
 \NeedsTeXFormat{LaTeX2e}[1995/06/01]
 \ProvidesPackage{jabbrv}[2010/08/18 v0.2
 	Automatic Journal Title Abbreviation Package]
@@ -115,12 +115,12 @@
 }
 \def\journal@abbrv@period{%
 	\ifx\journal@char@stop\@jrnl@temp@char%
-		\journal@abbrv@period@noperiod%
+	\journal@abbrv@period@noperiod%
 	\else%
-		\ifx.\@jrnl@temp@char%
-		\else%
-			\journal@abbrv@period@period%
-		\fi%
+	\ifx.\@jrnl@temp@char%
+	\else%
+	\journal@abbrv@period@period%
+	\fi%
 	\fi%
 }
 
@@ -139,30 +139,30 @@
 % processed as command names
 \def\journal@char@empty{\@gobble X} % cannot be empty or it will match \journal@char@stop
 \def\jabbrv@redefine@diacritic{%
-	\let\`\journal@char@empty% grave accent
-	\let\'\journal@char@empty% accute accent
-	\let\^\journal@char@empty% circumflex
-	\let\"\journal@char@empty% umlaut
-	\let\=\journal@char@empty% macron accent
-	\let\c\journal@char@empty% cedilla
-	\let\t\journal@char@empty% tie
-	\let\u\journal@char@empty% breve
-	\let\v\journal@char@empty% caron
-	\def\~{@TILDE@}%
-	\def\aa{@RINGa@}%
-	\def\AA{@RINGA@}%
-	\def\ae{@aeDIPHTHONG@}%
-	\def\AE{@AEDIPHTHONG@}%
-	\def\o{@SLASHo@}%
-	\def\O{@SLASHO@}%
-	\def\oe{@oeDIPHTHONG@}%
-	\def\OE{@OEDIPHTHONG@}%
-	\def\ss{@ESZETT@}%
-	\def\&{@AND@}%
-	\def\textlefthalfring{@LEFTHALFRING@}%
-	% Custom \J@C may be called directly or defined through \textcommabelow:
-	\def\J@C{@JABBRVCOMMA@}%
-	\let\textcommabelow=\J@C%
+\let\`\journal@char@empty% grave accent
+\let\'\journal@char@empty% accute accent
+\let\^\journal@char@empty% circumflex
+\let\"\journal@char@empty% umlaut
+\let\=\journal@char@empty% macron accent
+\let\c\journal@char@empty% cedilla
+\let\t\journal@char@empty% tie
+\let\u\journal@char@empty% breve
+\let\v\journal@char@empty% caron
+\def\~{@TILDE@}%
+\def\aa{@RINGa@}%
+\def\AA{@RINGA@}%
+\def\ae{@aeDIPHTHONG@}%
+\def\AE{@AEDIPHTHONG@}%
+\def\o{@SLASHo@}%
+\def\O{@SLASHO@}%
+\def\oe{@oeDIPHTHONG@}%
+\def\OE{@OEDIPHTHONG@}%
+\def\ss{@ESZETT@}%
+\def\&{@AND@}%
+\def\textlefthalfring{@LEFTHALFRING@}%
+% Custom \J@C may be called directly or defined through \textcommabelow:
+\def\J@C{@JABBRVCOMMA@}%
+\let\textcommabelow=\J@C%
 }
 \global\let\jabbrv@graveaccent=\`
 \global\let\jabbrv@accuteaccent=\'
@@ -226,64 +226,64 @@
 	\let\_=\jabbrv@underscore%
 }
 \global\let\jabbrv@slash@orig=\slash
-\global\let\jabbrv@space@orig=\ 
+\global\let\jabbrv@space@orig=\
 \global\let\jabbrv@underscore@orig=\_
 
 % Define Common Abbreviations (see language definition files for the list):
 \providecommand{\DefineJournalAbbreviation}[2]{
 	\begingroup
-		\jabbrv@redefine@diacritic
-		\expandafter\gdef\csname journal@abbrv@#1\endcsname{%
-			\begingroup%
-				\jabbrv@normal@diacritic%
-				#2%
-			\endgroup%
-			\@gobble@space@false%
-			\journal@abbrv@period%
-		}
+	\jabbrv@redefine@diacritic
+	\expandafter\gdef\csname journal@abbrv@#1\endcsname{%
+		\begingroup%
+		\jabbrv@normal@diacritic%
+		#2%
+		\endgroup%
+		\@gobble@space@false%
+		\journal@abbrv@period%
+	}
 	\endgroup
 }
 
 % Define specific journals that are exceptions:
 \providecommand{\DefineJournalException}[2]{
 	\begingroup
-		\jabbrv@redefine@diacritic
-		\expandafter\gdef\csname journal@exception@#1\endcsname{%
-			\begingroup%
-				\jabbrv@normal@diacritic%
-				#2%
-			\endgroup%
-			\@gobble@space@false%
-		}
+	\jabbrv@redefine@diacritic
+	\expandafter\gdef\csname journal@exception@#1\endcsname{%
+		\begingroup%
+		\jabbrv@normal@diacritic%
+		#2%
+		\endgroup%
+		\@gobble@space@false%
+	}
 	\endgroup
 }
 
 % Define specific journal words that are exceptions:
 \providecommand{\DefineJournalWordException}[2]{
 	\begingroup
-		\jabbrv@redefine@diacritic
-		\expandafter\gdef\csname journal@word@exception@#1\endcsname{%
-			\begingroup%
-				\jabbrv@normal@diacritic%
-				#2%
-			\endgroup%
-			\@gobble@space@false%
-		}
+	\jabbrv@redefine@diacritic
+	\expandafter\gdef\csname journal@word@exception@#1\endcsname{%
+		\begingroup%
+		\jabbrv@normal@diacritic%
+		#2%
+		\endgroup%
+		\@gobble@space@false%
+	}
 	\endgroup
 }
 
 % Define Common Partial Abbreviations (see language definition files for the list):
 \providecommand{\DefineJournalPartialAbbreviation}[2]{
 	\begingroup
-		\jabbrv@redefine@diacritic
-		\expandafter\gdef\csname journal@partial@abbrv@#1\endcsname{%
-			\begingroup%
-				\jabbrv@normal@diacritic%
-				#2%
-			\endgroup%
-			\@gobble@space@false%
-			\journal@abbrv@period%
-		}
+	\jabbrv@redefine@diacritic
+	\expandafter\gdef\csname journal@partial@abbrv@#1\endcsname{%
+		\begingroup%
+		\jabbrv@normal@diacritic%
+		#2%
+		\endgroup%
+		\@gobble@space@false%
+		\journal@abbrv@period%
+	}
 	\endgroup
 }
 
@@ -371,10 +371,10 @@
 	\ifx \jabbrv@gobble@stop\@jrnl@gobble@char%
 		\let\@tempa\@gobble%
 	\else\ifcat\noexpand\@jrnl@gobble@char\relax%
-		\let\@tempa\jabbrv@gobble@ending@character@%
-	\else%
-		\let\@tempa\jabbrv@gobble@ending@character%
-	\fi\fi%
+			\let\@tempa\jabbrv@gobble@ending@character@%
+		\else%
+			\let\@tempa\jabbrv@gobble@ending@character%
+		\fi\fi%
 	\@tempa%
 }
 
@@ -440,8 +440,8 @@
 				\@latex@warning{No abbreviation defined for `\the\temp@journal@text'}%
 			\fi%
 			\begingroup%
-				\jabbrv@normal@diacritic%
-				\the\temp@journal@text%
+			\jabbrv@normal@diacritic%
+			\the\temp@journal@text%
 			\endgroup%
 			\global\@end@period@false % reset the "need a period at the end" indicator
 			\@gobble@space@false%
@@ -474,57 +474,57 @@
 	% remove the group ({}) wrapping around whatever commands are within it
 	\ifx\bgroup\@jrnl@temp@char%
 		\let\@tempa\@journal@group%
-	% The space character is the ``special token'' - use this character to find
-	% title words to abbreviate
+		% The space character is the ``special token'' - use this character to find
+		% title words to abbreviate
 	\else\ifx \@sptoken\@jrnl@temp@char%
-		\@journal@word@sep%
-	% Capture the '\ ' style space and treat it the same as a regular space
-	\else\ifx \jabbrv@space\@jrnl@temp@char%
-		\@journal@word@sep%
-	% Capture the non-breaking space and treat it similar to a regular space
-	\else\ifx \jabbrv@nbsp\@jrnl@temp@char%
-		\@journal@word@sep%
-		\@jabbrv@special@sep@true%
-		\leavevmode\nobreak\space% {\nobreakspace}
-	% Capture the underscore and treat it as a word separator
-	\else\ifx \jabbrv@underscore\@jrnl@temp@char%
-		\@journal@word@sep%
-		\@jabbrv@special@sep@true%
-		\jabbrv@underscore@orig%
-	% Capture the slash and treat it as a word separator
-	\else\ifx \jabbrv@slash\@jrnl@temp@char%
-		\@journal@word@sep%
-		\@jabbrv@special@sep@true%
-		\jabbrv@slash@orig%
-	\else%
-		% \journal@char@stop is specially defined so this routine knows
-		% when the entire text has been read (where to stop)
-		\ifx \journal@char@stop\@jrnl@temp@char%
-			\expandafter\ifnum\value{jabbrv@word@count} > 0\relax%
-				\journal@output@abbrv%
-			\else%
-				\jabbrv@one@word@title%
-			\fi%
-			\let\@tempa\@gobble%
-		\else%
-			% Measure all other characters and include them in the title word
-			\@special@period@false%
-			\let\@tempa\@journal@character%
-		\fi%
-	\fi\fi\fi\fi\fi\fi%
+			\@journal@word@sep%
+			% Capture the '\ ' style space and treat it the same as a regular space
+		\else\ifx \jabbrv@space\@jrnl@temp@char%
+				\@journal@word@sep%
+				% Capture the non-breaking space and treat it similar to a regular space
+			\else\ifx \jabbrv@nbsp\@jrnl@temp@char%
+					\@journal@word@sep%
+					\@jabbrv@special@sep@true%
+					\leavevmode\nobreak\space% {\nobreakspace}
+					% Capture the underscore and treat it as a word separator
+				\else\ifx \jabbrv@underscore\@jrnl@temp@char%
+						\@journal@word@sep%
+						\@jabbrv@special@sep@true%
+						\jabbrv@underscore@orig%
+						% Capture the slash and treat it as a word separator
+					\else\ifx \jabbrv@slash\@jrnl@temp@char%
+							\@journal@word@sep%
+							\@jabbrv@special@sep@true%
+							\jabbrv@slash@orig%
+						\else%
+							% \journal@char@stop is specially defined so this routine knows
+							% when the entire text has been read (where to stop)
+							\ifx \journal@char@stop\@jrnl@temp@char%
+								\expandafter\ifnum\value{jabbrv@word@count} > 0\relax%
+									\journal@output@abbrv%
+								\else%
+									\jabbrv@one@word@title%
+								\fi%
+								\let\@tempa\@gobble%
+							\else%
+								% Measure all other characters and include them in the title word
+								\@special@period@false%
+								\let\@tempa\@journal@character%
+							\fi%
+						\fi\fi\fi\fi\fi\fi%
 	\@tempa%
 }
 
 % Eat a period at the end of the entry if the next character is also a period
 \def\@jrnl@eat@period#1{%
 	\if@end@period@%
-		\ifx.#1\else%
-			\ifx\newblock#1%
-				.\newblock%
-			\else%
-				\journal@abbrv@period@period%
-			\fi%
-		\fi%
+	\ifx.#1\else%
+	\ifx\newblock#1%
+		.\newblock%
+	\else%
+		\journal@abbrv@period@period%
+	\fi%
+	\fi%
 	\fi%
 	#1%
 }
@@ -545,24 +545,24 @@
 	\@abbreviate@journal@true%
 	\global\@end@period@false%
 	\begingroup%
-		\jabbrv@redefine@diacritic%
-		\jabbrv@redefine@special%
-		\edef\journal@fulltitle{#1}%
-		\ifcsname journal@exception@#1\endcsname%
-			\csname journal@exception@#1\endcsname%
-			\global\@abbreviate@journal@false%
-		\fi%
+	\jabbrv@redefine@diacritic%
+	\jabbrv@redefine@special%
+	\edef\journal@fulltitle{#1}%
+	\ifcsname journal@exception@#1\endcsname%
+		\csname journal@exception@#1\endcsname%
+		\global\@abbreviate@journal@false%
+	\fi%
 	\endgroup%
 	\if@abbreviate@journal@%
 		\begingroup%
-			\@gobble@space@true%
-			\@special@period@false%
-			\jabbrv@redefine@diacritic%
-			\jabbrv@redefine@special%
-			\jabbrv@reset@word@count%
-			\expandafter\journal@char@loop%
-				#1%
-			\journal@char@stop%
+		\@gobble@space@true%
+		\@special@period@false%
+		\jabbrv@redefine@diacritic%
+		\jabbrv@redefine@special%
+		\jabbrv@reset@word@count%
+		\expandafter\journal@char@loop%
+		#1%
+		\journal@char@stop%
 		\endgroup%
 	\fi%
 	% If the next character is not a period then add one in
@@ -585,32 +585,32 @@
 
 % Process the option list and input the language definitions
 \ProcessKeyvalOptions{jabbrv}
-\InputIfFileExists{./packages/jabbrv-ltwa-all.ldf}{}{%
+\InputIfFileExists{../packages/jabbrv-ltwa-all.ldf}{}{%
 	\@latex@error{The master abbreviation language file `jabbrv-ltwa-all.ldf' was not found}{Make sure the file is in the appropriate folder and recompile.}%
 }
-\InputIfFileExists{./packages/jabbrv-ltwa-\jabbrv@lang.ldf}{}{%
+\InputIfFileExists{../packages/jabbrv-ltwa-\jabbrv@lang.ldf}{}{%
 	\@latex@error{Abbreviation language `jabbrv-ltwa-\jabbrv@lang.ldf' not found}{Select a valid language and recompile.}%
 }
 
 % If working with biblatex then apply the journal title as a "field handler"
 \@ifl@t@r\fmtversion{2020-10-01}{%
-    \AddToHook{begindocument/before}{%
-        \@ifpackageloaded{biblatex}{%
-	        \DeclareFieldInputHandler{journaltitle}{%
-		        \def\NewValue{\JournalTitle{#1}}%
-	        }%
-        }{}%
-    }%
+	\AddToHook{begindocument/before}{%
+		\@ifpackageloaded{biblatex}{%
+			\DeclareFieldInputHandler{journaltitle}{%
+				\def\NewValue{\JournalTitle{#1}}%
+			}%
+		}{}%
+	}%
 }{%
-    \global\let\jabbrv@begin@document=\document%
-    \gdef\document{%
-        \endgroup%
-        \@ifpackageloaded{biblatex}{%
-	        \DeclareFieldInputHandler{journaltitle}{%
-		        \def\NewValue{\JournalTitle{##1}}%
-	        }%
-        }{}%
-        \begingroup%
-        \jabbrv@begin@document%
-    }%
+	\global\let\jabbrv@begin@document=\document%
+	\gdef\document{%
+	\endgroup%
+	\@ifpackageloaded{biblatex}{%
+		\DeclareFieldInputHandler{journaltitle}{%
+			\def\NewValue{\JournalTitle{##1}}%
+		}%
+	}{}%
+	\begingroup%
+	\jabbrv@begin@document%
+	}%
 }
