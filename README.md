@@ -1,5 +1,6 @@
 # Lab notes for POyDSI
 
+[![Build LaTeX document](https://github.com/alexrecuenco/lab-notes-POyDSI/actions/workflows/compile-technical-resume.yml/badge.svg)](https://github.com/alexrecuenco/lab-notes-POyDSI/actions/workflows/compile-technical-resume.yml)
 
 ## Template
 
