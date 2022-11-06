@@ -1,6 +1,7 @@
-\documentclass{../packages/optica-article}
+% !TEX TS-program = pdflatexmk
+\documentclass{./packages/optica-article}
 
-\graphicspath{{images/}{../images}}
+\graphicspath{{images/}{practica1/images}}
 
 \journal{opticajournal}
 
@@ -53,7 +54,7 @@ En la tabla~\ref{table:perfilintensidad} se recogen medidas tomadas del perfil d
 		table head=\toprule%
 		Barras & $y_{\min} (px)$ & $y_{\max} (px)$ & Contraste & $x_{\min} (px)$ & $x_{\max} (px)$ & N Periodos & periodo (px) &  $\flatfrac{\textrm{ciclos}}{\textrm{mm}}$%
 		\\\midrule%
-	]{MTF/Profiles.csv}
+	]{practica1/MTF/Profiles.csv}
 	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$: distancia en píxeles. El contraste se ha obtenido a partir de la eq. \ref{eq:contraste}. la frequencia se ha obtenido a traves de la eq. \ref{eq:frecuencia}}%
 	\label{table:perfilintensidad}
 \end{table}

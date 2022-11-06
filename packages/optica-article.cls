@@ -55,8 +55,8 @@
 
 % Set journal type
 \newcommand*{\journal}[1]{%
-	\IfFileExists{../styles/#1.sty}{%
-		\RequirePackage{../styles/#1}
+	\IfFileExists{./styles/#1.sty}{%
+		\RequirePackage{./styles/#1}
 	}{%
 		\ClassError{optica-article}{You've specified an unsupported journal '#1'. Was that a typo, or are you using a copy of the template without the complete set of style files?}{Was that a typo, or are you using a copy of the template without the complete set of style files?}
 	}
@@ -182,7 +182,7 @@
 \renewcommand\figurename{Fig.}
 \def\fps@table{h}%\def\fps@table{!htb}
 \renewcommand\refname{References}
-\bibliographystyle{../packages/opticajnl}
+\bibliographystyle{./packages/opticajnl}
 \AtBeginDocument{\pretocmd{\bibliography}{\typeout{}}{}{}}
 
 % Table style
@@ -248,7 +248,7 @@
 \let\endReferences\endthebibliography
 
 %% 2017/12/06 Automatically abbreviate journal titles
-\RequirePackage{../packages/jabbrv}
+\RequirePackage{./packages/jabbrv}
 
 %% New section parameters 4/28/2003 sdinee
 %% Authors may now use \cite \ref for section numbers

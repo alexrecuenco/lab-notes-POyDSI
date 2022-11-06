@@ -12,19 +12,19 @@ jobs:
         uses: xu-cheng/latex-action@v2
         with:
           root_file: report1.tex
-          working_directory: ./practica1
+          working_directory: ./
       - name: Compile Practica2 document
         uses: xu-cheng/latex-action@v2
         with:
           root_file: report2.tex
-          working_directory: ./practica2
+          working_directory: ./
       - uses: actions/upload-artifact@v2
         name: Upload artifact
         with:
           name: Report1
-          path: ./practica1/report1.pdf
+          path: ./report1.pdf
       - uses: actions/upload-artifact@v2
         name: Upload artifact
         with:
           name: Report2
-          path: ./practica2/report2.pdf
+          path: ./report2.pdf

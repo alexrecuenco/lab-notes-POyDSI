@@ -585,10 +585,10 @@
 
 % Process the option list and input the language definitions
 \ProcessKeyvalOptions{jabbrv}
-\InputIfFileExists{../packages/jabbrv-ltwa-all.ldf}{}{%
+\InputIfFileExists{./packages/jabbrv-ltwa-all.ldf}{}{%
 	\@latex@error{The master abbreviation language file `jabbrv-ltwa-all.ldf' was not found}{Make sure the file is in the appropriate folder and recompile.}%
 }
-\InputIfFileExists{../packages/jabbrv-ltwa-\jabbrv@lang.ldf}{}{%
+\InputIfFileExists{./packages/jabbrv-ltwa-\jabbrv@lang.ldf}{}{%
 	\@latex@error{Abbreviation language `jabbrv-ltwa-\jabbrv@lang.ldf' not found}{Select a valid language and recompile.}%
 }
 
