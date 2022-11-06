@@ -96,15 +96,17 @@ La frecuencia, se calcula como:
 
 Donde el periodo, $T$, se obtiene dividiendo la diferencia $x_{\max} - x_{\min}$ entre el número de periodos en ese intervalo.
 
-Todas estas medidas se realizan en las imagenes muestradas tomando un perfil y midiendo con matlab 
+Todas estas medidas se realizan en las imagenes muestradas tomando un perfil y midiendo con matlab, vease un ejemplo en Fig. \ref{fig:example}
 
-\begin{figure}[hptb]
+\begin{figure}[p]
 \includegraphics[width=\textwidth]{profile-lines.pdf}
 \caption{TODO DESCRIBE LA FOTO Y EL PROCESO DE SELECCION}
 \label{fig:example}
 \end{figure}
 
 \subsection{Medida de la MTF mediante el test de borde (método indirecto)}
+
+Debido a que la función $\delta(x)$ es la derivada de la step function, $s(x),$ como distribución, podemos usar este hecho para calcular la LTF, encontrando primero la respuesta a un borde, y realizando una estimación de la derivada, podemos obtener la LTF más fácilmente
 
 \section{Cuestiones}
 
