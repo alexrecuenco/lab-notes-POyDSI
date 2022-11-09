@@ -1,8 +1,6 @@
 % !TEX TS-program = pdflatexmk
 \documentclass{./packages/optica-article}
-
 \graphicspath{{images/}{practica1/images}}
-
 \journal{opticajournal}
 
 \usepackage{csvsimple}
@@ -11,21 +9,15 @@
 \usepackage{booktabs}
 \usepackage{tikz}
 
-% Figures and subfigures
 \usepackage{caption}
 \usepackage{subcaption}
-
 \usetikzlibrary{positioning}
-
-% cref instead of ref
-% \usepackage{cleveref}
 
 \newcommand{\sinc}{\textrm{sinc}}
 \newcommand\conv{\circledast}
 
 % Set the article type
 \articletype{Research Article}
-
 \begin{document}
 
 \title{Caracterización de sistemas de formación de imágenes}
@@ -35,24 +27,15 @@
 \address{\authormark{1}Universidad Complutense de Madrid, Madrid, PC 28040, España}
 
 \section{Introducción}
-En esta práctica vamos a caracterizar un sistema de formación de imágenes mediante la determinación experimental de su función de transferencia de modulación (MTF). Para ello utilizaremos un método directo (el test de barras) y un método indirecto (el test de borde).
+En esta práctica vamos a caracterizar un sistema de formación de imágenes mediante la determinación experimental de su función de transferencia de modulación (MTF). Para ello utilizaremos un método directo (el test de barras) y un método indirecto (el test de borde). 
 
 
-\section{TODO: SETUP, or whichever way you call it}
-
+\section{Marco práctico}
 El sistema cuya MTF mediremos consiste en un objetivo de microscopio con apertura numérica $NA = 0,25$ y un aumento $10\times$ (F10), y una cámara CCD con un tamaño de píxel de $s=4,65 \unit{\micro\meter}$. Las imágenes captadas por la cámara se visualizarán en la pantalla del PC.
-
-\subsection{Fundamento teórico}
-
-\begin{itemize}
-	\item Poner referencias
-	\item ?`Tenemos que explicar de donde viene esto?
-\end{itemize}
-
 
 \subsection{Medida de MTF mediante el test de barras (método directo)}
 
-Utilizando el test USAF 1951 (Fig.~\ref{fig:usaf1951}), y realizamos fotos de cada uno de los distintos elementos de rendijas de la diapositiva, como se indica en la Fig.~\ref{fig:usafpic}. Se controla la exposición para obtener una exposición que nos resuelva todos los colores grises sin sobre-exposición.
+Utilizando el test USAF 1951 (Fig.~\ref{fig:usaf1951}), y realizamos fotos de cada uno de los distintos elementos de rendijas de la diapositiva, como se indica en la Fig.~\ref{fig:usafpic}. Se controla la exposición para obtener los colores grises sin sobre-exposición.
 
 Después, se obtiene a través de estas imágenes un perfíl ortogonal a las rendijas de contraste como se indica en Fig.~\ref{fig:example} para cada una de las distintas imágenes. Los resultados se discutirán en la sección~\ref{sec:mtf-directo}.
 
@@ -77,18 +60,19 @@ En la tabla~\ref{table:perfilintensidad} se recogen medidas tomadas del perfil d
 		Barras & $y_{\min} (px)$ & $y_{\max} (px)$ & Contraste & $x_{\min} (px)$ & $x_{\max} (px)$ & N Periodos & periodo (px) &  $\flatfrac{\textrm{ciclos}}{\textrm{mm}}$%
 		\\\midrule%
 	]{practica1/MTF/Profiles.csv}
-	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$: distancia en píxeles. El contraste se ha obtenido a partir de la eq. \ref{eq:contraste}. la frequencia se ha obtenido a traves de la eq. \ref{eq:frecuencia}}%
+	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$: distancia en píxeles. El contraste se ha obtenido a partir de la equacion \ref{eq:contraste}. la frecuencia se ha obtenido a través de la equacion. \ref{eq:frecuencia}}%
 	\label{table:perfilintensidad}
 \end{table}
 
-El contraste se ha obtenido a partir de la expresión TODO: MOVER ESTO A FUNDAMENTO TEORICO Y PONER REFERENCIA?
+El contraste se ha obtenido a partir de la expresión: 
 \nopagebreak
+
 \begin{equation}
 	C = \frac{y_{\max} - y_{\min}}{y_{\max} + y_{\min}}.
 	\label{eq:contraste}
 \end{equation}
 
-La frecuencia, se calcula como:
+La frecuencia se calcula como:
 
 \begin{equation}
 	\nu = \frac{1825}{T}\ \textrm{ciclos/mm},\quad\textrm{TODO: QUE es 1825??}
@@ -131,8 +115,6 @@ Se obtiene la imagen de una única barra que abarque el campo completo de visió
 
 \subsection{Medida de la MTF mediante el test de barras (método directo)}\label{sec:mtf-directo}
 
-
-
 \begin{figure}[p]
 	\includegraphics[width=\textwidth]{profile-lines.pdf}
 	\caption{TODO DESCRIBE LA FOTO Y EL PROCESO DE SELECCION}
@@ -147,13 +129,13 @@ Debido a que la función $\delta(x)$ es la derivada de la step function, $s(x),$
 
 \subsection{Sea $H_{c}(u)$ la función de transferencia de un sistema para luz coherente. Escribir la relación entre $H_{c}(u)$ y la función de transferencia del mismo sistema para luz incoherente, $H_{i}(u)$.}
 
-Cuando la luz incidente es coherente, la imagen resultante se obtiene añadiendo linealmente la amplitud compleja. Sin embargo, cuando la iluminación es idealmente incoherente, la iluminación es linear en la intensidad de la onda incidente. Por ello, en el caso ideal donde la correlación de fase es zero para distintas posiciones, se obtiene que \cite[p.~132--134]{goodman1996introduction}.
+Cuando la luz incidente es coherente, la imagen resultante se obtiene añadiendo linealmente la amplitud compleja. Sin embargo, cuando la iluminación es idealmente incoherente, la iluminación es linear en la intensidad de la onda incidente. Por ello, en el caso ideal donde la correlación de fase es cero para distintas posiciones, se obtiene que \cite[p.~132--134]{goodman1996introduction}.
 
 \begin{equation}
 	I_{i}(u,v) = \kappa \iint_{-\infty}^{\infty}\abs{h(u - \xi, v- \eta)}^{2} I_{g}(\xi, \eta) \dd \xi \dd \eta
 \end{equation}
 
-Por lo tanto, la funcion $H_{i}(u)$ se puede obtener con el schema descrito en Fig. \ref{fig:transformacion}. Basicamente, haciendo la transformación inversa para obtener $h_{c}$, luego multiplicando esta con su conjugada, obteniendo $h_{i}$, donde $i$ denota intensidad. Y al realizar la transformada inversa obtenemos el resultado.
+Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en Fig. \ref{fig:transformacion}. Básicamente, haciendo la transformación inversa para obtener $h_{c}$, luego multiplicando está con su conjugada, obteniendo $h_{i}$, donde $i$ denota intensidad. Y al realizar la transformada inversa obtenemos el resultado.
 
 \begin{align}
 	H_{i}(u)
@@ -185,20 +167,47 @@ Por lo tanto, la funcion $H_{i}(u)$ se puede obtener con el schema descrito en F
 	\end{center}
 	\caption{Diagrama TODO, describirlo mejor}
 	\label{fig:transformacion}
-\end{figure}
+    \end{figure}
 
 \subsection[]{Para un sistema parecido al usado en la práctica:
 	\begin{enumerate}
 		\item Estimar la frecuencia de corte de la cámara CCD, $u_{c}^{(CCD)}$, en líneas por milímetro.
 		\item Estimar la frecuencia de corte $u_{c}^{(Obj)}$ del objetivo $10\times$ para luz incoherente (la longitud de onda media $\lambda=500\,\unit{\nano\metre}$).
 		\item Tomando estos valores y suponiendo que la PSF del objetivo y de la cámara se aproximan por la función $|\sinc(ax)|^2$, dibujar la MTF de cada uno de los elementos y del sistema compuesto.
-	\end{enumerate}}
+	\end{enumerate}
+	
+\subsection{Aplicar usando los image J, dos metodos de deconvolucion 
+dos metodos de deconvolución: Regularized Inverse Filter y Richardson-Lucy a una imagen test obtenida por un sistema con una PSF conocida y diferentes tipos de ruido: Gauss y Poisson.}
 
+Imagen test original’ref’ e imagen del PSF ’psf’.
 
+    \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{Simulation deconvolution/psf.jpg}
+    \caption{Imagen PSF }
+    \label{f:psf}
+    \end{figure}
+    
+     \begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{Simulation deconvolution/ref.jpg}
+    \caption{Imagen referencia test original}
+    \label{f:REF}
+    \end{figure}
 
-\subsection{Aplicar usando el plugin Deconvolutionlab2 y Image J dos métodos de convolución: Regularized Inverse Filter y Richardson-Lucy a una imagen test obtenida por un sistema con una PSF conocida y diferentes tipos de ruido: Guass y Poisson.}
+      Convolution Noiseless (convolución sin ruido);
+        b) Simulation with noise-Gauss (convolución con ruido Gaussiano: 
+        Mean=0
+        Stdev: 0.1 y 0.01 );
+        c) Simulation with noise-Poisson (Convolución con ruido Poisson 0.01, 10 y 0.0001, las dos ultimas no
+        hace falta deconvoluciones después ) y guardar las imágenes correspondientes como ’refconv’, ’refNG...’ y ’refNP’ como .TIF o .BMP. 
+        Nivel de ruido:
+		\item Aplicar los algoritmos de deconvolución a las imágenes obtenidas en el apartado anterior (arrastrar a la ventana’Image’): 
+		a) Regularized Inverse filter: 
+		RIF: =0.01, =1. 
+		b) Richardson-Lucy (RL) algorithm con 10 y 50 iteraciones. Probar 100 iteraciones para una caso y comparar con 50 iteraciones
 
-
+	}
 %%%%%%%%%% If using BibTeX:
 \bibliography{bibliography}
 
