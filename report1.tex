@@ -214,13 +214,15 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 \end{figure}
 
       Convolution Noiseless (convolución sin ruido);
+      
         b) Simulation with noise-Gauss (convolución con ruido Gaussiano: 
         Mean=0
         Stdev: 0.1 y 0.01 );
+        
         c) Simulation with noise-Poisson (Convolución con ruido Poisson 0.01, 10 y 0.0001, las dos ultimas no
         hace falta deconvoluciones después ) y guardar las imágenes correspondientes como ’refconv’, ’refNG...’ y ’refNP’ como .TIF o .BMP. 
         Nivel de ruido:
-		\item Aplicar los algoritmos de deconvolución a las imágenes obtenidas en el apartado anterior (arrastrar a la ventana’Image’): 
+		Aplicar los algoritmos de deconvolución a las imágenes obtenidas en el apartado anterior (arrastrar a la ventana’Image’): 
 		a) Regularized Inverse filter: 
 		RIF: =0.01, =1. 
 		b) Richardson-Lucy (RL) algorithm con 10 y 50 iteraciones. Probar 100 iteraciones para una caso y comparar con 50 iteraciones
