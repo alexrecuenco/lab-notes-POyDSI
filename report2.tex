@@ -8,10 +8,15 @@
 
 \usepackage{csvsimple}
 \usepackage{siunitx}
-\usepackage{graphicx}
 \usepackage{physics}
 \usepackage{booktabs}
 \usepackage{tikz}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% No floating captions
+\usepackage{capt-of}
 \usetikzlibrary{positioning}
 
 \tikzset{>=stealth}
@@ -48,51 +53,57 @@ libre en el régimen de Fresnel para ciertas distancias. Por otra parte, se cons
     \item Observación efecto de Talbot
 Se trabaja con el siguiente esquema:
 
-    \begin{figure}[h]
-    \centering
-    \includegraphics[scale=1]{/sistematalbot.png}
-    \caption{ Esquema del banco óptico, (1) filtro espacial, (2) atenuador, L1 lente colimadora, cámara CCD y PC para efectuar el registro.}
-    \label{talbot}
-    \end{figure}
+% Nota como para FORZARLO a estar aqui, no se utiliza figure, que es algo que flota
+% Esto normalmente esse considera mala forma en un documento, ya que LaTeX es muy bueno a cuadrar todo
+\begin{center}
+    \includegraphics[scale=1]{sistematalbot.png}
+     \captionof{figure}{Esquema del banco óptico, (1) filtro espacial, (2) atenuador, L1 lente colimadora, cámara CCD y PC para efectuar el registro.}
+    \label{fig:talbot} % for use in \ref{table1} if you want to refer to the table number
+\end{center}
     
     
-Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias descritas a continuación:\par
+Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias descritas a continuación:
 
 
-Se registraron las imágenes y las distancias donde se observaron:\par
-    \begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.2]{/parte2-talbot/4.9cm-talbot7.png}
-    \caption{ Talbot a distancia 1}
-    \label{talbot1}
-    \end{figure}
-    
-    \begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.15]{/parte2-talbot/23.9-talbot.png}
-    \caption{ Talbot a distancia 2}
-    \label{talbot2}
-    \end{figure}
-    
-    \begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.15]{/parte2-talbot/42.2-talbot.png}
-    \caption{ Talbot a distancia 3}
-    \label{talbot3}
-    \end{figure}
-    
-    \begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.15]{/parte2-talbot/54.8-2a-talbot.png}
-    \caption{ Talbot a distancia 3}
-    \label{talbot3}
-    \end{figure}
-    
+Se registraron las imágenes y las distancias donde se observaron, 
+
+\begin{figure}[hptb]
+\begin{center}
+    \begin{subfigure}[t]{0.45\textwidth}\centering
+        \includegraphics[width=\textwidth]{/parte2-talbot/4.9cm-talbot7.png}
+        \caption{ Talbot a distancia 1}
+        \label{fig:talbot1}	
+    \end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}\centering
+		\includegraphics[width=\textwidth]{/parte2-talbot/23.9-talbot.png}
+        \caption{Talbot a distancia 2}
+        \label{fig:talbot2}
+	\end{subfigure}
+	\\
+	\begin{subfigure}[t]{0.45\textwidth}\centering
+		\includegraphics[width=\textwidth]{/parte2-talbot/42.2-talbot.png}
+        \caption{ Talbot a distancia 3}
+        \label{fig:talbot3}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}\centering
+		\includegraphics[width=\textwidth]{/parte2-talbot/54.8-2a-talbot.png}
+        \caption{ Talbot a distancia 4}
+        \label{fig:talbot4}
+	\end{subfigure}
+	
+	
+	
+\caption{Posiciones de contraste máximo (\ref{fig:talbot2}, \ref{fig:talbot4}) y mínimo (\ref{fig:talbot1}, \ref{fig:talbot3})%
+	}
+	\label{fig:alltalbot}
+\end{center}
+\end{figure}
 
 Se estima la distancia de talbot siendo:
-\par
 
-y el periodo de la red: \par
+y el periodo de la red: 
 
 
 Se registró las imágenes mostradas a continuacion:
@@ -113,40 +124,42 @@ Se realiza la experimentación bajo el diseño del siguiente montaje:
 
 En el sistema armado se utilizaron lentes focales diferentes, un polarizador como atenuador y un diafragma para disminuir la influencia de luz parasita.
 
-Se observaron los espectros de Fourier en los siguientes escenarios: \par
+Se observaron los espectros de Fourier en los siguientes escenarios: 
 
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.15]{/parte3-fourier/fourier_transform_-20-lense-20-camera.png}
+\begin{figure}[hptb]
+\begin{center}
+    \begin{subfigure}[t]{0.45\textwidth}\centering
+        \includegraphics[width=\textwidth]{/parte3-fourier/fourier_transform_-20-lense-20-camera.png}
     \caption{Esquema del montaje experimental para la observación del espectro de Fourier de un objeto plano. }
-    \label{fourier1}
-    \end{figure}
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.15]{/parte3-fourier/fourier-car-multiplied-pixels.png}
+    \label{fig:fourier1}
+    \end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}\centering
+		\includegraphics[width=\textwidth]{/parte3-fourier/fourier-car-multiplied-pixels.png}
     \caption{Espectro de Fourier imagen autos }
-    \label{fourier2}
-    \end{figure}
-    
-    \begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.15]{/parte3-fourier/fourier-letras.png}
+    \label{fig:fourier2}
+	\end{subfigure}
+	\\
+	\begin{subfigure}[t]{0.45\textwidth}\centering
+		\includegraphics[width=\textwidth]{/parte3-fourier/fourier-letras.png}
     \caption{Espectro de Fourier imagen letras. }
     \label{fourier3}
-    \end{figure}
-    
-    \begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.15]{/parte3-fourier/fourier-periodic-grating-10cm-focal.png}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.45\textwidth}\centering
+		\includegraphics[width=\textwidth]{/parte3-fourier/fourier-periodic-grating-10cm-focal.png}
     \caption{Espectro de Fourier imagen gratin }
     \label{fourier4}
-    \end{figure}
-    
+	\end{subfigure}
+	
+	
+	\caption{Observaciones en campo de fourier de distintos elementos
+	}
+	\label{fig:alltalbot}
+\end{center}
+\end{figure}
+
 A partir del espectro de Fourier estimar el periodo de la red aplicada para la observación del efecto del efecto de Talbot.
-
-
     \item Filtrado óptico
     \item Edad del Hierro
 \end{enumerate}

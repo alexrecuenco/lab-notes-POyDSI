@@ -33,25 +33,94 @@ En esta práctica vamos a caracterizar un sistema de formación de imágenes med
 \section{Marco práctico}
 El sistema cuya MTF mediremos consiste en un objetivo de microscopio con apertura numérica $NA = 0,25$ y un aumento $10\times$ (F10), y una cámara CCD con un tamaño de píxel de $s=4,65 \unit{\micro\meter}$. Las imágenes captadas por la cámara se visualizarán en la pantalla del PC.
 
-\subsection{Medida de MTF mediante el test de barras (método directo)}
+\subsection{Medida de MTF mediante el test de barras (método directo)}\label{sec:directo}
 
-Utilizando el test USAF 1951 (Fig.~\ref{fig:usaf1951}), y realizamos fotos de cada uno de los distintos elementos de rendijas de la diapositiva, como se indica en la Fig.~\ref{fig:usafpic}. Se controla la exposición para obtener los colores grises sin sobre-exposición.
-
-Después, se obtiene a través de estas imágenes un perfíl ortogonal a las rendijas de contraste como se indica en Fig.~\ref{fig:example} para cada una de las distintas imágenes. Los resultados se discutirán en la sección~\ref{sec:mtf-directo}.
-
-\begin{figure}[p]
-	\centering
-	\includegraphics[width=0.5\textwidth]{smallest_lines}
-	\caption{Foto tomada durante la práctica de las líneas centrales del test USAF 1951}\label{fig:usafpic}
-\end{figure}
-
-\begin{figure}[htb]
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.05]{testusaf1951}
 	\caption{Test USAF 1951}\label{fig:usaf1951}
 \end{figure}
 
-En la tabla~\ref{table:perfilintensidad} se recogen medidas tomadas del perfil de intensidad para distintos conjuntos de barras.
+Utilizando el test USAF 1951 (Fig.~\ref{fig:usaf1951}), y realizamos fotos de cada uno de los distintos elementos de rendijas de la diapositiva, como se indica en la Fig.~\ref{fig:usafpic} presentada a continuación. Se controla la exposición para obtener los colores grises sin sobre-exposición.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{smallest_lines}
+	\caption{Foto tomada durante la práctica de las líneas centrales del test USAF 1951}\label{fig:usafpic}
+\end{figure}
+
+Después, se obtiene a través de estas imágenes un perfíl ortogonal a las rendijas de contraste como se indica en Fig.~\ref{fig:example} para cada una de las distintas imágenes. Los resultados se discutirán en la sección~\ref{sec:mtf-directo}.
+
+
+
+El contraste se ha obtenido a partir de la expresión: 
+\nopagebreak
+\begin{equation}
+	C = \frac{y_{\max} - y_{\min}}{y_{\max} + y_{\min}}.
+	\label{eq:contraste}
+\end{equation}
+
+La frecuencia se calcula como:
+\nopagebreak
+\begin{equation}
+	\nu = \frac{1825}{T}\ \textrm{ciclos/mm},\quad\textrm{TODO: QUE es 1825??}
+	\label{eq:frecuencia}
+\end{equation}
+
+Donde el periodo, $T$, se calcula como se explica en Fig.~\ref{fig:perfil:example}.
+
+\subsection{Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:description:indirecto}
+
+Se obtiene la imagen de una única barra que abarque el campo completo de visión, dividiendo la imagen ortogonalmente como se puede ver en la Fig.~\ref{fig:perfil:img}
+
+\begin{figure}[hptb]
+	\centering
+	\begin{subfigure}[t]{0.31\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{edge_large_line}
+		\caption{Imagen de una franja amplia}
+		\label{fig:perfil:img}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.31\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{edge_perfil}
+		\caption{Perfil de intensidad de píxeles en una línea horizontal}
+		\label{fig:perfil:graph}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.31\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{edge_perfil}
+		\caption{TODO: Imagen de la derivada del perfil}
+		\label{fig:perfil:lsf}
+	\end{subfigure}
+	
+	\caption{Perfil de intensidad de una franja grande utilizada para el método indirecto para obtener el MTF, como se describe en la sección~\ref{sec:description:indirecto}}
+	\label{fig:perfil}
+\end{figure}
+
+\section{Resultados experimentales}\label{sec:resultados}
+
+\subsection{Medida de la MTF mediante el test de barras (método directo)}\label{sec:resultados:directo}
+Se realizó el procedimiento explicado en Fig.~\ref{fig:perfil:example} por cada imagen que se obtuvo del test de USAF (Fig.~\ref{fig:usaf1951}) durante la practica (Fig.~\ref{fig:images:example}).
+
+\begin{figure}[!h]
+	\includegraphics[width=\textwidth]{profile-lines.pdf}
+	\caption{Procedimiento para sacar el perfil de un segmento de líneas. Se obtiene dos posiciones tan distantes como se pueda de dos mínimos de las barras. Se mide la distancia en píxeles entre ellas ($x_{\max} - x_{\min} $), se cuenta el número de periodos entre ellas, que nos permite calcular $T = \flatfrac{x_{\max} - x_{\min} }{N_{\textrm{periodos}}}$. A continuación,  se toma los máximos y mínimos de altura $y_{\max}$, $y_{\min}$, que nos permite calcular el contraste usando la formula~\ref{eq:contraste} }
+	\label{fig:perfil:example}
+\end{figure}
+
+A continuación se muestran algunas de las imágenes de las tomadas en la PC en esta sección:
+
+\begin{figure}[!h]
+	\includegraphics[width=0.9\textwidth]{/imaglineas.jpg}
+	\caption{Imágenes tomadas del test de USAF Fig.~\ref{fig:usaf1951}}
+	\label{fig:images:example}
+\end{figure}
+
+
+En la tabla~\ref{table:perfilintensidad} se recogen medidas tomadas del perfil de intensidad para distintos conjuntos de barras, posterior a obtener los datos del perfil de las imágenes.
 
 \begin{table}[p]
 	\centering
@@ -60,68 +129,15 @@ En la tabla~\ref{table:perfilintensidad} se recogen medidas tomadas del perfil d
 		Barras & $y_{\min} (px)$ & $y_{\max} (px)$ & Contraste & $x_{\min} (px)$ & $x_{\max} (px)$ & N Periodos & periodo (px) &  $\flatfrac{\textrm{ciclos}}{\textrm{mm}}$%
 		\\\midrule%
 	]{practica1/MTF/Profiles.csv}
-	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$: distancia en píxeles. El contraste se ha obtenido a partir de la equacion \ref{eq:contraste}. la frecuencia se ha obtenido a través de la equacion. \ref{eq:frecuencia}}%
+	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$: distancia en píxeles. El contraste se ha obtenido a partir de la ecuación \ref{eq:contraste}. la frecuencia se ha obtenido a través de la equacion. \ref{eq:frecuencia}}%
 	\label{table:perfilintensidad}
 \end{table}
 
-El contraste se ha obtenido a partir de la expresión: 
-\nopagebreak
 
-\begin{equation}
-	C = \frac{y_{\max} - y_{\min}}{y_{\max} + y_{\min}}.
-	\label{eq:contraste}
-\end{equation}
 
-La frecuencia se calcula como:
 
-\begin{equation}
-	\nu = \frac{1825}{T}\ \textrm{ciclos/mm},\quad\textrm{TODO: QUE es 1825??}
-	\label{eq:frecuencia}
-\end{equation}
 
-Donde el periodo, $T$, se obtiene dividiendo la diferencia $x_{\max} - x_{\min}$ entre el número de periodos en ese intervalo.
-
-\subsection{Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:description:indirecto}
-
-Se obtiene la imagen de una única barra que abarque el campo completo de visión, dividiendo la imagen ortogonalmente como se puede ver en la Fig.~\ref{fig:perfil:img}
-
-\begin{figure}[hptb]
-	\centering
-	\begin{subfigure}[b]{0.33\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{edge_large_line}
-		\caption{Imagen de una franja amplia}
-		\label{fig:perfil:img}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.25\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{edge_perfil}
-		\caption{Perfil de intensidad de píxeles en una línea horizontal}
-		\label{fig:perfil:graph}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[b]{0.25\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{edge_perfil}
-		\caption{TODO: Imagen de la derivada del perfil}
-		\label{fig:perfil:lsf}
-	\end{subfigure}
-	\caption{Perfil de intensidad de una franja grande utilizada para el método indirecto para ogtener el MTF, como se describe en la sección~\ref{sec:description:indirecto}}
-	\label{fig:perfil}
-\end{figure}
-
-\section{Resultados experimentales}
-
-\subsection{Medida de la MTF mediante el test de barras (método directo)}\label{sec:mtf-directo}
-
-\begin{figure}[p]
-	\includegraphics[width=\textwidth]{profile-lines.pdf}
-	\caption{TODO DESCRIBE LA FOTO Y EL PROCESO DE SELECCION}
-	\label{fig:example}
-\end{figure}
-
-\subsection{Medida de la MTF mediante el test de borde (método indirecto)}
+\subsection{Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:resultados:indirecto}
 
 Debido a que la función $\delta(x)$ es la derivada de la step function, $s(x),$ como distribución, podemos usar este hecho para calcular la LTF, encontrando primero la respuesta a un borde, y realizando una estimación de la derivada, podemos obtener la LTF más fácilmente
 
@@ -167,7 +183,7 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 	\end{center}
 	\caption{Diagrama TODO, describirlo mejor}
 	\label{fig:transformacion}
-    \end{figure}
+\end{figure}
 
 \subsection[]{Para un sistema parecido al usado en la práctica:
 	\begin{enumerate}
@@ -175,25 +191,27 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 		\item Estimar la frecuencia de corte $u_{c}^{(Obj)}$ del objetivo $10\times$ para luz incoherente (la longitud de onda media $\lambda=500\,\unit{\nano\metre}$).
 		\item Tomando estos valores y suponiendo que la PSF del objetivo y de la cámara se aproximan por la función $|\sinc(ax)|^2$, dibujar la MTF de cada uno de los elementos y del sistema compuesto.
 	\end{enumerate}
-	
-\subsection{Aplicar usando los image J, dos metodos de deconvolucion 
-dos metodos de deconvolución: Regularized Inverse Filter y Richardson-Lucy a una imagen test obtenida por un sistema con una PSF conocida y diferentes tipos de ruido: Gauss y Poisson.}
+}
 
-Imagen test original’ref’ e imagen del PSF ’psf’.
 
-    \begin{figure}[h]
+\begin{figure}[hbp]
+\centering
+
+\begin{subfigure}[t]{0.45\textwidth}\centering
     \centering
-    \includegraphics[scale=0.5]{Simulation deconvolution/psf.jpg}
-    \caption{Imagen PSF }
-    \label{f:psf}
-    \end{figure}
-    
-     \begin{figure}[h]
-    \centering
-    \includegraphics[scale=0.5]{Simulation deconvolution/ref.jpg}
+    \includegraphics[width=\textwidth]{Simulation deconvolution/ref.jpg}
     \caption{Imagen referencia test original}
     \label{f:REF}
-    \end{figure}
+\end{subfigure}
+\hfill
+\begin{subfigure}[t]{0.45\textwidth}\centering
+    \includegraphics[width=\textwidth]{Simulation deconvolution/psf.jpg}
+    \caption{Imagen PSF}
+    \label{f:psf}
+\end{subfigure}
+
+\caption{Simulación con imagen de referencia y }\label{fig:psf-ref}
+\end{figure}
 
       Convolution Noiseless (convolución sin ruido);
         b) Simulation with noise-Gauss (convolución con ruido Gaussiano: 
@@ -207,7 +225,7 @@ Imagen test original’ref’ e imagen del PSF ’psf’.
 		RIF: =0.01, =1. 
 		b) Richardson-Lucy (RL) algorithm con 10 y 50 iteraciones. Probar 100 iteraciones para una caso y comparar con 50 iteraciones
 
-	}
+	
 %%%%%%%%%% If using BibTeX:
 \bibliography{bibliography}
 
