@@ -1,0 +1,4 @@
+The results of edge_profile.png and MTF.png have been obtained using the python code included inside lab.Rmd.
+
+
+Note however that this python code relies on files that are not properly placed relative to this script
