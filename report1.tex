@@ -197,7 +197,6 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 
 \subsection{Aplicar usando el pluging Deconvolutionlab2 y Image J dos métodos de convolución: Regularized Inverse Filter y Richardson-Lucy a una imagen test obtenida por un sistema con una PSF conocida y diferentes tipos de ruido: Guass y Poisson.}
 
-La imagen REFERENCIAL y la imagen PSF a trabajar se presentan como:
 
 \begin{figure}[hbp]
 	\centering
@@ -214,18 +213,19 @@ La imagen REFERENCIAL y la imagen PSF a trabajar se presentan como:
 	\caption{Imagen usada para la simulación con Deconvolutionlab2 y Image J, y el PSF del sistema de captura simulado}\label{fig:image:ref-psf}
 \end{figure}
  
- Y se obtienen las siguientes imágenes resultantes de acuerdo a lo que se pide en el siguiente orden:
+ Simulamos tomar fotos de la imagen de referencia (Fig.~\ref{fig:ref}) con un systema con Point Spread Function (PSF) del sistema simulado (Fig.~\ref{fig:psf}). Queremos estudiar distintos tipos de ruido simulado y que algoritmos de de-noising actúan mejor para reducir este ruido.
+
+ Realizamos las siguientes simulaciones de observación con ruido. (Las imágenes obtenidas se ven en Fig.~\ref{fig:convolutions})
 
 \begin{enumerate}
-
-    \item Convolution Noiseless (convolución sin ruido)
-    \item Simulation with noise-Gauss (convolución con ruido Gaussiano. Mean=0, Stdev: 0.1 y 0.01
+    \item Noiseless (convolución sin ruido)
+    \item Simulación con noise-Gauss (convolución con ruido Gaussiano. $\mu=0$, $\sigma=0.1$, y $0.01$
     \item Simulation with noise-Poisson (Convolución con ruido Poisson 0.01, 10 y 0.0001.
-    \item Aplicar a las imagenes anteriores Regularized Inverse filter: RIF: =0.01, =1.y Richardson-Lucy (RL) algorithm con 10 y 50 iteraciones. Probar 100 iteraciones para una caso y comparar con 50 iteraciones
+    \item Aplicar a las imagenes anteriores Regularized Inverse filter (RIF): =0.01, =1.y Richardson-Lucy (RL) algorithm con 10 y 50 iteraciones. Probamos 100 iteraciones para una caso y comparar con 50 iteraciones
     
 \end{enumerate}
 
-\begin{figure}[h]
+\begin{figure}[hbp]
 	% Esto no se hace asi con hfill y \, ... pero no me acuerdo como
 	\begin{center}
 		\,\hfill
