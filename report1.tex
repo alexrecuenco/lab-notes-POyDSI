@@ -50,7 +50,7 @@ Posterior a la toma de imágenes, se obtiene a través de estas imágenes un per
 
 \subsection{Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:description:indirecto}
 
-Se obtiene la imagen de la misma manera que el apartado anterior de una única barra que abarque el campo completo de visión, dividiendo la imagen ortogonalmente como se puede ver en la Fig.~\ref{fig:borde1}
+Se obtiene la imagen de la misma manera que el apartado anterior, pero esta vez de una única barra que abarque el campo completo de visión, dividiendo la imagen ortogonalmente como se puede ver en la Fig.~\ref{fig:borde1}
 
 \begin{figure}[h]
 	\centering
@@ -58,7 +58,7 @@ Se obtiene la imagen de la misma manera que el apartado anterior de una única b
 	\caption{Imagen para análisis de Borde}\label{fig:borde1}
 \end{figure}
 
-De la misma manera se obtiene un perfil de la imagen, por medio del software en MATLAB, los resultados se presentarán en la sección de resultados correspondientes.
+De la misma manera se obtiene un perfil de la imagen, por medio del software en MATLAB, los resultados se presentarán en la sección de resultados correspondiente.
 
 
 \section{Resultados experimentales}\label{sec:resultados}
@@ -77,7 +77,7 @@ Se realizó el procedimiento explicado con anterioridad por cada imagen que se o
 	\caption{Foto tomada durante la práctica de las líneas centrales del test USAF 1951}\label{fig:usafpic}
 \end{figure}
 
-Procedimiento para sacar el perfil de un segmento de líneas. Se obtiene dos posiciones tan distantes como se pueda de dos mínimos de las barras. Se mide la distancia en píxeles entre ellas ($x_{\max} - x_{\min} $), se cuenta el número de periodos entre ellas, que nos permite calcular $T = \flatfrac{x_{\max} - x_{\min} }{N_{\textrm{periodos}}}$. A continuación,  se toma los máximos y mínimos de altura $y_{\max}$, $y_{\min}$.
+Procedimiento para sacar el contraste y la frecuencia a partir del perfil de un segmento de líneas: Se obtiene dos posiciones tan distantes como se pueda de dos mínimos de las barras. Se mide la distancia en píxeles entre ellas ($x_{\max} - x_{\min} $), se cuenta el número de periodos entre ellas, que nos permite calcular $T = \flatfrac{(x_{\max} - x_{\min)} }{N_{\textrm{periodos}}}$. A continuación,  se toma los máximos y mínimos de altura $y_{\max}$, $y_{\min}$.
 
 El contraste se ha obtenido a partir de la expresión:
 \nopagebreak
@@ -92,15 +92,15 @@ La frecuencia se calcula como:
 	\nu = \frac{1825}{T}\ \textrm{ciclos/mm},\quad\textrm{TODO: QUE es 1825??}\label{eq:frecuencia}
 \end{equation}
 
-De manera gráfica, el procedimiento se resume en:
+Donde el periodo, $T$, se calcula de acuerdo a la gráfica del perfil obtenida en el estudio de cada imagen. Un ejemplo de estas gráficas se muestra en la figura \ref{fig:perfil:example}:
 
 \begin{figure}[!h]
 	\includegraphics[width=0.8\textwidth]{profile-lines.pdf}
-	\caption{Proceso MTF}\label{fig:perfil:example}
+	\caption{Perfil de un segmento de líneas}\label{fig:perfil:example}
 \end{figure}
-Donde el periodo, $T$, se calcula de acuerdo a la gráfica obtenida en el estudio de cada imagen.\\
 
-En la tabla siguiente se recogen medidas tomadas del perfil de intensidad para distintos conjuntos de barras, posterior a obtener los datos del perfil de las imágenes. 
+
+En la tabla siguiente se recogen medidas tomadas del perfil de intensidad para distintos conjuntos de barras:
 
 \begin{table}[h]
 	\centering
@@ -109,10 +109,15 @@ En la tabla siguiente se recogen medidas tomadas del perfil de intensidad para d
 		Barras & $y_{\min} (px)$ & $y_{\max} (px)$ & Contraste & $x_{\min} (px)$ & $x_{\max} (px)$ & N Periodos & periodo (px) &  $\flatfrac{\textrm{ciclos}}{\textrm{mm}}$%
 		\\\midrule%
 	]{practica1/MTF/Profiles.csv}
-	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$: distancia en píxeles. El contraste se ha obtenido a partir de la ecuación~\ref{eq:contraste}.
-		la frecuencia se ha obtenido a través de la equacion~\ref{eq:frecuencia}}%
+	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$: distancia en píxeles. El contraste se ha obtenido a partir de la ecuación~\ref{eq:contraste}. La frecuencia se ha obtenido a través de la ecuación~\ref{eq:frecuencia}}%
 	\label{table:perfilintensidad}
 \end{table}
+
+
+
+
+
+
 
 \subsection{Resultados Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:resultados:indirecto}
 Con la imagen del borde obtenida de la imagen patrón USAF de manera que la cámara al tomar la imagen no se encuentre saturada, ingresamos la imagen resultante en el análisis de perfil de intensidad y obtenemos su derivada.\\
@@ -218,12 +223,15 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
  Realizamos las siguientes simulaciones de observación con ruido. (Las imágenes obtenidas se ven en Fig.~\ref{fig:convolutions})
 
 \begin{enumerate}
-    \item Noiseless (convolución sin ruido)
-    \item Simulación con noise-Gauss (convolución con ruido Gaussiano. $\mu=0$, $\sigma=0.1$, y $0.01$
-    \item Simulation with noise-Poisson (Convolución con ruido Poisson 0.01, 10 y 0.0001.
-    \item Aplicar a las imagenes anteriores Regularized Inverse filter (RIF): =0.01, =1.y Richardson-Lucy (RL) algorithm con 10 y 50 iteraciones. Probamos 100 iteraciones para una caso y comparar con 50 iteraciones
-    
+    \item \emph{Noiseless convolution} (convolución sin ruido)
+    \item \emph{Simulation with noise-Gauss} (convolución con ruido Gaussiano. $\mu=0$, $\sigma=0.1$, y $0.01$
+    \item \emph{Simulation with noise-Poisson} (Convolución con ruido Poisson 0.01, 10 y 0.0001.
+    \item Aplicar a las imagenes anteriores \emph{Regularized Inverse filter (RIF)}: =0.01, =1.y Richardson-Lucy (RL) algorithm con 10 y 50 iteraciones. Probamos 100 iteraciones para una caso y comparar con 50 iteraciones
 \end{enumerate}
+
+Al realizar el tratado de las imágenes a las cuales se le aplicó ruido, podemos observar a ante la aplicación de un RIF menor con un número de iteraciones menor, se visualiza una recuperación de la imagen mejor filtrada, en cambio, a mayor número de los parámetros anteriormente mencionados la imagen coge más ruido, hasta degradándose en sus colores originales.
+
+Por otro lado la deconvolución de Richardson-Lucy, al ser procedimiento iterativo para recuperar una imagen subyacente que ha sido añadida ruido por una función de dispersión de puntos conocida, tiene mejores resultados en su filtrado.
 
 \begin{figure}[hbp]
 	% Esto no se hace asi con hfill y \, ... pero no me acuerdo como
@@ -303,8 +311,6 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 	\end{tabular}
 	\caption{Matriz de de convoluciones para las imágenes de la figura \ref{fig:convolutions} (a-d).}
 \end{figure}
-Al realizar el tratado de las imágenes a las cuales se le aplicó ruido, podemos observar a ante la aplicación de un RIF menor con un número de iteraciones menor, se visualiza una imagen mejor filtrada, en cambio, a mayor número de los parámetros anteriormente mencionados la imagen coge más ruido, hasta degradándose en sus colores originales.
-Por otro lado, la deconvolución de RichardsonLucy al ser procedimiento iterativo para recuperar una imagen subyacente que ha sido añadida ruido por una función de dispersión de puntos conocida, tiene mejores resultados en su filtrado.
 
 %%%%%%%%%% If using BibTeX:
 \bibliography{bibliography}
