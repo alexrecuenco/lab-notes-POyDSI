@@ -117,8 +117,6 @@ En la tabla siguiente se recogen medidas tomadas del perfil de intensidad para d
 
 
 
-
-
 \subsection{Resultados Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:resultados:indirecto}
 Con la imagen del borde obtenida de la imagen patrón USAF de manera que la cámara al tomar la imagen no se encuentre saturada, ingresamos la imagen resultante en el análisis de perfil de intensidad y obtenemos su derivada.\\
 Esto Debido a que la función $\delta(x)$ es la derivada de la step function, $s(x)$, como distribución, podemos usar este hecho para calcular la LSF, encontrando primero la respuesta a un borde, y realizando una estimación de la derivada, podemos obtener la MTF de una manera más rápida.\\
@@ -231,7 +229,7 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 
 Al realizar el tratado de las imágenes a las cuales se le aplicó ruido, podemos observar a ante la aplicación de un RIF menor con un número de iteraciones menor, se visualiza una recuperación de la imagen mejor filtrada, en cambio, a mayor número de los parámetros anteriormente mencionados la imagen coge más ruido, hasta degradándose en sus colores originales.
 
-Por otro lado la deconvolución de Richardson-Lucy, al ser procedimiento iterativo para recuperar una imagen subyacente que ha sido añadida ruido por una función de dispersión de puntos conocida, tiene mejores resultados en su filtrado.
+Por otro lado, la deconvolución de Richardson-Lucy, al ser procedimiento iterativo para recuperar una imagen subyacente que ha sido añadida ruido por una función de dispersión de puntos conocida, tiene mejores resultados en su filtrado.
 
 \begin{figure}[hbp]
 	% Esto no se hace asi con hfill y \, ... pero no me acuerdo como
