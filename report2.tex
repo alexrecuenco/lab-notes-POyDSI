@@ -101,7 +101,28 @@ El grado de coherencia del haz afecta directamente a como un sistema óptico for
 
 \subsection{Observación del efecto Talbot}
 Con una red periodica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias, cuando el contraste es mínimo o máximo (Fig.~\ref{fig:alltalbot}) el Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias descritas a continuación:\\
-Se registraron las imágenes y las distancias donde se observaron, 
+Las distancias a las que se reproduce el campo periódico son ciertas fracciones de la denominada distancia de Talbot, que viene dada por la expresión \ref{ec:zt}:
+
+\begin{center}
+    \begin{equation}
+        z_T = \frac{2d^2}{\lambda}
+        \label{ec:zt}
+    \end{equation}
+\end{center}
+
+
+Registramos varias imágenes a distancias en la que se observaba una distribución de intensidad semejante a la del objeto original (franjas transparentes y opacas de igual tamaño), así como a distancias en las que se observaba una distribución de intensidad homogénea:\par
+
+\begin{center}
+    \captionof{table}{Distancias fraccionarias de la longitud de Talbot $z_T$}
+    \begin{tabular}{|c|c|c|} \hline
+        Distancia & Distribución de intensidad & Distancia (fracción de $z_T$)\\ \hline
+        18,5 cm & Homogénea & $z_T/4$\\ \hline
+        36,8 cm & Franjas claras y oscuras & $z_T/2$\\ \hline
+        55,8 cm & Homogénea & $3z_T/4$\\ \hline
+        72,9 cm & Franjas claras y oscuras & $z_T$\\ \hline
+    \end{tabular}
+\end{center}
 
 \begin{figure}[hptb]
 \begin{center}
@@ -130,45 +151,17 @@ Se registraron las imágenes y las distancias donde se observaron,
 	\end{subfigure}
 	
 \caption{Posiciones de contraste máximo (\ref{fig:talbot2}, \ref{fig:talbot4}) y mínimo (\ref{fig:talbot1}, \ref{fig:talbot3}).
-Se ve en estas fotos como entre \ref{fig:talbot2} y \ref{fig:talbot4} las posiciones tiene un shift de medio periodo.
-	}\label{fig:alltalbot}
+Se ve en estas fotos como entre \ref{fig:talbot2} y \ref{fig:talbot4} las posiciones tiene un shift de medio periodo.}
+\label{fig:alltalbot}
 \end{center}
 \end{figure}
 
-Distancia de Talbot: 
-
-%\begin{table}[h] % h indica que queremos posicionar la tabla Here
-%        \centering
-%        \begin{tabular}{|c|c|}
-%            \hline
-%            Distancia Imagen distribución de intensidad semejante & Distancia Imagen es semejante a la imagen original\\
-%            \hline
-%            18cm & 35,7cm\\
-%            \hline
-%            54cm & 73cm \\
-%            \hline
-%        \end{tabular}
-%        \caption{Distancias de Talbot}
-%        \label{tab:dtalbot}
-%    \end{table}
 Periodo de la red:
-$d=\sqrt{\flatfrac{Z \cdot \lambda}{2}}$
-Cuando una onda plana incide sobre una red de difracción periódica, la imagen de la red se repite a distancias regulares lejos del plano de la misma
+En nuestro sistema, hemos encontrado que esta distancia vale $Z_T = 72,9 cm$. Conociendo la longitud de onda del láser, $\lambda = 635 nm$, se puede despejar el periodo de la red de la ecuación \ref{ec:zt}, obteniendo:
+\begin{center}
+    $d = 481,1 \mu m$
+\end{center}
 
-\begin{table}[h] % h indica que queremos posicionar la tabla Here
-        \centering
-        \begin{tabular}{|c|c|}
-            \hline
-            Periodo Imagen distribución de intensidad semejante & Periodo Imagen es semejante a la imagen original\\
-            \hline
-            0.023cm & 0.34cm\\
-            \hline
-            0.41cm & 0,48cm \\
-            \hline
-        \end{tabular}
-        \caption{Distancias de Talbot}
-        \label{tab:dtalbot}
-    \end{table}
 
 CUESTIONES:
 \begin{enumerate}
