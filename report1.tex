@@ -27,14 +27,16 @@
 \address{\authormark{1}Universidad Complutense de Madrid, Madrid, CP 28040, España}
 
 \section{Introducción}
-En esta práctica vamos a caracterizar un sistema de formación de imágenes mediante la determinación experimental de su función de transferencia de modulación (MTF). Para ello utilizaremos un método directo (el test de barras) y un método indirecto (el test de borde). La MTF nos aportará información sobre el rango de frecuencias espaciales, estimar su resolución y el contraste de la imagen a estudiar.\\
+En esta práctica vamos a caracterizar un sistema de formación de imágenes mediante la determinación experimental de su función de transferencia de modulación (MTF). Para ello utilizaremos un método directo (el test de barras) y un método indirecto (el test de borde). La MTF nos aportará información sobre el rango de frecuencias espaciales, estimar su resolución y el contraste de la imagen a estudiar.
+
 Para tal fin anteriormente mencionado tuvimos que entender la respuesta a un impulso, la función de transferencia de modulación de la imagen, el poder distinguir si nuestro sistema es lineal e invariante con respecto a su desplazamiento y sus descripciones.
 
 \section{Marco práctico}
 El sistema cuya MTF mediremos consiste en un objetivo de microscopio con apertura numérica $\textrm{NA} = 0,25$ y un aumento $10\times$ (F10),
 y una cámara CCD con un tamaño de píxel de $s=4,65 \unit{\micro\meter}$.
 Las imágenes captadas por la cámara se visualizarán en la pantalla del PC.
-A continuación se detallará el procedimiento práctico realizado utilizando los dos métodos de medición de la MTF: \\
+A continuación se detallará el procedimiento práctico realizado utilizando los dos métodos de medición de la MTF.
+
 \subsection{Medida de MTF mediante el test de barras (método directo)}\label{sec:metodo-directo}
 
 Se utilizó el test USAF 1951 (Fig.~\ref{fig:usaf1951}) como imagen general en la que se captaron fotografías de  distintos elementos de rendijas de la diapositiva de la Fig.~\ref{fig:usafpic} presentada a continuación. Se controla la exposición para obtener los colores grises en cada muestra de imagen sin sobre-exposición.
@@ -50,13 +52,7 @@ Posterior a la toma de imágenes, se obtiene a través de estas imágenes un per
 
 \subsection{Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:description:indirecto}
 
-Se obtiene la imagen de la misma manera que el apartado anterior, pero esta vez de una única barra que abarque el campo completo de visión, dividiendo la imagen ortogonalmente como se puede ver en la Fig.~\ref{fig:borde1}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[scale=0.2]{/edge_large_line.png}
-	\caption{Imagen para análisis de Borde}\label{fig:borde1}
-\end{figure}
+Se obtiene la imagen de la misma manera que el apartado anterior, pero esta vez de una única barra que abarque el campo completo de visión, dividiendo la imagen ortogonalmente como se puede ver en la Fig.~\ref{fig:perfil:img}
 
 De la misma manera se obtiene un perfil de la imagen, por medio del software en MATLAB, los resultados se presentarán en la sección de resultados correspondiente.
 
@@ -66,17 +62,19 @@ De la misma manera se obtiene un perfil de la imagen, por medio del software en 
 \subsection{Resultados medidas de la MTF mediante el test de barras (método directo)}\label{sec:mtf-directo}
 Se realizó el procedimiento explicado con anterioridad por cada imagen que se obtuvo del test de USAF de referencia. A continuación se presenta algunas de las imágenes estudiadas:
 
-\begin{figure}[!h]
-	\includegraphics[width=0.95\textwidth]{/imaglineas.jpg}
+\begin{figure}
+\centering
+\begin{subfigure}[t]{0.576\textwidth}\centering
+	\includegraphics[width=\textwidth]{/imaglineas.jpg}
 	\caption{Imágenes tomadas del test de USAF Fig.~\ref{fig:usaf1951} para la medida del MTF directo}\label{fig:images:example}
-\end{figure}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.5\textwidth]{smallest_lines}
+\end{subfigure}
+\,
+\begin{subfigure}[t]{0.4\textwidth}\centering
+	\includegraphics[width=\textwidth]{smallest_lines}
 	\caption{Foto tomada durante la práctica de las líneas centrales del test USAF 1951}\label{fig:usafpic}
+\end{subfigure}
+\caption{Fotos tomadas durante la práctica}\label{fig:group:usaf}
 \end{figure}
-
 Procedimiento para sacar el contraste y la frecuencia a partir del perfil de un segmento de líneas: Se obtiene dos posiciones tan distantes como se pueda de dos mínimos de las barras. Se mide la distancia en píxeles entre ellas ($x_{\max} - x_{\min} $), se cuenta el número de periodos entre ellas, que nos permite calcular $T = \flatfrac{(x_{\max} - x_{\min)} }{N_{\textrm{periodos}}}$. A continuación,  se toma los máximos y mínimos de altura $y_{\max}$, $y_{\min}$.
 
 El contraste se ha obtenido a partir de la expresión:
@@ -92,24 +90,24 @@ La frecuencia se calcula como:
 	\nu = \frac{1825}{T}\ \textrm{ciclos/mm},\quad\textrm{TODO: QUE es 1825??}\label{eq:frecuencia}
 \end{equation}
 
-Donde el periodo, $T$, se calcula de acuerdo a la gráfica del perfil obtenida en el estudio de cada imagen. Un ejemplo de estas gráficas se muestra en la figura \ref{fig:perfil:example}:
+Donde el periodo, $T$, se calcula de acuerdo a la gráfica del perfil obtenida en el estudio de cada imagen. Un ejemplo de estas gráficas se muestra en la figura \ref{fig:perfil:example}.
 
 \begin{figure}[!h]
-	\includegraphics[width=0.8\textwidth]{profile-lines.pdf}
+	\includegraphics[width=\textwidth]{profile-lines.pdf}
 	\caption{Perfil de un segmento de líneas}\label{fig:perfil:example}
 \end{figure}
 
 
-En la tabla siguiente se recogen medidas tomadas del perfil de intensidad para distintos conjuntos de barras:
+En la tabla \ref{table:perfilintensidad} se recogen medidas tomadas del perfil de intensidad para distintos conjuntos de barras
 
-\begin{table}[h]
+\begin{table}[hbp]
 	\centering
 	\csvautotabular[
 		table head=\toprule%
 		Barras & $y_{\min} (px)$ & $y_{\max} (px)$ & Contraste & $x_{\min} (px)$ & $x_{\max} (px)$ & N Periodos & periodo (px) &  $\flatfrac{\textrm{ciclos}}{\textrm{mm}}$%
 		\\\midrule%
 	]{practica1/MTF/Profiles.csv}
-	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$: distancia en píxeles. El contraste se ha obtenido a partir de la ecuación~\ref{eq:contraste}. La frecuencia se ha obtenido a través de la ecuación~\ref{eq:frecuencia}}%
+	\caption{Datos del perfil de intensidad. $y$: intensidad. $x$. El contraste se ha obtenido a partir de la ecuación~\ref{eq:contraste}. La frecuencia se ha obtenido a través de la ecuación~\ref{eq:frecuencia}. Como se obtienen los periodos se explica visualmente en la Fig.~\ref{fig:perfil:example}}%
 	\label{table:perfilintensidad}
 \end{table}
 
@@ -118,39 +116,35 @@ En la tabla siguiente se recogen medidas tomadas del perfil de intensidad para d
 
 
 \subsection{Resultados Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:resultados:indirecto}
-Con la imagen del borde obtenida de la imagen patrón USAF de manera que la cámara al tomar la imagen no se encuentre saturada, ingresamos la imagen resultante en el análisis de perfil de intensidad y obtenemos su derivada.\\
-Esto Debido a que la función $\delta(x)$ es la derivada de la step function, $s(x)$, como distribución, podemos usar este hecho para calcular la LSF, encontrando primero la respuesta a un borde, y realizando una estimación de la derivada, podemos obtener la MTF de una manera más rápida.\\
-Se genera la MTF a partir de la LSF y se estima la frecuencia de corte del sistema.\\
+Con la imagen del borde obtenida de la imagen patrón USAF de manera que la cámara al tomar la imagen no se encuentre saturada, ingresamos la imagen resultante en el análisis de perfil de intensidad y obtenemos su derivada.
+
+Esto Debido a que la función $\delta(x)$ es la derivada de la step function, $s(x)$, como distribución, podemos usar este hecho para calcular la LSF, encontrando primero la respuesta a un borde, y realizando una estimación de la derivada, podemos obtener la MTF de una manera más rápida.
+
+Se genera la MTF a partir de la LSF y se estima la frecuencia de corte del sistema.
+
 A continuación se muestra los resultados de manera gráfica para mejor interpretación:
 \begin{figure}[hptb]
 	\centering
-	\begin{subfigure}[t]{0.31\textwidth}
+	\begin{subfigure}[t]{0.35\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{edge_large_line}
+		\includegraphics[height=4cm]{edge_large_line}
 		\caption{Imagen de una franja amplia}\label{fig:perfil:img}
 	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.31\textwidth}
+	\quad
+	\begin{subfigure}[t]{0.60\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{edge_perfil}
-		\caption{Perfil de intensidad de píxeles en una línea horizontal}\label{fig:perfil:graph}
+		\includegraphics[width=\textwidth, height=4cm]{lsf_edge}
+		\caption{Perfil de intensidad de píxeles en una línea horizontal (izqda) y la derivada de este perfil (drcha). La derivada es igual al LSF}\label{fig:perfil:graph}
 	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.31\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{edge_perfil}
-		\caption{TODO: Imagen de la derivada del perfil}\label{fig:perfil:lsf}
-	\end{subfigure}
-
 	\caption{Perfil de intensidad de una franja grande utilizada para el método indirecto para obtener el MTF, como se describe en la sección~\ref{sec:description:indirecto}}\label{fig:perfil}
 \end{figure}
 
 \section{Cuestiones}
 
-\subsection{Sea $H_{c}(u)$ la función de transferencia de un sistema para luz coherente. Escribir la relación entre $H_{c}(u)$ y la función de transferencia del mismo sistema para luz incoherente, $H_{i}(u)$.}
+\subsection{Sea $H_{c}(u)$ la función de transferencia de un sistema para luz coherente. Escribir la relación entre $H_{c}(u)$ y la función de transferencia del mismo sistema para luz incoherente, $H_{i}(u)$.}\label{sec:cuestion:incoherente}
 
 Cuando la luz incidente es coherente, la imagen resultante se obtiene añadiendo linealmente la amplitud compleja. Sin embargo, cuando la iluminación es idealmente incoherente, la iluminación es linear en la intensidad de la onda incidente. Por ello, en el caso ideal donde la correlación de fase es cero para distintas posiciones, se obtiene que~\cite[p.~132--134]{goodman1996introduction}.
-
+\nopagebreak
 \begin{equation}
 	I_{i}(u,v) = \kappa \iint_{-\infty}^{\infty}\abs{h(u - \xi, v- \eta)}^{2} I_{g}(\xi, \eta) \dd \xi \dd \eta.
 \end{equation}
@@ -172,7 +166,6 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 \begin{figure}[htpb]
 	\begin{center}
 		\begin{tikzpicture}[line width=0.4mm, >=stealth]
-
 			\def \n {5}
 			\def \radius {3cm}
 			\def \margin {8} % margin in angles, depends on the radius
@@ -187,7 +180,7 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 			\draw[->] (H) -- (Hi) node[pos=0.5, anchor=east] {$H_{c} \conv H^{*}_{c}$};
 		\end{tikzpicture}
 	\end{center}
-	\caption{Diagrama TODO, describirlo mejor}\label{fig:transformacion}
+	\caption{Diagrama del proceso para obtener la PTF de intensidad\ref{sec:cuestion:incoherente} }\label{fig:transformacion}
 \end{figure}
 
 \subsection{Para un sistema parecido al usado en la práctica:}
@@ -198,7 +191,7 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 	\end{enumerate}
 
 
-\subsection{Aplicar usando el pluging Deconvolutionlab2 y Image J dos métodos de convolución: Regularized Inverse Filter y Richardson-Lucy a una imagen test obtenida por un sistema con una PSF conocida y diferentes tipos de ruido: Guass y Poisson.}
+\subsection{Aplicar usando el pluging Deconvolutionlab2 y Image J dos métodos de convolución: Regularized Inverse Filter y Richardson-Lucy a una imagen test obtenida por un sistema con una PSF conocida y diferentes tipos de ruido: Gauss y Poisson.}
 
 
 \begin{figure}[hbp]
@@ -307,7 +300,7 @@ Por otro lado, la deconvolución de Richardson-Lucy, al ser procedimiento iterat
 		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RL_50.png}
 		\\
 	\end{tabular}
-	\caption{Matriz de de convoluciones para las imágenes de la figura \ref{fig:convolutions} (a-d).}
+	\caption{Matriz de los filtros realizados para recuperar las imágenes con ruido añadido simulado. Cada fila d se corresponde a una figura de \ref{fig:convolutions} (a-d), cada columna indica un método de recuperación}
 \end{figure}
 
 %%%%%%%%%% If using BibTeX:

@@ -47,7 +47,8 @@ libre en el régimen de Fresnel para ciertas distancias. Por otra parte, se cons
 
 \subsection{Marco Práctico}
     \begin{enumerate}
-    \item Observación efecto de Talbot\\
+    \item Observación efecto de Talbot
+    
 La primera parte de la práctica consistió en la observación de imágenes de la difracción de una onda plana coherente y monocromática en el régimen de Fresnel por un objeto periódico. 
 Se trabajó con un láser de 635nm , en el siguiente sistema en la cual la lente colimadora transforma la onda esférica divergente en una onda plana.:
 
@@ -70,7 +71,8 @@ Para obtener el módulo de la transformada de Fourier de una escena mediante sis
     \label{fouriersistema}
     \end{figure}
     
-En el sistema armado se utilizaron lentes focales diferentes, un polarizador como atenuador y un diafragma para disminuir la influencia de luz parasita.\\
+En el sistema armado se utilizaron lentes focales diferentes, un polarizador como atenuador y un diafragma para disminuir la influencia de luz parasita.
+
 Se observaron los espectros de Fourier en distintos escenarios que expondremos en la parte de resultados de la práctica.
     \item Filtrado óptico
 Se realiza la práctica experimental de esta parte con el montaje de un sistema 4f introducido por Van der Lugt para el procesado óptico de información de 1963
@@ -92,15 +94,16 @@ El grado de coherencia del haz afecta directamente a como un sistema óptico for
     \centering
     \includegraphics[scale=0.5]{/parte5-luz-coherente/sistema4.png}
     \caption{Esquema de el filtrado con difusor, }
-    \label{coherenciaespacial}
-    \end{figure}
+    \label{fig:coherenciaespacial}
+\end{figure}
 
 \end{enumerate}
 
 \section{Resultados experimentales}
 
 \subsection{Observación del efecto Talbot}
-Con una red periodica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias, cuando el contraste es mínimo o máximo (Fig.~\ref{fig:alltalbot}) el Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias descritas a continuación:\\
+Con una red periodica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias, cuando el contraste es mínimo o máximo (Fig.~\ref{fig:alltalbot}) el Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias descritas a continuación:
+
 Las distancias a las que se reproduce el campo periódico son ciertas fracciones de la denominada distancia de Talbot, que viene dada por la expresión \ref{ec:zt}:
 
 \begin{center}
@@ -114,14 +117,14 @@ Las distancias a las que se reproduce el campo periódico son ciertas fracciones
 Registramos varias imágenes a distancias en la que se observaba una distribución de intensidad semejante a la del objeto original (franjas transparentes y opacas de igual tamaño), así como a distancias en las que se observaba una distribución de intensidad homogénea:\par
 
 \begin{center}
-    \captionof{table}{Distancias fraccionarias de la longitud de Talbot $z_T$}
-    \begin{tabular}{|c|c|c|} \hline
-        Distancia & Distribución de intensidad & Distancia (fracción de $z_T$)\\ \hline
-        18,5 cm & Homogénea & $z_T/4$\\ \hline
-        36,8 cm & Franjas claras y oscuras & $z_T/2$\\ \hline
-        55,8 cm & Homogénea & $3z_T/4$\\ \hline
-        72,9 cm & Franjas claras y oscuras & $z_T$\\ \hline
+    \begin{tabular}{|l|c|c|} \hline
+         Distribución de intensidad & Distancia & Distancia (fracción de $z_T$)\\ 
+         Homogénea & $z_T/4$ & 18,5 cm \\ 
+        Franjas claras y oscuras &  $z_T/2$ &36,8 cm \\ 
+        Homogénea  & $3z_T/4$& 55,8 cm\\ 
+        Franjas claras y oscuras &  $z_T$ &72,9 cm \\ 
     \end{tabular}
+    \captionof{table}{Distancias fraccionarias de la longitud de Talbot $z_T$, como se pueden observar en Fig.~\ref{fig:alltalbot}}\label{tab:talbot}
 \end{center}
 
 \begin{figure}[hptb]
@@ -165,7 +168,7 @@ En nuestro sistema, hemos encontrado que esta distancia vale $Z_T = 72,9 cm$. Co
 
 CUESTIONES:
 \begin{enumerate}
-\item Representando una señal óptica periódica (longitud de onda $\lambda$, periodo $d$) como una serie de Fourier, demostrar analíticamente que en las distancias iguales a la mitad de la distancia de Talbot, $z=\flatfrac{ZT}{2}$, observamos el objeto original desplazado en la mitad del periodo $d$.
+\item Representando una señal óptica periódica (longitud de onda $\lambda$, periodo $d$) como una serie de Fourier, demostrar analíticamente que en las distancias iguales a la mitad de la distancia de Talbot, $z=\flatfrac{z_{T}}{2}$, observamos el objeto original desplazado en la mitad del periodo $d$.
 A la mitad de la longitud de Talbot, aparece una autoimagen pero desfasada medio periodo
 \item Usando las ecs. (7)-(8) analizar la intensidad y la fase del campo difractado por un objeto periódico compuesto de líneas blancas (transparentes) y negras (opacas) alternadas de la misma anchura, a una distancia $z=\flatfrac{ZT}{4}$
 En un cuarto del valor de la longitud de Talbot, la autoimagen se reduce a la mitad y aparece con la mitad del periodo de la red
