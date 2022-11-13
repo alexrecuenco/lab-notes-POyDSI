@@ -91,7 +91,7 @@ El grado de coherencia del haz afecta directamente a como un sistema óptico for
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.5]{/parte5-luz-coherente/sistema4.png}
-    \caption{Esquema del montaje de la práctica}
+    \caption{Esquema de el filtrado con difusor, }
     \label{coherenciaespacial}
     \end{figure}
 
@@ -100,7 +100,7 @@ El grado de coherencia del haz afecta directamente a como un sistema óptico for
 \section{Resultados experimentales}
 
 \subsection{Observación del efecto Talbot}
-Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias descritas a continuación:\\
+Con una red periodica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias, cuando el contraste es mínimo o máximo (Fig.~\ref{fig:alltalbot}) el Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias descritas a continuación:\\
 Se registraron las imágenes y las distancias donde se observaron, 
 
 \begin{figure}[hptb]
@@ -110,7 +110,7 @@ Se registraron las imágenes y las distancias donde se observaron,
         \caption{ Talbot a distancia 1 (18cm)}
         \label{fig:talbot1}	
     \end{subfigure}
-	\hfill
+	\quad
 	\begin{subfigure}[t]{0.45\textwidth}\centering
 		\includegraphics[width=\textwidth]{/parte2-talbot/23.9-talbot.png}
         \caption{Talbot a distancia 2 (36cm)}
@@ -122,38 +122,37 @@ Se registraron las imágenes y las distancias donde se observaron,
         \caption{ Talbot a distancia 3 (54cm)}
         \label{fig:talbot3}
 	\end{subfigure}
-	\hfill
+	\quad
 	\begin{subfigure}[t]{0.45\textwidth}\centering
 		\includegraphics[width=\textwidth]{/parte2-talbot/54.8-2a-talbot.png}
         \caption{ Talbot a distancia 4 (73cm)}
         \label{fig:talbot4}
 	\end{subfigure}
 	
-\caption{Posiciones de contraste máximo (\ref{fig:talbot2}, \ref{fig:talbot4}) y mínimo (\ref{fig:talbot1}, \ref{fig:talbot3})%
+\caption{Posiciones de contraste máximo (\ref{fig:talbot2}, \ref{fig:talbot4}) y mínimo (\ref{fig:talbot1}, \ref{fig:talbot3}).
 Se ve en estas fotos como entre \ref{fig:talbot2} y \ref{fig:talbot4} las posiciones tiene un shift de medio periodo.
-	}
-	\label{fig:alltalbot}
+	}\label{fig:alltalbot}
 \end{center}
 \end{figure}
 
 Distancia de Talbot: 
 
-\begin{table}[h] % h indica que queremos posicionar la tabla Here
-        \centering
-        \begin{tabular}{|c|c|}
-            \hline
-            Distancia Imagen distribución de intensidad semejante & Distancia Imagen es semejante a la imagen original\\
-            \hline
-            18cm & 35,7cm\\
-            \hline
-            54cm & 73cm \\
-            \hline
-        \end{tabular}
-        \caption{Distancias de Talbot}
-        \label{tab:dtalbot}
-    \end{table}
+%\begin{table}[h] % h indica que queremos posicionar la tabla Here
+%        \centering
+%        \begin{tabular}{|c|c|}
+%            \hline
+%            Distancia Imagen distribución de intensidad semejante & Distancia Imagen es semejante a la imagen original\\
+%            \hline
+%            18cm & 35,7cm\\
+%            \hline
+%            54cm & 73cm \\
+%            \hline
+%        \end{tabular}
+%        \caption{Distancias de Talbot}
+%        \label{tab:dtalbot}
+%    \end{table}
 Periodo de la red:
-$d=\sqrt{\flatfrac{Z *\cdot \lambda}{2}}$
+$d=\sqrt{\flatfrac{Z \cdot \lambda}{2}}$
 Cuando una onda plana incide sobre una red de difracción periódica, la imagen de la red se repite a distancias regulares lejos del plano de la misma
 
 \begin{table}[h] % h indica que queremos posicionar la tabla Here
@@ -190,31 +189,28 @@ Se toma los espectros de Fourier de las imágenes en cuestión presentadas a con
 \begin{center}
     \begin{subfigure}[t]{0.45\textwidth}\centering
         \includegraphics[width=\textwidth]{/parte3-fourier/fourier_transform_-20-lense-20-camera.png}
-    \caption{Esquema del montaje experimental para la observación del espectro de Fourier de un objeto plano. }
+    \caption{Espectro de fourier de lineas verticales  con una lente de focal de 20cm. Notese como teóricamente la transformada de fourier deberia ser discreta, incluyendo los ordenes impares. El error experimental (lineas no vertical, alineamiento, aberración,etc), vemos pequeños valores para los órdenes pares}
     \label{fig:fourier1}
     \end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.45\textwidth}\centering
-		\includegraphics[width=\textwidth]{/parte3-fourier/fourier-car-multiplied-pixels.png}
-    \caption{Espectro de Fourier imagen autos }
-    \label{fig:fourier2}
-	\end{subfigure}
-	\\
-	\begin{subfigure}[t]{0.45\textwidth}\centering
-		\includegraphics[width=\textwidth]{/parte3-fourier/fourier-letras.png}
-    \caption{Espectro de Fourier imagen letras. }
-    \label{fourier3}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.45\textwidth}\centering
+	\quad
+		\begin{subfigure}[t]{0.45\textwidth}\centering
 		\includegraphics[width=\textwidth]{/parte3-fourier/fourier-periodic-grating-10cm-focal.png}
-    \caption{Espectro de Fourier imagen gratin }
+    \caption{Espectro de Fourier de líneas con una lente de 10cm de focal. Nótese el efecto que tiene en crear una imagen igual que \ref{fig:fourier1} pero mas pequeña}
     \label{fourier4}
 	\end{subfigure}
-	
-	\caption{Observaciones en campo de fourier de distintos elementos
-	}
-	\label{fig:alltalbot}
+
+	\begin{subfigure}[t]{0.45\textwidth}\centering
+		\includegraphics[width=\textwidth]{/parte3-fourier/fourier-letras.png}
+    \caption{Espectro de Fourier de las letras. Nótese que al tener mejor resolución que el coche (\ref{fig:fourier2}) no se ve el tamaño de píxel reflejado}
+    \label{fourier3}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[t]{0.45\textwidth}\centering
+		\includegraphics[width=\textwidth]{/parte3-fourier/fourier-car-multiplied-pixels.png}
+    \caption{Espectro de Fourier de una imagen de un automobil. Nótese que la imagen tiene un tamaño de pixel suficientemenete grande para que los píxeles en sí forman un \emph{square grating}. Por lo tanto, lo que estamos viendo es la convolución de un \emph{square grating} con la foto del coche, lo que crea la misma imágen de fourier de el coche trasladada a cada orden de la rendija cuadrada.}
+    \label{fig:fourier2}
+	\end{subfigure}	
+	\caption{Observaciones en campo de fourier de distintos elementos}\label{fig:alltalbot}
 \end{center}
 \end{figure}
 
@@ -234,26 +230,27 @@ Se obtienen los siguientes resultados:
 \begin{figure}[hptb]
 \begin{center}
     \begin{subfigure}[t]{0.45\textwidth}\centering
-        \includegraphics[width=\textwidth]{parte4-filtrado/4f-pic-2ocm-diafragm-10cm-camera-letters-diafragma_y_punto-pasabanda.png}
-    \caption{que es }
+    \includegraphics[width=\textwidth]{parte4-filtrado/4f-pic-2ocm-diafragm-10cm-camera-letters-diafragma_y_punto-pasabanda.png}
+    \caption{Filtro con diafragma pasa banda, se puede ver en la imágen como esto elimina los bordes}
     \label{fig:filtrado1}
    \end{subfigure}
+   \quad
 	\begin{subfigure}[t]{0.45\textwidth}\centering
 		\includegraphics[width=\textwidth]{parte4-filtrado/4f-pic-2ocm-diafragm-10cm-camera-letters-high-frequency-almost-x.png}
-   % \caption{que es }
+   	\caption{Filtrado pasa alta en la dirección horizontal, se realiza con un diafragma que corta el centro del foco en la dirección horizontal}
     \label{fig:filtrado2}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.45\textwidth}\centering
 		\includegraphics[width=\textwidth]{parte4-filtrado/4f-pic-2ocm-diafragm-10cm-camera-letters-high-frequency-dot-down.png}
-    \caption{que es}
+    \caption{Filtrando de forma similar a \ref{fig:filtrado2}, pero en la dirección vertical}
    \label{fig:filtrado3}
 	\end{subfigure}
-	\hfill
+	\quad
 	\begin{subfigure}[t]{0.45\textwidth}\centering
 		\includegraphics[width=\textwidth]{parte4-filtrado/4f-pic-2ocm-diafragm-10cm-camera-letters-high-frequency-dot-right-a-bit-down.png}
-  \caption{que es }
+  \caption{Filtrado similar a \ref{fig:filtrado2}, pero en una dirección a un ángulo del eje vertical y horizontal}
  	\end{subfigure}
-	\caption{que es}
+	\caption{Realizando transformaciones con un diafragma en un sistema 4-f en medio del sistema, podemos realizar filtros de frequencias analogicamente. Aqui podemos ver la imagen original (Fig.~\ref{fig:filtrado1}), y como podemos filtrar high-pass en distintas direcciones, obteniendo los bordes de las imágenes}
 	\label{fig:filtrado4}
 \end{center}
 \end{figure}
