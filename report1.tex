@@ -137,11 +137,21 @@ En la tabla~\ref{table:perfilintensidad} se recogen las medidas tomadas de los p
 Representando el contraste de la imagen frente a la frecuencia (cliclos/mm) se obtiene la MTF del sistema (figura $~\ref{fig:mtf-directo}$).
 
 \begin{figure}
+\begin{subfigure}[t]{0.48\textwidth}
 	\centering
-	\includegraphics[scale=0.5]{MTF-directo.png}
+	\includegraphics[width=\textwidth]{MTF-directo.png}
 	\caption{MTF del sistema obtenida mediante el test de barras (método directo). Ajuste: $C = 1,05 \cdot 10^{-5} u^2 + 1,52 \cdot 10^{-3} u + 0,91$, donde u es la frecuencia y C el contraste.}
 	\label{fig:mtf-directo}
+\end{subfigure}
+\quad
+\begin{subfigure}[t]{0.48\textwidth}
+	\centering
+	\includegraphics[width=\textwidth]{/MTF-indirecto.png}
+	\caption{MTF del sistema obtenida mediante el test de borde (método indirecto)}
+	\label{fig:mtf-indirecto}
+\end{subfigure}
 \end{figure}
+
 
 El sistema se comporta como un filtro pasa baja. Las frecuencias superiores a la frecuencia de corte, con una transferencia teóricamente nula, no son captadas a la salida del sistema. En nuestro estudio comprobamos que los conjuntos de barras de más de 250-300 líneas/mm ya no aparecían resueltos en la imagen, aunque la presencia de ruido impedía visualizar frecuencias mayores.
 
@@ -174,13 +184,6 @@ En la figura~\ref{fig:perfil} se muestran los resultados de manera gráfica para
 \end{figure}
 
 Mediante un programa de MATLAB podemos calcular fácilmente la transformada de Fourier de la LSF mostrada en la figura~\ref{fig:perfil:graph} (gráfica derecha). Esta TF es la MTF del sistema (figura~\ref{fig:mtf-indirecto}).
-
-\begin{figure}
-	\centering
-	\includegraphics[scale=0.5]{/MTF-indirecto.png}
-	\caption{MTF del sistema obtenida mediante el test de borde (método indirecto)}
-	\label{fig:mtf-indirecto}
-\end{figure}
 
 La frecuencia de corte estimada con este método indirecto se sitúa entre 200 y 300 líneas/mm. Ambos métodos arrojan resultados parecidos, aunque no concuerdan con los predicho por la teoría. Comparando las gráficas de ambos métodos (figuras~\ref{fig:mtf-directo} y \ref{fig:mtf-indirecto}), vemos que el rango de frecuencias que pasan por el sistema es aproximadamente el mismo. Sin embargo, la caída del valor de la MTF es más acusada en el caso de este último método del test de borde. Esto evidencia que en las medidas de los máximos y mínimos de los perfiles de intensidad en el método directo se tomaron los valores más extremos del perfil, obteniéndose un contraste mayor que el contraste real de la imagen. Habiendo tomado como máximo un valor promedio de todos los máximos, y lo mismo para los mínimos, las dos gráficas habrían salido probablemente más parecidas aún.
 
@@ -232,7 +235,7 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 			\draw[->] (H) -- (Hi) node[pos=0.5, anchor=east] {$H_{c} \conv H^{*}_{c}$};
 		\end{tikzpicture}
 	\end{center}
-	\caption{Diagrama del proceso para obtener la PTF de intensidad\ref{sec:cuestion:incoherente} }\label{fig:transformacion}
+	\caption{Diagrama del proceso para obtener la PTF de intensidad en la cuestion~\ref{sec:cuestion:incoherente}}\label{fig:transformacion}
 \end{figure}
 
 
