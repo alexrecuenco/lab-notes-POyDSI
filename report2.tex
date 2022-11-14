@@ -22,7 +22,7 @@
 % cref instead of ref
 \usepackage{cleveref}
 
-\usepackage[allfiguresdraft]{draftfigure}
+%\usepackage[allfiguresdraft]{draftfigure}
 
 
 \newcommand{\sinc}{\textrm{sinc}}
@@ -36,7 +36,7 @@
 
 \begin{document}
 
-\title{El efecto Talbot}
+\title{Procesado óptico de la información}
 
 \author{Adriana Mamani Lazarte\authormark{1} Alex G. Recuenco\authormark{1}, and Carlos España Castaño\authormark{1}}
 
@@ -102,23 +102,21 @@ Se realiza la práctica experimental de esta parte con el montaje de un sistema 
 
 
 \section{Observación del efecto Talbot}
-Con una red periodica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias, cuando el contraste es mínimo o máximo (Fig.~\ref{fig:alltalbot}) el Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias descritas a continuación:
+Con una red periodica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias, cuando el contraste es mínimo o máximo (Fig.~\ref{fig:alltalbot}) el Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias de la tabla ~\ref{ec:zt}
 
-Las distancias a las que se reproduce el campo periódico son ciertas fracciones de la denominada distancia de Talbot, que viene dada por la expresión \ref{ec:zt}:
+Las distancias a las que se reproduce el campo periódico son ciertas fracciones de la denominada distancia de Talbot, que viene dada por la expresión
 
-\begin{center}
-	\begin{equation}
-		z_T = \frac{2d^2}{\lambda}
+\begin{equation}
+		z_T = \frac{2d^2}{\lambda}.
 		\label{ec:zt}
-	\end{equation}
-\end{center}
+\end{equation}
 
 
 Registramos varias imágenes a distancias en la que se observaba una distribución de intensidad semejante a la del objeto original (franjas transparentes y opacas de igual tamaño), así como a distancias en las que se observaba una distribución de intensidad homogénea:\par
 
 \begin{center}
 	\begin{tabular}{|l|c|c|} \hline
-		Distribución de intensidad & Distancia & Distancia (fracción de $z_T$) \\
+		Distribución de intensidad & Distancia & Distancia (fracción de $z_T$) \\ \hline
 		Homogénea                  & $z_T/4$   & 18,5 cm                       \\
 		Franjas claras y oscuras   & $z_T/2$   & 36,8 cm                       \\
 		Homogénea                  & $3z_T/4$  & 55,8 cm                       \\
@@ -224,7 +222,7 @@ Donde
 	      En esta red periódica, es evidente que el efecto de mirar a $z=z_{m-1/2}$ estamos cambiando las franjas de mayor intensidad con aquellas de menor intensidad, cambiando los mínimos de intensidad con los máximos.
 	      %  En general, no parece obvio a primera vista que esto siga siendo correcto para cualquier tipo de red.
 	      
-\subsubsection{ Usando la equación \ref{eq:talbot} analizar la intensidad y la fase del campo difractado por un objeto periódico compuesto de líneas blancas (transparentes) y negras (opacas) alternadas de la misma anchura, a una distancia $z=\flatfrac{ZT}{4}$
+\subsubsection{ Usando la ecuación \ref{eq:talbot} analizar la intensidad y la fase del campo difractado por un objeto periódico compuesto de líneas blancas (transparentes) y negras (opacas) alternadas de la misma anchura, a una distancia $z=\flatfrac{ZT}{4}$
 }
 	      De forma similar a eq.~\ref{eq:talbot:semi}, llegamos a
 	      \begin{align}
@@ -281,7 +279,7 @@ Donde
 	      A distancias mayores a las de talbot mencionadas aparecen otras auto-imágenes que no conservan su periodicidad axial.
 
 \section{Observación del espectro de Fourier}
-Se toma los espectros de Fourier de las imágenes en cuestión presentadas a continuación:
+Se toma los espectros de Fourier de las imágenes en cuestión presentadas a continuación en la figura ~\ref{fig:fourier:all}.
 
 \begin{figure}[hptb]
 	\begin{center}
@@ -308,20 +306,24 @@ Se toma los espectros de Fourier de las imágenes en cuestión presentadas a con
 			\caption{Espectro de Fourier de una imagen de un automobil. Nótese que la imagen tiene un tamaño de pixel suficientemenete grande para que los píxeles en sí forman un \emph{square grating}. Por lo tanto, lo que estamos viendo es la convolución de un \emph{square grating} con la foto del coche, lo que crea la misma imágen de fourier de el coche trasladada a cada orden de la rendija cuadrada.}
 			\label{fig:fourier2}
 		\end{subfigure}
-		\caption{Observaciones en campo de fourier de distintos elementos}\label{fig:alltalbot}
+		\caption{Observaciones en campo de fourier de distintos elementos}\label{fig:fourier:all}
 	\end{center}
 \end{figure}
 
 \subsection{Cuestiones}
 
-\subsubsection{¿Qué valores $d_1$ y $d_2$ son adecuados para la observación del espectro de Fourier?}
-	La distancia de $d_{1}$ no importa cuando la onda incidente es plana. La distancia $d_{2}$ tiene que ser la focal de la lente, para que en el plano de observación obtengamos una imagen escalada de la transformada de Fourier.
+\subsubsection{Cuestión 1 }
+    \begin{enumerate}
+        \item ¿Qué valores $d_1$ y $d_2$ son adecuados para la observación del espectro de Fourier?
+    \end{enumerate}
+    
+	La distancia de $d_{1}$ no importa cuando la onda incidente es plana. El desplazamiento solamente introduce un término de fase que no se modifica la intensidad observada. La distancia $d_{2}$ tiene que ser la focal de la lente, para que en el plano de observación obtengamos una imagen escalada de la transformada de Fourier.
 
-\subsubsection[]{Cuestiones
+\subsubsection{Cuestión 2}
 \begin{enumerate}
 	\item ¿El espectro de la red está de acuerdo con la teoría (véanse los resultados del problema 1.6.)?
 	\item Justifique el procedimiento seguido para determinar el periodo de la red y exponga los resultados.
-\end{enumerate}}
+\end{enumerate}
 Respuestas
 \begin{enumerate}
 	\item	
@@ -332,7 +334,7 @@ Respuestas
 
 \subsubsection{¿Es posible registrar el espectro de Fourier colocando un objeto detrás de la lente?}
 
-TODO
+No porque 
 
 
 
