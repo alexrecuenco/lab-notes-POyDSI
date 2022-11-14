@@ -243,7 +243,7 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 	      La resolución de la cámara CCD está limitada por su tamaño de píxel. La frecuencia límite de un conjunto de barras que es capaz de resolver es aquella en la que cada barra tiene un tamaño de 1 px. La frecuencia de este conjunto de barras es la frecuencia de corte de la cámara, y viene dada por:
 
 	      \begin{equation}
-		      u_c^{(\textrm{CCD})} = \frac{1}{2s} = 108 \flatfrac{ciclos}{mm}
+		      u_c^{(\textrm{CCD})} = \frac{1}{2s} = 108 \flatfrac{\textrm{ciclos}}{\textrm{mm}}
 	      \end{equation}
 
 	      Donde $s=4,65 \mu m$ es el tamaño del píxel. Esta frecuencia corresponderá a la imagen formada por el objetivo, la cual está aumentada x10. Esto se tendrá en cuenta para calcular la MTF del sistema entero. La $u^{(\textrm{CCD})}$, no obstante, se da como la frecuencia de la imagen, que hace de objeto para la cámara.
@@ -269,26 +269,26 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 		            \begin{equation}
 			            \wedge(u)=
 			            \begin{cases}
-				            \frac{1}{|a|}\left(1-\abs{\frac{u}{a}}\right) & \textrm{si   $|u| \leq 1$} \\
-				            0                                             & \textrm{si  $|u| \geq 1$}
+				            \frac{1}{|a|}\left(1-\abs{\frac{u}{a}}\right) & \textrm{si   $\abs{\flatfrac u a} \leq 1$} \\
+				            0                                             & \textrm{si  $\abs{\flatfrac u a}  \geq 1$}
 			            \end{cases}
 		            \end{equation}
 
 		            La MTF para cada elemento es $\MTF(u) = \frac{\wedge(u)}{\wedge(0)}$, y $\wedge(0) = \frac{1}{|a|}$. Por tanto, para el objetivo quedaría:
 		            \begin{equation}
-			            MTF^{(\textrm{Obj})}(u)=
+			            \MTF^{(\textrm{Obj})}(u)=
 			            \begin{cases}
-				            1-\abs{\frac{u}{1000}} & \textrm{si   $|u| \leq 1$} \\
-				            0                      & \textrm{si  $|u| \geq 1$}
+				            1-\abs{\frac{u}{1000}} & \textrm{si   $|u| \leq 1000$} \\
+				            0                      & \textrm{si  $|u| \geq 1000$}
 			            \end{cases}
 		            \end{equation}
 
 		            Y para la cámara CCD:
 		            \begin{equation}
-			            MTF^{(\textrm{CCD})}(u)=
+			            \MTF^{(\textrm{CCD})}(u)=
 			            \begin{cases}
-				            1-\abs{\frac{u}{1080}} & \textrm{si   $|u| \leq 1$} \\
-				            0                      & \textrm{si  $|u| \geq 1$}
+				            1-\abs{\frac{u}{1080}} & \textrm{si   $|u| \leq 1080$} \\
+				            0                      & \textrm{si  $|u| \geq 1080$}
 			            \end{cases}
 		            \end{equation}
 
@@ -303,8 +303,8 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 			            \MTF(u) & = \MTF^{(Obj)}(u) \cdot \MTF^{(CCD)}(u) \\
 			            \MTF(u) & =
 			            \begin{cases}
-				            \left(1-\abs{\frac{u}{1080}}\right)\left(1-\abs{\frac{u}{1000}}\right) & \textrm{si   $|u| \leq 1$} \\
-				            0                                                                      & \textrm{si  $|u| \geq 1$}
+				            \left(1-\abs{\frac{u}{1080}}\right)\left(1-\abs{\frac{u}{1000}}\right) & \textrm{si   $|u| \leq 1000$} \\
+				            0                                                                      & \textrm{si  $|u| \geq 1000$}
 			            \end{cases}
 			            \label{eq:mtf-teorica}
 		            \end{align}
