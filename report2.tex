@@ -311,27 +311,15 @@ Se toma los espectros de Fourier de las imágenes en cuestión presentadas a con
 \end{figure}
 
 \subsection{Cuestiones}
+\subsubsection{ ¿Qué valores $d_1$ y $d_2$ son adecuados para la observación del espectro de Fourier?}
+La distancia de $d_{1}$ no importa cuando la onda incidente es plana. El desplazamiento solamente introduce un término de fase que no se modifica la intensidad observada. La distancia $d_{2}$ tiene que ser la focal de la lente, para que en el plano de observación obtengamos una imagen escalada de la transformada de Fourier.
 
-\subsubsection{Cuestión 1 }
-    \begin{enumerate}
-        \item ¿Qué valores $d_1$ y $d_2$ son adecuados para la observación del espectro de Fourier?
-    \end{enumerate}
-    
-	La distancia de $d_{1}$ no importa cuando la onda incidente es plana. El desplazamiento solamente introduce un término de fase que no se modifica la intensidad observada. La distancia $d_{2}$ tiene que ser la focal de la lente, para que en el plano de observación obtengamos una imagen escalada de la transformada de Fourier.
+\subsubsection{¿El espectro de la red está de acuerdo con la teoría (véanse los resultados del problema 1.6.)?}
+Vease la descripción de \ref{fig:filtrado1}. Como se explica en esa descripción, sí, se ajusta con la teoría, excepto que ciertos errores permiten que los ordenes pares tengan valores no nulos, en vez de ser exactamente zero.
 
-\subsubsection{Cuestión 2}
-\begin{enumerate}
-	\item ¿El espectro de la red está de acuerdo con la teoría (véanse los resultados del problema 1.6.)?
-	\item Justifique el procedimiento seguido para determinar el periodo de la red y exponga los resultados.
-\end{enumerate}
-Respuestas
-\begin{enumerate}
-	\item	
-	Vease la descripción de \ref{fig:filtrado1}. Como se explica en esa descripción, sí, se ajusta con la teoría, excepto que ciertos errores permiten que los ordenes pares tengan valores no nulos, en vez de ser exactamente zero.
-	\item El espectro de onda plana es un espectro continuo de ondas planas uniformes y hay un componente de onda plana en el espectro para cada punto tangente en el frente de fase de campo lejano. La amplitud de ese componente de onda plana sería la amplitud del campo óptico en ese punto tangente. Nuevamente, esto es cierto solo en el campo lejano, es por lo cual observamos las imágenes resultantes de la transformada de fourier de acuerdo a la naturaleza de la imagen en cuestión. Y es por tanto que el factor de escala de la TF depende de la distancia.
+\subsubsection{ Justifique el procedimiento seguido para determinar el periodo de la red y exponga los resultados.}
+ El espectro de onda plana es un espectro continuo de ondas planas uniformes y hay un componente de onda plana en el espectro para cada punto tangente en el frente de fase de campo lejano. La amplitud de ese componente de onda plana sería la amplitud del campo óptico en ese punto tangente. Nuevamente, esto es cierto solo en el campo lejano, es por lo cual observamos las imágenes resultantes de la transformada de fourier de acuerdo a la naturaleza de la imagen en cuestión. Y es por tanto que el factor de escala de la TF depende de la distancia.
 	
-\end{enumerate}
-
 \subsubsection{¿Es posible registrar el espectro de Fourier colocando un objeto detrás de la lente?}
 
 No porque el campo del objeto necesita transmitirse a través de la lente para obtener el espectro de Fourier en el plano focal, y para ello no importa dónde se sitúe el objeto, pero siempre delante de la lente. Si colocamos el objeto detrás de la lente, los patrones de intensidad que obtengamos no vendrán de rayos transmitidos a través de esta. La única posibilidad sería registrar la intensidad en campo lejano, pero se perdería mucha visibilidad. 
@@ -421,10 +409,6 @@ Para la observación de objetos 3D la iluminación coherente es mejor, si podemo
 
 Continua siendo una iluminacion coherente.
 
-% NA
-
-\section{Conclusiones}
-Se logra obtener una distancia de talbot experimental lo mas precisa posible no obstante  una meta para el futuro es entender cómo se pueden hacer mediciones más precisas y de esta manera disminuir los errores experimentales en la difracción de campo cercano.
 
 %%%%%%%%%% If using BibTeX:
 \bibliography{bibliography}
