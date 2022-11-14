@@ -15,6 +15,7 @@
 
 \newcommand{\sinc}{\textrm{sinc}}
 \newcommand\conv{\circledast}
+\newcommand\MTF{\textrm{MTF}}
 
 % Set the article type
 \articletype{Research Article}
@@ -61,7 +62,7 @@ Se utilizó el test USAF 1951 (Fig.~\ref{fig:usaf1951}) como imagen general en l
 	\caption{Test USAF 1951.}\label{fig:usaf1951}
 \end{figure}
 
-A través de las imágenes tomadas (figura ~\ref{fig:group:usaf}) se obtiene un perfil ortogonal a las rendijas de contraste, para cada una de las distintas imágenes. Los resultados se discutirán en la sección~\ref{sec:mtf-directo} del apartado de Resultados experimentales. Este perfil es obtenido mediante un software diseñado en la plataforma de MATLAB.
+A través de las imágenes tomadas (figura~\ref{fig:group:usaf}) se obtiene un perfil ortogonal a las rendijas de contraste, para cada una de las distintas imágenes. Los resultados se discutirán en la sección~\ref{sec:mtf-directo} del apartado de Resultados experimentales. Este perfil es obtenido mediante un software diseñado en la plataforma de MATLAB.
 
 \begin{figure}[h]
 \centering
@@ -120,7 +121,7 @@ Un ejemplo de perfil estudiado para un conjunto de barras se muestra en la figur
 	\caption{Perfil de un segmento de líneas}\label{fig:perfil:example}
 \end{figure}
 
-En la tabla \ref{table:perfilintensidad} se recogen las medidas tomadas de los perfiles de intensidad para distintos conjuntos de barras, así como la frecuencia (líneas/mm) y el contraste calculados según las ecuaciones ~\ref{eq:frecuencia} y ~\ref{eq:contraste}.
+En la tabla \ref{table:perfilintensidad} se recogen las medidas tomadas de los perfiles de intensidad para distintos conjuntos de barras, así como la frecuencia (líneas/mm) y el contraste calculados según las ecuaciones~\ref{eq:frecuencia} y~\ref{eq:contraste}.
 
 \begin{table}[hbp]
 	\centering
@@ -142,9 +143,9 @@ Representando el contraste de la imagen frente a la frecuencia (cliclos/mm) se o
     \label{fig:mtf-directo}
 \end{figure}
 
-El sistema se comporta como un filtro pasa baja. Las frecuencias superiores a la frecuencia de corte, con una transferencia teóricamente nula, no son captadas a la salida del sistema. En nuestro estudio comprobamos que los conjuntos de barras de más de 250-300 líneas/mm ya no aparecían resueltos en la imagen, aunque la presencia de ruido impedía visualizar frecuencias mayores. 
+El sistema se comporta como un filtro pasa baja. Las frecuencias superiores a la frecuencia de corte, con una transferencia teóricamente nula, no son captadas a la salida del sistema. En nuestro estudio comprobamos que los conjuntos de barras de más de 250-300 líneas/mm ya no aparecían resueltos en la imagen, aunque la presencia de ruido impedía visualizar frecuencias mayores.
 
-La frecuencia de corte del sistema según la teoría es mayor. En la sección ~\ref{sec:cuestion:mtf} se muestra la gráfica de la MTF del sistema calculada mediante un modelo teórico. Según predice la teoría, esta MTF se puede aproximar a una función cuadrática. Se realizó por tanto un ajuste cuadrático de los datos experimentales, obteniendo la ecuación $C = 1,05 \cdot 10^{-5} u^2 + 1,52 \cdot 10^{-3} u + 0,91$, con un coeficiente $R^2$ de $0,964$. Esta función tiene su mínimo en un valor de la frecuencia de $u = 263$ líneas/mm, el cual dista mucho de la frecuencia de corte teórica de 1000 líneas/mm (sección ~\ref{sec:cuestion:mtf}). Esta discrepancia puede deberse al ruido, de manera que se pueden haber tomado valores de los máximos y mínimos de los perfiles que no correspondían con los de la señal de interés (la imagen) sino con picos de ruido. Tomando un valor de los máximos y de los mínimos promedio se eliminaría este problema y probablemente se obtendría un mejor ajuste de los datos.
+La frecuencia de corte del sistema según la teoría es mayor. En la sección~\ref{sec:cuestion:mtf} se muestra la gráfica de la MTF del sistema calculada mediante un modelo teórico. Según predice la teoría, esta MTF se puede aproximar a una función cuadrática. Se realizó por tanto un ajuste cuadrático de los datos experimentales, obteniendo la ecuación $C = 1,05 \cdot 10^{-5} u^2 + 1,52 \cdot 10^{-3} u + 0,91$, con un coeficiente $R^2$ de $0,964$. Esta función tiene su mínimo en un valor de la frecuencia de $u = 263$ líneas/mm, el cual dista mucho de la frecuencia de corte teórica de 1000 líneas/mm (sección~\ref{sec:cuestion:mtf}). Esta discrepancia puede deberse al ruido, de manera que se pueden haber tomado valores de los máximos y mínimos de los perfiles que no correspondían con los de la señal de interés (la imagen) sino con picos de ruido. Tomando un valor de los máximos y de los mínimos promedio se eliminaría este problema y probablemente se obtendría un mejor ajuste de los datos.
 
 Este método permite la medida directa de la respuesta del sistema a cada frecuencia determinada, lo cual puede ser de utilizada cuando se requiera un comportamiento específico a frecuencias concretas. En la siguiente sección utilizaremos otro método que permite calcular la MTF del sistema experimentalmente para más frecuencias de una forma más rápida.
 
@@ -155,7 +156,7 @@ Este método permite la medida directa de la respuesta del sistema a cada frecue
 \subsection{Resultados Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:resultados:indirecto}
 
 
-En la figura ~\ref{fig:perfil} se muestran los resultados de manera gráfica para mejor interpretación.
+En la figura~\ref{fig:perfil} se muestran los resultados de manera gráfica para mejor interpretación.
 \begin{figure}[hptb]
 	\centering
 	\begin{subfigure}[t]{0.35\textwidth}
@@ -172,7 +173,7 @@ En la figura ~\ref{fig:perfil} se muestran los resultados de manera gráfica par
 	\caption{Perfil de intensidad de una franja grande utilizada para el método indirecto para obtener el MTF, como se describe en la sección~\ref{sec:description:indirecto}}\label{fig:perfil}
 \end{figure}
 
-Mediante un programa de MATLAB podemos calcular fácilmente la transformada de Fourier de la LSF mostrada en la figura ~\ref{fig:perfil:graph} (gráfica derecha). Esta TF es la MTF del sistema (figura ~\ref{fig:mtf-indirecto}).
+Mediante un programa de MATLAB podemos calcular fácilmente la transformada de Fourier de la LSF mostrada en la figura~\ref{fig:perfil:graph} (gráfica derecha). Esta TF es la MTF del sistema (figura~\ref{fig:mtf-indirecto}).
 
 \begin{figure}
     \centering
@@ -181,9 +182,9 @@ Mediante un programa de MATLAB podemos calcular fácilmente la transformada de F
     \label{fig:mtf-indirecto}
 \end{figure}
 
-La frecuencia de corte estimada con este método indirecto se sitúa entre 200 y 300 líneas/mm. Ambos métodos arrojan resultados parecidos, aunque no concuerdan con los predicho por la teoría. Comparando las gráficas de ambos métodos (figuras ~\ref{fig:mtf-directo} y ~\ref{fig:mtf-indirecto}), vemos que el rango de frecuencias que pasan por el sistema es aproximadamente el mismo. Sin embargo, la caída del valor de la MTF es más acusada en el caso de este último método del test de borde. Esto evidencia que en las medidas de los máximos y mínimos de los perfiles de intensidad en el método directo se tomaron los valores más extremos del perfil, obteniéndose un contraste mayor que el contraste real de la imagen. Habiendo tomado como máximo un valor promedio de todos los máximos, y lo mismo para los mínimos, las dos gráficas habrían salido probablemente más parecidas aún.
+La frecuencia de corte estimada con este método indirecto se sitúa entre 200 y 300 líneas/mm. Ambos métodos arrojan resultados parecidos, aunque no concuerdan con los predicho por la teoría. Comparando las gráficas de ambos métodos (figuras~\ref{fig:mtf-directo} y \ref{fig:mtf-indirecto}), vemos que el rango de frecuencias que pasan por el sistema es aproximadamente el mismo. Sin embargo, la caída del valor de la MTF es más acusada en el caso de este último método del test de borde. Esto evidencia que en las medidas de los máximos y mínimos de los perfiles de intensidad en el método directo se tomaron los valores más extremos del perfil, obteniéndose un contraste mayor que el contraste real de la imagen. Habiendo tomado como máximo un valor promedio de todos los máximos, y lo mismo para los mínimos, las dos gráficas habrían salido probablemente más parecidas aún.
 
-El método del test de borde tiene la ventaja respecto al método de barras de permitirnos visualizar la MTF para un mayor rango de frecuencias. Este puede resultar más útil que el método directo para caracterizar sistemas en un rango completo de frecuencias de forma rápida. 
+El método del test de borde tiene la ventaja respecto al método de barras de permitirnos visualizar la MTF para un mayor rango de frecuencias. Este puede resultar más útil que el método directo para caracterizar sistemas en un rango completo de frecuencias de forma rápida.
 
 
 
@@ -238,100 +239,95 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 \subsection{Para un sistema parecido al usado en la práctica:}\label{sec:cuestion:mtf}
 	\begin{enumerate}
 		\item Estimar la frecuencia de corte de la cámara CCD, $u_{c}^{(CCD)}$, en líneas por milímetro.
-		
+
 	    La resolución de la cámara CCD está limitada por su tamaño de píxel. La frecuencia límite de un conjunto de barras que es capaz de resolver es aquella en la que cada barra tiene un tamaño de 1 px. La frecuencia de este conjunto de barras es la frecuencia de corte de la cámara, y viene dada por:
-	    
+
 	    \begin{equation}
-	        u_c^{(CCD)} = \frac{1}{2s} = 108 \flatfrac{ciclos}{mm}
+	        u_c^{(\textrm{CCD})} = \frac{1}{2s} = 108 \flatfrac{ciclos}{mm}
 	    \end{equation}
-		
-		Donde $s=4,65 \mu m$ es el tamaño del píxel. Esta frecuencia corresponderá a la imagen formada por el objetivo, la cual está aumentada x10. Esto se tendrá en cuenta para calcular la MTF del sistema entero. La $u_^{(CCD)}$, no obstante, se da como la frecuencia de la imagen, que hace de objeto para la cámara.
-		
+
+		Donde $s=4,65 \mu m$ es el tamaño del píxel. Esta frecuencia corresponderá a la imagen formada por el objetivo, la cual está aumentada x10. Esto se tendrá en cuenta para calcular la MTF del sistema entero. La $u^{(\textrm{CCD})}$, no obstante, se da como la frecuencia de la imagen, que hace de objeto para la cámara.
+
 		\item Estimar la frecuencia de corte $u_{c}^{(Obj)}$ del objetivo $10\times$ para luz incoherente (la longitud de onda media $\lambda=500\,\unit{\nano\metre}$).
-		
+
 		La frecuencia de corte del objetivo viene dada por:
-		
+
 		\begin{equation}
-		    u_c^{(Obj)} = \frac{2 NA}{\lambda} = 1000 \flatfrac{ciclos}{mm}
+		    u_c^{(\textrm{Obj})} = \frac{2 \textrm{NA}}{\lambda} = 1000 \flatfrac{ciclos}{mm}
 		\end{equation}
-		
-		Donde $NA=0,25$ es la apertura numérica del objetivo en el espacio objeto. Al igual que para el cálculo de $u_^{(CCD)}$, esta frecuencia se da como la frecuencia del objeto, que en este caso es el propio objeto del sistema, la diapositiva del test USAF 1951.
-		
+
+		Donde $\textrm{NA}=0,25$ es la apertura numérica del objetivo en el espacio objeto. Al igual que para el cálculo de $u^{(\textrm{CCD})}$, esta frecuencia se da como la frecuencia del objeto, que en este caso es el propio objeto del sistema, la diapositiva del test USAF 1951.
+
 		\item Tomando estos valores y suponiendo que la PSF del objetivo y de la cámara se aproximan por la función $|\sinc(ax)|^2$, dibujar la MTF de cada uno de los elementos y del sistema compuesto.
-		
-		La MTF de cada elemento es la transformada de Fourier (TF) normalizada de la PSF $|\sinc(ax)|^2$. El parámetro ''a'' será la frecuencia de corte $a=u_c^{(Obj)}$ en el caso del objetivo. Para la cámara, $a=10 u_c^{(CCD)}$, puesto que la imagen formada por el objetivo (el objeto de la cámara) está aumentada x10. De esta manera obtenemos la MTF(u) de la cámara en función de las frecuencias (u) de la diapositiva del test USAF 1951, igual que la MTF(u) del objetivo. Así, la MTF del sistema será el producto las MTF de los dos elementos del mismo. 
-		
+
+		La MTF de cada elemento es la transformada de Fourier (TF) normalizada de la PSF $|\sinc(ax)|^2$. El parámetro ``$a$'' será la frecuencia de corte $a=u_c^{(Obj)}$ en el caso del objetivo. Para la cámara, $a=10\, u_c^{(\textrm{CCD})}$, puesto que la imagen formada por el objetivo (el objeto de la cámara) está aumentada x10. De esta manera obtenemos la $\MTF(u)$ de la cámara en función de las frecuencias (u) de la diapositiva del test USAF 1951, igual que la $\MTF(u)$ del objetivo. Así, la MTF del sistema será el producto las MTF de los dos elementos del mismo.
+
 		\begin{enumerate}
 		    \item MTF del objetivo y la cámara CCD:
-		    
+
 		    La TF de $|\sinc(ax)|^2$ es la función triangular con un factor $\flatfrac{1}{|a|}$:
-    		    \begin{equation}
-    		        \wedge(u)= \left\{ \begin{array}{lcc}
-                 \frac{1}{|a|}(1-|\frac{u}{a}|) &   si  & |u| \leq 1 \\
-                 \\ 0 &  si & |u| \geq 1 \\
-                 \end{array}
-                \right.
+    		  \begin{equation}
+    		        \wedge(u)=
+		        \begin{cases}
+		        \frac{1}{|a|}\left(1-\abs{\frac{u}{a}}\right)   &\textrm{si   $|u| \leq 1$} \\
+                 0   &\textrm{si  $|u| \geq 1$}
+		        \end{cases}
 		    \end{equation}
-		    
-		    La MTF para cada elemento es $MTF(u) = \frac{\wedge(u)}{\wedge(0)}$, y $\wedge(0) = \frac{1}{|a|}$. Por tanto, para el objetivo quedaría:
+
+		    La MTF para cada elemento es $\MTF(u) = \frac{\wedge(u)}{\wedge(0)}$, y $\wedge(0) = \frac{1}{|a|}$. Por tanto, para el objetivo quedaría:
 		        \begin{equation}
-    		       MTF^{(Obj)}(u)= \left\{ \begin{array}{lcc}
-                     1-|\frac{u}{1000}| &   si  & |u| \leq 1 \\
-                     \\ 0 &  si & |u| \geq 1 \\
-                     \end{array}
-                    \right.
+    		       MTF^{(\textrm{Obj})}(u)=
+		       \begin{cases}
+                     1-\abs{\frac{u}{1000}} &\textrm{si   $|u| \leq 1$}  \\
+					0   &\textrm{si  $|u| \geq 1$}
+                     \end{cases}
 		    \end{equation}
-		    
-		    Y para la cámara CCD: 
+
+		    Y para la cámara CCD:
 		    	\begin{equation}
-    		       MTF^{(CCD)}(u)= \left\{ \begin{array}{lcc}
-                     1-|\frac{u}{1080}| &   si  & |u| \leq 1 \\
-                     \\ 0 &  si & |u| \geq 1 \\
-                     \end{array}
-                    \right.
+    		       MTF^{(\textrm{CCD})}(u)=
+		       \begin{cases}
+                     1-\abs{\frac{u}{1080}} &\textrm{si   $|u| \leq 1$} \\
+                     0   &\textrm{si  $|u| \geq 1$}
+               \end{cases}
 		    \end{equation}
-		    
-		    Véase que la MTF de la cámara, $\wedge^{(CCD)}(u)$, está en función de las frecuencias del objeto del sistema (la diapositiva USAF 1951), ya que vamos a obtener la MTF del sistema multiplicando las dos MTF.
-		    
-		    
+
+		    Véase que la MTF de la cámara, $\wedge^{(\textrm{CCD})}(u)$, está en función de las frecuencias del objeto del sistema (la diapositiva USAF 1951), ya que vamos a obtener la MTF del sistema multiplicando las dos MTF.
+
+
 		    \item MTF del sistema y representación gráfica
-		    
-		    La MTF del sistema viene dada por la ecuación ~\ref{eq:mtf-teorica}. En la figura ~\ref{fig:mtf-teorica} se muestran las MTF de los elementos y la del sistema conjunto.
-		    
-		    \begin{equation}
-		        MTF(u) = MTF^{(Obj)}(u) \cdot MTF^{(CCD)}(u)
-		    \end{equation}
-		    \begin{equation}
-		        MTF(u)= \left\{ \begin{array}{lcc}
-                     (1-|\frac{u}{1080}|)(1-|\frac{u}{1000}|) &   si  & |u| \leq 1 \\
-                     \\ 0 &  si & |u| \geq 1 \\
-                     \end{array}
-                    \right.
-                    \label{eq:mtf-teorica}
-		    \end{equation}
-		        
-		    
+
+		    La MTF del sistema viene dada por la ecuación~\ref{eq:mtf-teorica}. En la figura~\ref{fig:mtf-teorica} se muestran las MTF de los elementos y la del sistema conjunto.
+
+		    \begin{align}
+		        \MTF(u) &= \MTF^{(Obj)}(u) \cdot \MTF^{(CCD)}(u) \\
+		        \MTF(u)&= 
+		        \begin{cases}
+                     \left(1-\abs{\frac{u}{1080}}\right)\left(1-\abs{\frac{u}{1000}}\right)  &\textrm{si   $|u| \leq 1$} \\
+                     0   &\textrm{si  $|u| \geq 1$}
+                \end{cases}
+                 \label{eq:mtf-teorica}
+			\end{align}
+
 		    \begin{figure}
 		        \centering
 		        \includegraphics[scale=0.45]{/MTF-teorica.png}
 		        \caption{MTF teóricas de los elementos del sistema y del sistema compuesto}
 		        \label{fig:mtf-teorica}
 		    \end{figure}
-		    
+
 		    Desarrollando el producto obtenemos la ecuación cuadrática que mencionamos en el estudio del método directo, aunque con distintos coeficientes:
-		    
-		    \begin{center}
-		        \begin{math}
+
+		        \begin{equation*}
 		        MTF(u) = 9,3 \cdot 10^{-7} u^2 + 1,9 \cdot 10^{-3} u + 1
-		        \end{math}
-		    \end{center}
-		    
-		    La MTF del sistema tiene la misma forma que las obtenidas experimentalmente, aunque con una frecuencia de corte mayor. Esta viene determinada por la frecuencia de corte del objetivo (1000 líneas/mm), que es la más restrictiva de las frecuencias de corte de los dos elementos. Esto significa el tamaño de píxel de la cámara es lo suficientemente grande como para adquirir todas las frecuencias espaciales de las imágenes formadas por el objetivo. 
-		    
-		    Que la frecuencia de corte teórica sea tan alta respecto a la del experimento (1000 líneas/mm frente a unas 200-300 líneas/mm) puede deberse a diversas causas relacionadas con la no idealidad de la realidad experimental: ruido, aberraciones, etc., que no se han tenido en cuenta en el cálculo teórico. Concretamente, el ruido de las imágenes impidió diferenciar máximos y mínimos en los perfiles de intensidad de conjuntos de barras de mayor frecuencia, aunque estos fueron bien resueltos por la cámara CCD. 
-		    
+		        \end{equation*}
+
+		    La MTF del sistema tiene la misma forma que las obtenidas experimentalmente, aunque con una frecuencia de corte mayor. Esta viene determinada por la frecuencia de corte del objetivo (1000 líneas/mm), que es la más restrictiva de las frecuencias de corte de los dos elementos. Esto significa el tamaño de píxel de la cámara es lo suficientemente grande como para adquirir todas las frecuencias espaciales de las imágenes formadas por el objetivo.
+
+		    Que la frecuencia de corte teórica sea tan alta respecto a la del experimento (1000 líneas/mm frente a unas 200-300 líneas/mm) puede deberse a diversas causas relacionadas con la no idealidad de la realidad experimental: ruido, aberraciones, etc., que no se han tenido en cuenta en el cálculo teórico. Concretamente, el ruido de las imágenes impidió diferenciar máximos y mínimos en los perfiles de intensidad de conjuntos de barras de mayor frecuencia, aunque estos fueron bien resueltos por la cámara CCD.
+
 		\end{enumerate}
-		
+
 	\end{enumerate}
 
 
@@ -352,7 +348,7 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 	\end{subfigure}
 	\caption{Imagen usada para la simulación con Deconvolutionlab2 y Image J, y el PSF del sistema de captura simulado}\label{fig:image:ref-psf}
 \end{figure}
- 
+
  Simulamos tomar fotos de la imagen de referencia (Fig.~\ref{fig:ref}) con un systema con Point Spread Function (PSF) del sistema simulado (Fig.~\ref{fig:psf}). Queremos estudiar distintos tipos de ruido simulado y que algoritmos de de-noising actúan mejor para reducir este ruido.
 
  Realizamos las siguientes simulaciones de observación con ruido. (Las imágenes obtenidas se ven en Fig.~\ref{fig:convolutions})
@@ -410,7 +406,7 @@ Por otro lado, la deconvolución de Richardson-Lucy, al ser procedimiento iterat
 			\caption{Convolution NP 10}
 		\end{subfigure}
 		\hfill\,
-		\caption{Simulación de la figura ~\ref{fig:image:ref-psf} con distintos tipos de ruido}\label{fig:convolutions}
+		\caption{Simulación de la figura~\ref{fig:image:ref-psf} con distintos tipos de ruido}\label{fig:convolutions}
 	\end{center}
 \end{figure}
 
