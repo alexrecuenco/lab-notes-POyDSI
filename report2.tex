@@ -42,6 +42,7 @@
 
 \address{\authormark{1}Universidad Complutense de Madrid, Madrid, PC 28040, España}
 
+\tableofcontents
 \section{Introducción}
 En la práctica realizada primeramente se aprendió a realizar montajes experimentales de sistemas ópticos, de tal manera que el mismo este alineado de manera correcta y el haz se encuentre colimado. Se estudia experimentalmente el efecto de Talbot que es la reproducción de campos periódicos durante la propagación en el espacio
 libre en el régimen de Fresnel para ciertas distancias. Por otra parte, se construyó un sistema para la observación y medida del espectro de Fourier de un objeto 2D (en este caso una lámina fotográfica). Se analiza la difracción de la iluminación coherente de una imagen al mover la cámara con respecto a la imagen.
@@ -50,55 +51,55 @@ libre en el régimen de Fresnel para ciertas distancias. Por otra parte, se cons
 \subsection{Marco Práctico}
 \subsubsection{Observación efecto de Talbot}
 
-	      La primera parte de la práctica consistió en la observación de imágenes de la difracción de una onda plana coherente y monocromática en el régimen de Fresnel por un objeto periódico.
-	      Se trabajó con un láser de 635nm , en el siguiente sistema en la cual la lente colimadora transforma la onda esférica divergente en una onda plana.:
+La primera parte de la práctica consistió en la observación de imágenes de la difracción de una onda plana coherente y monocromática en el régimen de Fresnel por un objeto periódico.
+Se trabajó con un láser de 635nm , en el siguiente sistema en la cual la lente colimadora transforma la onda esférica divergente en una onda plana.:
 
-	      % Nota como para FORZARLO a estar aqui, no se utiliza figure, que es algo que flota
-	      % Esto normalmente esse considera mala forma en un documento, ya que LaTeX es muy bueno a cuadrar todo
-	      \begin{center}
-		      \includegraphics[scale=1]{sistematalbot.png}
-		      \captionof{figure}{Esquema del banco óptico, (1) filtro espacial, (2) atenuador, L1 lente colimadora, cámara CCD y PC para efectuar el registro.}
-		      \label{fig:talbot} % for use in \ref{table1} if you want to refer to the table number
-	      \end{center}
+% Nota como para FORZARLO a estar aqui, no se utiliza figure, que es algo que flota
+% Esto normalmente esse considera mala forma en un documento, ya que LaTeX es muy bueno a cuadrar todo
+\begin{center}
+	\includegraphics[scale=1]{sistematalbot.png}
+	\captionof{figure}{Esquema del banco óptico, (1) filtro espacial, (2) atenuador, L1 lente colimadora, cámara CCD y PC para efectuar el registro.}
+	\label{fig:talbot} % for use in \ref{table1} if you want to refer to the table number
+\end{center}
 
 \subsubsection{ Espectro de Fourier}
 
-	      Para obtener el módulo de la transformada de Fourier de una escena mediante sistemas ópticos se trabajó con un montaje que se componía por una lente delgada, cuyo plano de entrada está iluminado por un plano de luz, coherente y monocromático.
+Para obtener el módulo de la transformada de Fourier de una escena mediante sistemas ópticos se trabajó con un montaje que se componía por una lente delgada, cuyo plano de entrada está iluminado por un plano de luz, coherente y monocromático.
 
-	      \begin{figure}[h]
-		      \centering
-		      \includegraphics[scale=1]{sistemaespectrodefourier.png}
-		      \caption{Esquema del montaje experimental para la observación del espectro de Fourier de un objeto plano. }
-		      \label{fouriersistema}
-	      \end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1]{sistemaespectrodefourier.png}
+	\caption{Esquema del montaje experimental para la observación del espectro de Fourier de un objeto plano. }
+	\label{fouriersistema}
+\end{figure}
 
-	      En el sistema armado se utilizaron lentes focales diferentes, un polarizador como atenuador y un diafragma para disminuir la influencia de luz parasita.
+En el sistema armado se utilizaron lentes focales diferentes, un polarizador como atenuador y un diafragma para disminuir la influencia de luz parasita.
 
-	      Se observaron los espectros de Fourier en distintos escenarios que expondremos en la parte de resultados de la práctica.
+Se observaron los espectros de Fourier en distintos escenarios que expondremos en la parte de resultados de la práctica.
 
 \subsubsection{Filtrado óptico}
 
 Se realiza la práctica experimental de esta parte con el montaje de un sistema 4f introducido por Van der Lugt para el procesado óptico de información de 1963
 
-	      \begin{figure}[h]
-		      \centering
-		      \includegraphics[scale=0.5]{/parte4-filtrado/Sistema3.png}
-		      \caption{Esquema para la realización de una operación de filtrado óptico.}
-		      \label{filtradoopticosistema}
-	      \end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{/parte4-filtrado/Sistema3.png}
+	\caption{Esquema para la realización de una operación de filtrado óptico.}
+	\label{filtradoopticosistema}
+\end{figure}
 
-	      Compuesto por un objeto de una escena en el plano P1, que es el focal de la lente L1 se ilumina con una onda plana. En el otro plano focal de la lente L1 donde se obtendrá la transformada de Fourier del objeto.
+Compuesto por un objeto de una escena en el plano P1, que es el focal de la lente L1 se ilumina con una onda plana. En el otro plano focal de la lente L1 donde se obtendrá la transformada de Fourier del objeto.
 
 \subsubsection{Formación de imagen con luz parcialmente coherente}
 
-	      El grado de coherencia del haz afecta directamente a como un sistema óptico forma imagen, por lo tanto, controlaremos este parámetro. Por tanto, en el siguiente montaje con él trabajaremos.
+El grado de coherencia del haz afecta directamente a como un sistema óptico forma imagen, por lo tanto, controlaremos este parámetro. Por tanto, en el siguiente montaje con él trabajaremos.
 
-	      \begin{figure}[h]
-		      \centering
-		      \includegraphics[scale=0.5]{/parte5-luz-coherente/sistema4.png}
-		      \caption{Esquema de el filtrado con difusor, }
-		      \label{fig:coherenciaespacial}
-	      \end{figure}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{/parte5-luz-coherente/sistema4.png}
+	\caption{Esquema de el filtrado con difusor, }
+	\label{fig:coherenciaespacial}
+\end{figure}
 
 
 
@@ -111,8 +112,8 @@ Con una red periodica, con distancia de periodo desconocido $d$, se observan  di
 Las distancias a las que se reproduce el campo periódico son ciertas fracciones de la denominada distancia de Talbot, que viene dada por la expresión
 
 \begin{equation}
-		z_T = \frac{2d^2}{\lambda}.
-		\label{ec:zt}
+	z_T = \frac{2d^2}{\lambda}.
+	\label{ec:zt}
 \end{equation}
 
 
@@ -180,7 +181,7 @@ Donde
 	\label{eq:talbot:t}
 	B(a,p,q) & = \frac 2 q \sum_{b=0}^{\flatfrac q 2 - 1} e^{i 2 \pi \frac{2ba}{q} - i\pi \left(2 \flatfrac{p b^2}{q} + b\right)} \\
 	T(x,0)   & =
-	\sum_{n} a_n e^{\frac{i 2 \pi n x} {d}}\\
+	\sum_{n} a_n e^{\frac{i 2 \pi n x} {d}}                                                                                       \\
 	T(x,z)   & =
 	e^{ikz}
 	\sum_{n} a_n e^{\frac{i 2 \pi n x} {d}} e^{- i n^2 \flatfrac{ \pi \lambda z } {d^2}}
@@ -189,96 +190,96 @@ Donde
 \subsubsection{Representando una señal óptica periódica (longitud de onda $\lambda$, periodo $d$) como una serie de Fourier, demostrar analíticamente que en las distancias iguales a la mitad de la distancia de Talbot, $z=\flatfrac{z_{T}}{2}$, observamos el objeto original desplazado en la mitad del periodo $d$.}
 
 
-	      A la mitad de la longitud de Talbot, aparece una auto-imagen, pero desfasada medio periodo.
+A la mitad de la longitud de Talbot, aparece una auto-imagen, pero desfasada medio periodo.
 
-	      Dada la ecuación.~\ref{eq:talbot:t}, si sustituimos $z_{m-1/2} = 2d^2/\lambda (m - 1/2)$
-	      \nopagebreak
-	      \begin{align*}
-		      T(x,z_{m - 1/2}) & =
-		      e^{ikz}
-		      \sum_{n} a_n e^{\frac{i 2 \pi n x} {d}} e^{- i n^2 \pi (2s - 1)} \\
-		             & =
-		      e^{ikz}
-		      \sum_{n} a_n e^{\frac{i 2 \pi n x} {d}} e^{ i n^2 \pi}           \\
-		             & =
-		      e^{ikz}
-		      \sum_{n} a_n (-1)^{n}e^{\frac{i 2 \pi n x} {d}}.                 \\
-	      \end{align*}
-	      Por lo tanto, en general, la intensidad es
-	      \begin{equation}\label{eq:talbot:semi}
-		      I_{z_{m - 1/2}} = T \cdot T^{*}  =
-		      \sum_{n} \sum_{m} a_n a_{m}^{*} (-1)^{n + m}e^{\frac{i 2 \pi (n - m)  x} {d}}
-	      \end{equation}
-	      Realizando el calculo específico para una red periodica con transmitancia $t \propto 1 + \cos{2\pi x / d}$  con $a_0=1$, $a_{\pm 1}=1/2$, $a_n = 0$ si $\abs{n} > 1$
-	      \nopagebreak
-	      \begin{align*}
-		      T(x,z_{m-1/2}) & \propto
-		      e^{ikz}\left(
-		      1-1/2
-		      e^{\frac{i 2 \pi  x} {d}}-1/2
-		      e^{\frac{i 2 \pi  x} {d}}
-		      \right),                 \\
-		      I              & \propto
-		      \left(
-		      1-\cos (2 \pi  x / d)
-		      \right)^{2},
-	      \end{align*}
-	      En esta red periódica, es evidente que el efecto de mirar a $z=z_{m-1/2}$ estamos cambiando las franjas de mayor intensidad con aquellas de menor intensidad, cambiando los mínimos de intensidad con los máximos.
-	      %  En general, no parece obvio a primera vista que esto siga siendo correcto para cualquier tipo de red.
-	      
+Dada la ecuación.~\ref{eq:talbot:t}, si sustituimos $z_{m-1/2} = 2d^2/\lambda (m - 1/2)$
+\nopagebreak
+\begin{align*}
+	T(x,z_{m - 1/2}) & =
+	e^{ikz}
+	\sum_{n} a_n e^{\frac{i 2 \pi n x} {d}} e^{- i n^2 \pi (2s - 1)} \\
+	                 & =
+	e^{ikz}
+	\sum_{n} a_n e^{\frac{i 2 \pi n x} {d}} e^{ i n^2 \pi}           \\
+	                 & =
+	e^{ikz}
+	\sum_{n} a_n (-1)^{n}e^{\frac{i 2 \pi n x} {d}}.                 \\
+\end{align*}
+Por lo tanto, en general, la intensidad es
+\begin{equation}\label{eq:talbot:semi}
+	I_{z_{m - 1/2}} = T \cdot T^{*}  =
+	\sum_{n} \sum_{m} a_n a_{m}^{*} (-1)^{n + m}e^{\frac{i 2 \pi (n - m)  x} {d}}
+\end{equation}
+Realizando el calculo específico para una red periodica con transmitancia $t \propto 1 + \cos{2\pi x / d}$  con $a_0=1$, $a_{\pm 1}=1/2$, $a_n = 0$ si $\abs{n} > 1$
+\nopagebreak
+\begin{align*}
+	T(x,z_{m-1/2}) & \propto
+	e^{ikz}\left(
+	1-1/2
+	e^{\frac{i 2 \pi  x} {d}}-1/2
+	e^{\frac{i 2 \pi  x} {d}}
+	\right),                 \\
+	I              & \propto
+	\left(
+	1-\cos (2 \pi  x / d)
+	\right)^{2},
+\end{align*}
+En esta red periódica, es evidente que el efecto de mirar a $z=z_{m-1/2}$ estamos cambiando las franjas de mayor intensidad con aquellas de menor intensidad, cambiando los mínimos de intensidad con los máximos.
+%  En general, no parece obvio a primera vista que esto siga siendo correcto para cualquier tipo de red.
+
 \subsubsection{ Usando la ecuación \ref{eq:talbot} analizar la intensidad y la fase del campo difractado por un objeto periódico compuesto de líneas blancas (transparentes) y negras (opacas) alternadas de la misma anchura, a una distancia $z=\flatfrac{ZT}{4}$
 }
-	      De forma similar a eq.~\ref{eq:talbot:semi}, llegamos a
-	      \begin{align}
-		      T(x,z) & =
-		      e^{ikz}
-		      \sum_{n} a_n e^{\frac{i 2 \pi n x} {d}}e^{i n^{2} \pi / 2}.
-	      \end{align}
+De forma similar a eq.~\ref{eq:talbot:semi}, llegamos a
+\begin{align}
+	T(x,z) & =
+	e^{ikz}
+	\sum_{n} a_n e^{\frac{i 2 \pi n x} {d}}e^{i n^{2} \pi / 2}.
+\end{align}
 
-	      Evaluandolo la intensidad en una red con transmitancia $t \propto 1 + \frac{1}{2}\cos{2\pi x / d}$  con $a_0=1$, $a_{\pm 1}=1/4$, $a_n = 0$ si $\abs{n} > 1$
-	      obtenemos
-	      \nopagebreak
-	      \begin{align*}
-		      T(x,z_{m-1/4}) & \propto
-		      e^{ikz}\left(
-		      1
-		      +i/4 e^{\frac{i 2 \pi  x} {d}}
-		      +i/4 e^{\frac{i 2 \pi  x} {d}}
-		      \right) = e^{ikz}
-		      \left(
-		      1
-		      +i/2 \cos(i 2 \pi  x /d)
-		      \right)
-		      ,                                              \\
-		      I              &=  T \cdot T^{*} \propto
-		      \left(
-		      1
-		      +i/2 \cos(i 2 \pi  x /d)
-		      \right)
-		      \left(
-		      1
-		      -i/2 \cos(i 2 \pi  x /d)
-		      \right) \\
-		      &\propto
-		      1 - 1/4 \cos^{2}(i 2 \pi  x /d).
-	      \end{align*}
+Evaluandolo la intensidad en una red con transmitancia $t \propto 1 + \frac{1}{2}\cos{2\pi x / d}$  con $a_0=1$, $a_{\pm 1}=1/4$, $a_n = 0$ si $\abs{n} > 1$
+obtenemos
+\nopagebreak
+\begin{align*}
+	T(x,z_{m-1/4}) & \propto
+	e^{ikz}\left(
+	1
+	+i/4 e^{\frac{i 2 \pi  x} {d}}
+	+i/4 e^{\frac{i 2 \pi  x} {d}}
+	\right) = e^{ikz}
+	\left(
+	1
+	+i/2 \cos(i 2 \pi  x /d)
+	\right)
+	,                                         \\
+	I              & =  T \cdot T^{*} \propto
+	\left(
+	1
+	+i/2 \cos(i 2 \pi  x /d)
+	\right)
+	\left(
+	1
+	-i/2 \cos(i 2 \pi  x /d)
+	\right)                                   \\
+	               & \propto
+	1 - 1/4 \cos^{2}(i 2 \pi  x /d).
+\end{align*}
 
-	      A $z = z_{m - 1/4}$ por lo tanto se obtiene un contraste reducido en las franjas comparado con el original, y unos máximos más delgados.
+A $z = z_{m - 1/4}$ por lo tanto se obtiene un contraste reducido en las franjas comparado con el original, y unos máximos más delgados.
 
 
 
 \subsubsection{ Justifique el procedimiento seguido para determinar la distancia de Talbot y el periodo de la red y exponga los resultados.}
-	      Cuando una onda plana incide sobre una red de difracción periódica, la imagen de la red se repite a distancias regulares lejos del plano de la misma. Para encontrar la distancia de Talbot, realizamos el siguiente procedimiento:
-	      
+Cuando una onda plana incide sobre una red de difracción periódica, la imagen de la red se repite a distancias regulares lejos del plano de la misma. Para encontrar la distancia de Talbot, realizamos el siguiente procedimiento:
+
 \begin{enumerate}
-	    \item Usamos un sistema 4-f, y encontramos el plano de foco con un sistema no periódico, así no aseguramos que el punto de foque que encontramos es real, y no una imágen de Talbot
-		\item Después, encontramos mientras nos trasladamos hacia atrás los puntos de $z_{1}/4$, $z_{1}/2$, $3 z_{1}/4$, $z_{1}$. Que podemos distinguir por medio de qué imágenes tienen contraste máximo/mínimo mientras nos desplazamos. como se ven en las Figuras~\ref{fig:alltalbot}.
-		\item Así nos aseguramos que al tomar las cuatro distancias llegamos a la distancia primera de Talbot, no a un múltiplo o a una distancia de medio punto.
+	\item Usamos un sistema 4-f, y encontramos el plano de foco con un sistema no periódico, así no aseguramos que el punto de foque que encontramos es real, y no una imágen de Talbot
+	\item Después, encontramos mientras nos trasladamos hacia atrás los puntos de $z_{1}/4$, $z_{1}/2$, $3 z_{1}/4$, $z_{1}$. Que podemos distinguir por medio de qué imágenes tienen contraste máximo/mínimo mientras nos desplazamos. como se ven en las Figuras~\ref{fig:alltalbot}.
+	\item Así nos aseguramos que al tomar las cuatro distancias llegamos a la distancia primera de Talbot, no a un múltiplo o a una distancia de medio punto.
 \end{enumerate}
 
 \subsubsection{ ¿Las imágenes observadas siempre son periódicas? ¿La respuesta está de acuerdo con la teoría?}
-	
-    A distancias mayores a las de Talbot mencionadas aparecen otras auto-imágenes que no conservan su periodicidad axial.
+
+A distancias mayores a las de Talbot mencionadas aparecen otras auto-imágenes que no conservan su periodicidad axial.
 
 
 
@@ -326,14 +327,15 @@ A partir
 La distancia de $d_{1}$ no importa cuando la onda incidente es plana. El desplazamiento solamente introduce un término de fase que no se modifica la intensidad observada. La distancia $d_{2}$ tiene que ser la focal de la lente, para que en el plano de observación obtengamos una imagen escalada de la transformada de Fourier.
 
 \subsubsection{¿El espectro de la red está de acuerdo con la teoría (véanse los resultados del problema 1.6.)?}
-Véase la descripción de \ref{fig:filtrado1}. Como se explica en esa descripción, sí, se ajusta con la teoría, excepto que ciertos errores permiten que los órdenes pares tengan valores no nulos, en vez de ser exactamente cero.
+Véase la descripción de~\ref{fig:fourier:all}.
+Como se explica en esa descripción, sí, se ajusta con la teoría, excepto que ciertos errores permiten que los órdenes pares tengan valores no nulos, en vez de ser exactamente cero.
 
 \subsubsection{ Justifique el procedimiento seguido para determinar el periodo de la red y exponga los resultados.}
- El espectro de onda plana es un espectro continuo de ondas planas uniformes y hay un componente de onda plana en el espectro para cada punto tangente en el frente de fase de campo lejano. La amplitud de ese componente de onda plana sería la amplitud del campo óptico en ese punto tangente. Nuevamente, esto es cierto solo en el campo lejano, es por lo cual observamos las imágenes resultantes de la transformada de Fourier de acuerdo a la naturaleza de la imagen en cuestión. Y es, por tanto, que el factor de escala de la TF depende de la distancia.
-	
+El espectro de onda plana es un espectro continuo de ondas planas uniformes y hay un componente de onda plana en el espectro para cada punto tangente en el frente de fase de campo lejano. La amplitud de ese componente de onda plana sería la amplitud del campo óptico en ese punto tangente. Nuevamente, esto es cierto solo en el campo lejano, es por lo cual observamos las imágenes resultantes de la transformada de Fourier de acuerdo a la naturaleza de la imagen en cuestión. Y es, por tanto, que el factor de escala de la TF depende de la distancia.
+
 \subsubsection{¿Es posible registrar el espectro de Fourier colocando un objeto detrás de la lente?}
 
-No porque el campo del objeto necesita transmitirse a través de la lente para obtener el espectro de Fourier en el plano focal, y para ello no importa dónde se sitúe el objeto, pero siempre delante de la lente. Si colocamos el objeto detrás de la lente, los patrones de intensidad que obtengamos no vendrán de rayos transmitidos a través de esta. La única posibilidad sería registrar la intensidad en campo lejano, pero se perdería mucha visibilidad. 
+No porque el campo del objeto necesita transmitirse a través de la lente para obtener el espectro de Fourier en el plano focal, y para ello no importa dónde se sitúe el objeto, pero siempre delante de la lente. Si colocamos el objeto detrás de la lente, los patrones de intensidad que obtengamos no vendrán de rayos transmitidos a través de esta. La única posibilidad sería registrar la intensidad en campo lejano, pero se perdería mucha visibilidad.
 
 
 
