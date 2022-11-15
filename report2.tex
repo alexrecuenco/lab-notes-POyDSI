@@ -101,6 +101,10 @@ Se realiza la práctica experimental de esta parte con el montaje de un sistema 
 	      \end{figure}
 
 
+
+
+
+
 \section{Observación del efecto Talbot}
 Con una red periodica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias, cuando el contraste es mínimo o máximo (Fig.~\ref{fig:alltalbot}) el Se observó la evolución del campo difractado al alejar la cámara CCD del plano del objeto, y se apuntó las distancias de la tabla ~\ref{ec:zt}
 
@@ -185,9 +189,9 @@ Donde
 \subsubsection{Representando una señal óptica periódica (longitud de onda $\lambda$, periodo $d$) como una serie de Fourier, demostrar analíticamente que en las distancias iguales a la mitad de la distancia de Talbot, $z=\flatfrac{z_{T}}{2}$, observamos el objeto original desplazado en la mitad del periodo $d$.}
 
 
-	      A la mitad de la longitud de Talbot, aparece una auto-imagen pero desfasada medio periodo.
+	      A la mitad de la longitud de Talbot, aparece una auto-imagen, pero desfasada medio periodo.
 
-	      Dada la ecuacion.~\ref{eq:talbot:t}, si sustituímos $z_{m-1/2} = 2d^2/\lambda (m - 1/2)$
+	      Dada la ecuación.~\ref{eq:talbot:t}, si sustituimos $z_{m-1/2} = 2d^2/\lambda (m - 1/2)$
 	      \nopagebreak
 	      \begin{align*}
 		      T(x,z_{m - 1/2}) & =
@@ -272,20 +276,27 @@ Donde
 		\item Así nos aseguramos que al tomar las cuatro distancias llegamos a la distancia primera de Talbot, no a un múltiplo o a una distancia de medio punto.
 \end{enumerate}
 
-\subsubsection{ ¿Las imágenes observadas siempre son periódicos? ¿La respuesta está de acuerdo con la teoría?}
+\subsubsection{ ¿Las imágenes observadas siempre son periódicas? ¿La respuesta está de acuerdo con la teoría?}
 	
-	La observación produce imágenes 
+    A distancias mayores a las de Talbot mencionadas aparecen otras auto-imágenes que no conservan su periodicidad axial.
 
-	      A distancias mayores a las de talbot mencionadas aparecen otras auto-imágenes que no conservan su periodicidad axial.
+
+
+
+
+
 
 \section{Observación del espectro de Fourier}
-Se toma los espectros de Fourier de las imágenes en cuestión presentadas a continuación en la figura ~\ref{fig:fourier:all}.
+Se toma los espectros de Fourier de las imágenes en cuestión presentadas a continuación en la figura ~\ref{fig:fourier:all}, donde se analizan sus características.
+
+A partir
+
 
 \begin{figure}[hptb]
 	\begin{center}
 		\begin{subfigure}[t]{0.45\textwidth}\centering
 			\includegraphics[width=\textwidth]{/parte3-fourier/fourier_transform_-20-lense-20-camera.png}
-			\caption{Espectro de fourier de lineas verticales  con una lente de focal de 20cm. Notese como teóricamente la transformada de fourier deberia ser discreta, incluyendo los ordenes impares. El error experimental (lineas no vertical, alineamiento, aberración,etc), vemos pequeños valores para los órdenes pares}
+			\caption{Espectro de Fourier de líneas verticales  con una lente de focal de 20cm. Nótese como teóricamente la transformada de Fourier debería ser discreta, incluyendo los órdenes impares. El error experimental (líneas no vertical, alineamiento, aberración, etc), vemos pequeños valores para los órdenes pares}
 			\label{fig:fourier1}
 		\end{subfigure}
 		\quad
@@ -303,10 +314,10 @@ Se toma los espectros de Fourier de las imágenes en cuestión presentadas a con
 		\quad
 		\begin{subfigure}[t]{0.45\textwidth}\centering
 			\includegraphics[width=\textwidth]{/parte3-fourier/fourier-car-multiplied-pixels.png}
-			\caption{Espectro de Fourier de una imagen de un automobil. Nótese que la imagen tiene un tamaño de pixel suficientemenete grande para que los píxeles en sí forman un \emph{square grating}. Por lo tanto, lo que estamos viendo es la convolución de un \emph{square grating} con la foto del coche, lo que crea la misma imágen de fourier de el coche trasladada a cada orden de la rendija cuadrada.}
+			\caption{Espectro de Fourier de una imagen de un automóvil. Nótese que la imagen tiene un tamaño de pixel suficientemente grande para que los píxeles en sí forman un \emph{square grating}. Por lo tanto, lo que estamos viendo es la convolución de un \emph{square grating} con la foto del coche, lo que crea la misma imagen de Fourier del coche trasladada a cada orden de la rendija cuadrada.}
 			\label{fig:fourier2}
 		\end{subfigure}
-		\caption{Observaciones en campo de fourier de distintos elementos}\label{fig:fourier:all}
+		\caption{Observaciones en campo de Fourier de distintos elementos}\label{fig:fourier:all}
 	\end{center}
 \end{figure}
 
@@ -315,10 +326,10 @@ Se toma los espectros de Fourier de las imágenes en cuestión presentadas a con
 La distancia de $d_{1}$ no importa cuando la onda incidente es plana. El desplazamiento solamente introduce un término de fase que no se modifica la intensidad observada. La distancia $d_{2}$ tiene que ser la focal de la lente, para que en el plano de observación obtengamos una imagen escalada de la transformada de Fourier.
 
 \subsubsection{¿El espectro de la red está de acuerdo con la teoría (véanse los resultados del problema 1.6.)?}
-Vease la descripción de \ref{fig:filtrado1}. Como se explica en esa descripción, sí, se ajusta con la teoría, excepto que ciertos errores permiten que los ordenes pares tengan valores no nulos, en vez de ser exactamente zero.
+Véase la descripción de \ref{fig:filtrado1}. Como se explica en esa descripción, sí, se ajusta con la teoría, excepto que ciertos errores permiten que los órdenes pares tengan valores no nulos, en vez de ser exactamente cero.
 
 \subsubsection{ Justifique el procedimiento seguido para determinar el periodo de la red y exponga los resultados.}
- El espectro de onda plana es un espectro continuo de ondas planas uniformes y hay un componente de onda plana en el espectro para cada punto tangente en el frente de fase de campo lejano. La amplitud de ese componente de onda plana sería la amplitud del campo óptico en ese punto tangente. Nuevamente, esto es cierto solo en el campo lejano, es por lo cual observamos las imágenes resultantes de la transformada de fourier de acuerdo a la naturaleza de la imagen en cuestión. Y es por tanto que el factor de escala de la TF depende de la distancia.
+ El espectro de onda plana es un espectro continuo de ondas planas uniformes y hay un componente de onda plana en el espectro para cada punto tangente en el frente de fase de campo lejano. La amplitud de ese componente de onda plana sería la amplitud del campo óptico en ese punto tangente. Nuevamente, esto es cierto solo en el campo lejano, es por lo cual observamos las imágenes resultantes de la transformada de Fourier de acuerdo a la naturaleza de la imagen en cuestión. Y es, por tanto, que el factor de escala de la TF depende de la distancia.
 	
 \subsubsection{¿Es posible registrar el espectro de Fourier colocando un objeto detrás de la lente?}
 
@@ -333,7 +344,7 @@ Se obtienen los siguientes resultados, descritos en la Fig.~\ref{fig:filtrado:al
 	\begin{center}
 		\begin{subfigure}[t]{0.45\textwidth}\centering
 			\includegraphics[width=\textwidth]{parte4-filtrado/4f-pic-2ocm-diafragm-10cm-camera-letters-diafragma_y_punto-pasabanda.png}
-			\caption{Filtro con diafragma pasa banda, se puede ver en la imágen como esto elimina los bordes}
+			\caption{Filtro con diafragma pasa banda, se puede ver en la imagen como esto elimina los bordes}
 			\label{fig:filtrado1}
 		\end{subfigure}
 		\quad
@@ -352,13 +363,13 @@ Se obtienen los siguientes resultados, descritos en la Fig.~\ref{fig:filtrado:al
 			\includegraphics[width=\textwidth]{parte4-filtrado/4f-pic-2ocm-diafragm-10cm-camera-letters-high-frequency-dot-right-a-bit-down.png}
 			\caption{Filtrado similar a \ref{fig:filtrado2}, pero en una dirección a un ángulo del eje vertical y horizontal}
 		\end{subfigure}
-		\caption{Realizando transformaciones con un diafragma en un sistema 4-f en medio del sistema, podemos realizar filtros de frequencias analogicamente. Aqui podemos ver la imagen original (Fig.~\ref{fig:filtrado1}), y como podemos filtrar high-pass en distintas direcciones, obteniendo los bordes de las imágenes}
+		\caption{Realizando transformaciones con un diafragma en un sistema 4-f en medio del sistema, podemos realizar filtros de frecuencias analógicamente. Aquí podemos ver la imagen original (Fig.~\ref{fig:filtrado1}), y como podemos filtrar high-pass en distintas direcciones, obteniendo los bordes de las imágenes}
 		\label{fig:filtrado:all}
 	\end{center}
 \end{figure}
 
 \subsection{Cuestiones}
-\subsubsection{¿Qué distancia focal tiene la lente más próxima a la camera? Justifique el procedimiento seguido para determinar el orden de las lentes.}
+\subsubsection{¿Qué distancia focal tiene la lente más próxima a la camara? Justifique el procedimiento seguido para determinar el orden de las lentes.}
 La distancia focal es de 10cm para esta práctica. Tenemos disponible otra lente de focal de 20cm, pero esto crearía una imagen mas grande, que preferimos sea la primera lente para tener un campo de Fourier más amplio.
 
 \subsubsection{Elegir un filtro entre los estudiados en la práctica que podría ser adecuado para la observación de objetos semi-transparentes. Justifique la respuesta.}
