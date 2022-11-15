@@ -44,10 +44,10 @@
 
 \tableofcontents
 \section{Introducción}
-En la práctica realizada primeramente se aprendió a realizar montajes experimentales de sistemas ópticos, de tal manera que el mismo este alineado de manera correcta y el haz se encuentre colimado. 
+En la práctica realizada primeramente se aprendió a realizar montajes experimentales de sistemas ópticos, de tal manera que el mismo este alineado de manera correcta y el haz se encuentre colimado.
 Se estudia experimentalmente el efecto de Talbot que es la reproducción de campos periódicos durante la propagación en el espacio
-libre en el régimen de Fresnel para ciertas distancias. 
-Por otra parte, se construyó un sistema para la observación y medida del espectro de Fourier de un objeto 2D (en este caso una lámina fotográfica). 
+libre en el régimen de Fresnel para ciertas distancias.
+Por otra parte, se construyó un sistema para la observación y medida del espectro de Fourier de un objeto 2D (en este caso una lámina fotográfica).
 Se analiza la difracción de la iluminación coherente de una imagen al mover la cámara con respecto a la imagen.
 
 
@@ -91,12 +91,12 @@ Se realiza la práctica experimental de esta parte con el montaje de un sistema 
 	\label{filtradoopticosistema}
 \end{figure}
 
-Compuesto por un objeto de una escena en el plano P1, que es el focal de la lente L1 se ilumina con una onda plana. 
+Compuesto por un objeto de una escena en el plano P1, que es el focal de la lente L1 se ilumina con una onda plana.
 En el otro plano focal de la lente L1 donde se obtendrá la transformada de Fourier del objeto.
 
 \subsubsection{Formación de imagen con luz parcialmente coherente}
 
-El grado de coherencia del haz afecta directamente a como un sistema óptico forma imagen, por lo tanto, controlaremos este parámetro. 
+El grado de coherencia del haz afecta directamente a como un sistema óptico forma imagen, por lo tanto, controlaremos este parámetro.
 Por tanto, en el siguiente montaje con él trabajaremos.
 
 \begin{figure}[h]
@@ -112,11 +112,11 @@ Por tanto, en el siguiente montaje con él trabajaremos.
 
 
 \section{Observación del efecto Talbot}
-Con una red periódica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias correspondientes a $z_m$, $z_{m-\flatfrac 1 4}$, $z_{m-\flatfrac 1 2}$, $z_{m-\flatfrac 3 4}$. 
+Con una red periódica, con distancia de periodo desconocido $d$, se observan  distintas distancias desde el foco, y se apuntan cuatro distancias correspondientes a $z_m$, $z_{m-\flatfrac 1 4}$, $z_{m-\flatfrac 1 2}$, $z_{m-\flatfrac 3 4}$.
 
 Para ello, se observó la evolución del campo difractado al alejar la cámara CCD, y cuando el contraste es mínimo o máximo (Fig.~\ref{fig:alltalbot})  se apuntó las distancias correspondiente. Todas las distancias quedan recogidas en la tabla~\ref{ec:zt}.
 
-Las distancias a las que se reproduce el campo periódico son ciertas fracciones de la denominada distancia de Talbot, 
+Las distancias a las que se reproduce el campo periódico son ciertas fracciones de la denominada distancia de Talbot,
 que viene dada por la expresión
 
 \begin{equation}
@@ -125,12 +125,13 @@ que viene dada por la expresión
 \end{equation}
 
 
-Donde $p$ es el periodo de la red. 
-Registramos varias imágenes a distancias en la que se observaba una distribución de intensidad semejante a la del objeto original (franjas transparentes y opacas de igual tamaño), 
+Donde $p$ es el periodo de la red.
+Registramos varias imágenes a distancias en la que se observaba una distribución de intensidad semejante a la del objeto original (franjas transparentes y opacas de igual tamaño),
 así como a distancias en las que se observaba una distribución de intensidad homogénea:
 
 \begin{center}
-	\begin{tabular}{ | m{2cm} | c | >{\centering}m{1.5cm} | } \hline
+	\begin{tabular}{ | l | c | c | }
+		\hline
 		Distribución de intensidad & Distancia & Distancia (fracción de $z_T$) \\ \hline
 		Homogénea                  & $z_T/4$   & 18,5 cm                       \\
 		Franjas claras y oscuras   & $z_T/2$   & 36,8 cm                       \\
@@ -138,7 +139,7 @@ así como a distancias en las que se observaba una distribución de intensidad h
 		Franjas claras y oscuras   & $z_T$     & 72,9 cm                       \\\hline
 	\end{tabular}
 	\captionof{table}{Distancias fraccionarias de la longitud de Talbot $z_T$,
-     como se pueden observar en Fig.~\ref{fig:alltalbot}}\label{tab:talbot}
+		como se pueden observar en Fig.~\ref{fig:alltalbot}}\label{tab:talbot}
 \end{center}
 
 \begin{figure}[hptb]
@@ -300,29 +301,29 @@ Se toma los espectros de Fourier de las imágenes en cuestión presentadas a con
 Podemos determinar el periodo de la red a partir de la distancia medida en el espectro de Fourier entre el máximo central y el máximo del primer armónico. Para ello, tenemos en cuenta que la expresión que relaciona el campo a la entrada de la lente con el campo en el plano focal (ec. ~\ref{ec:tf-plano-focal})
 
 \begin{equation}
-    E(u,\,f') \propto \textrm{TF}\{E_{in}\}\left(\frac{k}{f'}u\right)
-    \label{ec:tf-plano-focal}
+	E(u,\,f') \propto \textrm{TF}\{E_{in}\}\left(\frac{k}{f'}u\right)
+	\label{ec:tf-plano-focal}
 \end{equation}
 
 La variable de la transformada de Fourier del objeto está escaladas con un factor $\frac{k}{f'}$, donde $k=\frac{2\pi}{\lambda}$ y f' es la distancia focal de la lente. La transformada de Fourier de la onda cuadrada, $\textrm{square}(x)$, es, en la dirección $y$ una delta, $\delta y$, y en la dirección $x$ una suma discretizada de deltas (multiplicadas por un factor):
 
 \begin{equation}
-    \textrm{TF}\qty\{square(x)\}\qty(\frac{k}{f'}u) = \frac{A}{2} + \frac{A}{\pi}  \delta\left(\frac{k}{f'} u - \nu_0\right) + \frac{A}{3\pi} \delta\left(\frac{k}{f'}u - 3\nu_0\right) + \ldots
+	\textrm{TF}\qty\{square(x)\}\qty(\frac{k}{f'}u) = \frac{A}{2} + \frac{A}{\pi}  \delta\left(\frac{k}{f'} u - \nu_0\right) + \frac{A}{3\pi} \delta\left(\frac{k}{f'}u - 3\nu_0\right) + \ldots
 \end{equation}
 
 Donde $\nu_0 = \frac{1}{p}$ es la frecuencia de la onda cuadrada, siendo $p$ el periodo, y $A$ es la amplitud. Vemos en esta ecuación que el pico del primer armónico estaría desplazado $\frac{f'}{k} \nu_0$ respecto del pico central, en unidades de u. La distancia entre este pico central y el primer armónico, llamémosla d, es por tanto:
 
 \begin{equation}
-    d = \frac{\nu_0 f'}{k} = \frac{f'\lambda}{2\pi \cdot p}
-    \label{ec:d-p}
+	d = \frac{\nu_0 f'}{k} = \frac{f'\lambda}{2\pi \cdot p}
+	\label{ec:d-p}
 \end{equation}
 
 Podemos medir la distancia $d$ utilizando el programa ImageJ. Utilizando la imagen captada con la lente de $f' = 20$, la distancia nos da un resultado de $120 px$. Con un tamaño del píxel de $2,2 \unit{\micro\meter}$, la distancia en micras es es $d = 264 \unit{\micro\meter}$. Con una longitud de onda de $\lambda = 635 \unit{\nano\meter}$, usamos~\ref{ec:d-p} obteniendo:
 % Usamos a~\ref{} porque ~ es un espacio irrompible.  Si utilizas a ~\ref{}. Tienes dos espacios, uno irrompible, y otro normal.
 
-\begin{center}
-    $p = 130 \unit{\micro\meter}$
-\end{center}
+\begin{equation*}
+	p = 130 \unit{\micro\meter}
+\end{equation*}
 
 \begin{figure}[hptb]
 	\begin{center}
@@ -435,7 +436,7 @@ Como la Fourier de la red periódica será representada por unos desplazamientos
 			\label{fig:filtrado:talbot:3}
 		\end{subfigure}
 		\caption{Realizando un filtro en un sistema 4-f usando una red periódica en el campo de Fourier del sistema 4-f. Se observa como esto produce la convolución de la imágen con el sistema, creando una imagen periódica}
-		\label{fig:filtrado:all}
+		\label{fig:filtrado:talbot:all}
 	\end{center}
 \end{figure}
 
@@ -450,6 +451,11 @@ En esta sección comparamos los efectos de iluminar el objeto con luz coherente 
 Con luz coherente podemos observar objetos en muchos planos distintos a la vez, sin embargo, con luz incoherente, solo los podemos observar cuando estén en un plano que formen imagen en nuestro receptor, en cualquier otro plano crearán una imagen difusa.
 
 Para la observación de objetos 3D la iluminación coherente es mejor, si podemos usar técnicas en las que separemos la fase y filtremos la imagen adecuadamente para extraer más información. Si lo que queremos es obtener un plano del objeto 3D, con luz incoherente, enfocaremos solo en ese plano.
+
+
+%\subsubsection{Para el sistema de filtrado usado en la práctica, la última lente es la pupila de salida del sistema. Determinar la respuesta impulso y la función de transferencia del sistema en el caso de iluminación (a) coherente; (b) incoherente.}
+%
+%Continúa siendo una iluminación coherente.
 
 
 
