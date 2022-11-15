@@ -100,7 +100,9 @@ Donde el periodo, $T$, de acuerdo a la gráfica del perfil obtenida en el estudi
 
 \subsection{Medida de la MTF mediante el test de borde (método indirecto)}\label{sec:description:indirecto}
 
-Se obtiene la imagen de la misma manera que el apartado anterior, pero esta vez de una única barra que abarque el campo completo de visión como se puede ver en la Fig.~\ref{fig:perfil:img}. Con la imagen del borde obtenida, obtenemos su perfil de intensidad (la "respuesta a una escalón" o SR) y posteriormente su derivada ("line spread function", o LSF). La transformada de Fourier de la LSF nos da la MTF del sistema, a partir de la cual estimamos su frecuencia de corte.
+Se obtiene la imagen de la misma manera que el apartado anterior, pero esta vez de una única barra que abarque el campo completo de visión como se puede ver en la Fig.~\ref{fig:perfil:img}.
+Esta imágen del borde obtenida tendría demasiado ruido para realizar el calculo, por lo que se promedian líneas de perfiles paralelas (normalmente se toma un rectangulo, y se promedia en la direccion paralela al borde, creando un perfíl promedio).
+Con esta imagen del borde obtenida, obtenemos su perfil de intensidad (la "respuesta a una escalón" o SR) y posteriormente su derivada ("line spread function", o LSF). La transformada de Fourier de la LSF nos da la MTF del sistema, a partir de la cual estimamos su frecuencia de corte.
 
 Esto es debido a que la función $\delta(x)$ es la derivada de la step function, $s(x)$. Como distribución, podemos usar este hecho para calcular la LSF, encontrando primero la respuesta a un borde. Realizando una estimación de la derivada, podemos obtener la MTF de una manera más rápida.
 
@@ -117,7 +119,8 @@ Los resultados se presentarán en la sección de resultados correspondiente.
 Un ejemplo de perfil estudiado para un conjunto de barras se muestra en la figura \ref{fig:perfil:example}.
 
 \begin{figure}
-	\includegraphics[width=\textwidth]{profile-lines.pdf}
+	\centering
+	\includegraphics[height=6cm]{profile-lines.pdf}
 	\caption{Perfil de un segmento de líneas}\label{fig:perfil:example}
 \end{figure}
 
@@ -137,19 +140,19 @@ En la tabla~\ref{table:perfilintensidad} se recogen las medidas tomadas de los p
 Representando el contraste de la imagen frente a la frecuencia (cliclos/mm) se obtiene la MTF del sistema (figura $~\ref{fig:mtf-directo}$).
 
 \begin{figure}
-\begin{subfigure}[t]{0.48\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{MTF-directo.png}
-	\caption{MTF del sistema obtenida mediante el test de barras (método directo). Ajuste: $C = 1,05 \cdot 10^{-5} u^2 + 1,52 \cdot 10^{-3} u + 0,91$, donde u es la frecuencia y C el contraste.}
-	\label{fig:mtf-directo}
-\end{subfigure}
-\quad
-\begin{subfigure}[t]{0.48\textwidth}
-	\centering
-	\includegraphics[width=\textwidth]{/MTF-indirecto.png}
-	\caption{MTF del sistema obtenida mediante el test de borde (método indirecto)}
-	\label{fig:mtf-indirecto}
-\end{subfigure}
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{MTF-directo.png}
+		\caption{MTF del sistema obtenida mediante el test de barras (método directo). Ajuste: $C = 1,05 \cdot 10^{-5} u^2 + 1,52 \cdot 10^{-3} u + 0,91$, donde u es la frecuencia y C el contraste.}
+		\label{fig:mtf-directo}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[t]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{/MTF-indirecto.png}
+		\caption{MTF del sistema obtenida mediante el test de borde (método indirecto)}
+		\label{fig:mtf-indirecto}
+	\end{subfigure}
 \end{figure}
 
 
@@ -314,7 +317,7 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 
 		            \begin{figure}
 			            \centering
-			            \includegraphics[scale=0.45]{/MTF-teorica.png}
+			            \includegraphics[width=\textwidth]{/MTF-teorica.png}
 			            \caption{MTF teóricas de los elementos del sistema y del sistema compuesto}
 			            \label{fig:mtf-teorica}
 		            \end{figure}
@@ -336,22 +339,6 @@ Por lo tanto, la función $H_{i}(u)$ se puede obtener con el esquema descrito en
 
 \subsection{Aplicar usando el pluging Deconvolutionlab2 y Image J dos métodos de convolución: Regularized Inverse Filter y Richardson-Lucy a una imagen test obtenida por un sistema con una PSF conocida y diferentes tipos de ruido: Gauss y Poisson.}
 
-
-\begin{figure}[hbp]
-	\centering
-	\begin{subfigure}[t]{0.45\textwidth}\centering
-		\centering
-		\includegraphics[width=\textwidth]{Simulation deconvolution/ref.jpg}
-		\caption{Imagen referencia test original}\label{fig:ref}
-	\end{subfigure}
-	\hfill
-	\begin{subfigure}[t]{0.45\textwidth}\centering
-		\includegraphics[width=\textwidth]{Simulation deconvolution/psf.jpg}
-		\caption{Imagen PSF}\label{fig:psf}
-	\end{subfigure}
-	\caption{Imagen usada para la simulación con Deconvolutionlab2 y Image J, y el PSF del sistema de captura simulado}\label{fig:image:ref-psf}
-\end{figure}
-
 Simulamos tomar fotos de la imagen de referencia (Fig.~\ref{fig:ref}) con un systema con Point Spread Function (PSF) del sistema simulado (Fig.~\ref{fig:psf}). Queremos estudiar distintos tipos de ruido simulado y que algoritmos de de-noising actúan mejor para reducir este ruido.
 
 Realizamos las siguientes simulaciones de observación con ruido. (Las imágenes obtenidas se ven en Fig.~\ref{fig:convolutions})
@@ -368,47 +355,57 @@ Al realizar el tratado de las imágenes a las cuales se le aplicó ruido, podemo
 Por otro lado, la deconvolución de Richardson-Lucy, al ser procedimiento iterativo para recuperar una imagen subyacente que ha sido añadida ruido por una función de dispersión de puntos conocida, tiene mejores resultados en su filtrado.
 
 \begin{figure}[hbp]
+	\begin{center}
+		\begin{subfigure}[t]{0.4\textwidth}\centering
+			\centering
+			\includegraphics[width=\textwidth]{Simulation deconvolution/ref.jpg}
+			\caption{Imagen referencia test original}\label{fig:ref}
+		\end{subfigure}
+		\quad
+		\begin{subfigure}[t]{0.4\textwidth}\centering
+			\includegraphics[width=\textwidth]{Simulation deconvolution/psf.jpg}
+			\caption{Imagen PSF}\label{fig:psf}
+		\end{subfigure}
+		\caption{Imagen usada para la simulación con Deconvolutionlab2 y Image J, y el PSF del sistema de captura simulado}\label{fig:image:ref-psf}
+
+	\end{center}
 	% Esto no se hace asi con hfill y \, ... pero no me acuerdo como
 	\begin{center}
-		\,\hfill
 		\begin{subfigure}[t]{0.25\textwidth}\centering
 			\centering
 			\includegraphics[width=\textwidth]{Simulation deconvolution/ref_conv}
 			\caption{Noiseless}\label{fig:sim:conv}
 		\end{subfigure}
-		\,\hfill
+		\quad
 		\begin{subfigure}[t]{0.25\textwidth}\centering
 			\centering
 			\includegraphics[width=\textwidth]{Simulation deconvolution/ref_ng_0.1}
 			\caption{Gaussian noise. $\mu=0$, $\sigma=0.1$}\label{fig:sim:ng0.1}
 		\end{subfigure}
-		\hfill
+		\quad
 		\begin{subfigure}[t]{0.25\textwidth}\centering
 			\centering
 			\includegraphics[width=\textwidth]{Simulation deconvolution/ref_ng_0.01}
 			\caption{Gaussian noise. $\mu=0$, $\sigma=0.01$}\label{fig:sim:ng0.01}
 		\end{subfigure}
-		\hfill\,
 		\\
-		\hfill\,
 		\begin{subfigure}[t]{0.25\textwidth}\centering
 			\centering
 			\includegraphics[width=\textwidth]{Simulation deconvolution/ref_np_0.01}
 			\caption{Poisson noise $\lambda = 0.01$}\label{fig:sim:np0.01}
 		\end{subfigure}
-		\hfill
+		\quad
 		\begin{subfigure}[t]{0.25\textwidth}\centering
 			\centering
 			\includegraphics[width=\textwidth]{Simulation deconvolution/ref_np_0.0001}
 			\caption{Poisson noise $\lambda = 0.0001$}
 		\end{subfigure}
-		\hfill
+		\quad
 		\begin{subfigure}[t]{0.25\textwidth}\centering
 			\centering
 			\includegraphics[width=\textwidth]{Simulation deconvolution/ref_np_10}
 			\caption{Poisson noise $\lambda =  10$}
 		\end{subfigure}
-		\hfill\,
 		\caption{Simulación de la figura~\ref{fig:image:ref-psf} con distintos tipos de ruido}\label{fig:convolutions}
 	\end{center}
 \end{figure}
@@ -416,62 +413,62 @@ Por otro lado, la deconvolución de Richardson-Lucy, al ser procedimiento iterat
 
 \begin{figure}[hbp]
 	\centering
-	\begin{tabular}[t]{l c c c c}
-		Original Image                                                                  & RIF 0.01 & RIF 1 & RL 10 & RL 50 \\
-		Fig.~\ref{fig:sim:conv}                                                         &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_conv/RIF_0.01.png}    &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_conv/RIF_1.png}       &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_conv/RL_10.png}       &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_conv/RL_50.png}
+
+	\newcommand\centerbox[2][width=0.15\textwidth, trim=-.5cm -.5cm -.5cm -.5cm]{\raisebox{-.5\height}{\includegraphics[#1]{#2}}}
+
+	\begin{tabular}{>{\centering\small}m{2cm} | c c c c}
+		Imagen Original                                                   & RIF 0.01 & RIF 1 & RL 10 & RL 50 \\\hline
+		Noiseless, Fig.~\ref{fig:sim:conv}                                &
+		\centerbox{Simulation deconvolution/ref_conv/RIF_0.01.png}        &
+		\centerbox{Simulation deconvolution/ref_conv/RIF_1.png}           &
+		\centerbox{Simulation deconvolution/ref_conv/RL_10.png}           &
+		\centerbox{Simulation deconvolution/ref_conv/RL_50.png}
 		\\
-		Fig.~\ref{fig:sim:ng0.1}                                                        &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_ng_0.1/RIF_0.01.png}  &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_ng_0.1/RIF_1.png}     &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_ng_0.1/RL_10.png}     &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_ng_0.1/RL_50.png}
+		Gaussian noise. $\mu=0$, $\sigma=0.1$, Fig.~\ref{fig:sim:ng0.1}  &
+		\centerbox{Simulation deconvolution/ref_ng_0.1/RIF_0.01.png}      &
+		\centerbox{Simulation deconvolution/ref_ng_0.1/RIF_1.png}         &
+		\centerbox{Simulation deconvolution/ref_ng_0.1/RL_10.png}         &
+		\centerbox{Simulation deconvolution/ref_ng_0.1/RL_50.png}
 		\\
-		Fig.~\ref{fig:sim:ng0.01}                                                       &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_ng_0.01/RIF_0.01.png} &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_ng_0.01/RIF_1.png}    &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_ng_0.01/RL_10.png}    &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_ng_0.01/RL_50.png}
+		Gaussian noise. $\mu=0$, $\sigma=0.01$, Fig.~\ref{fig:sim:ng0.01} &
+		\centerbox{Simulation deconvolution/ref_ng_0.01/RIF_0.01.png}     &
+		\centerbox{Simulation deconvolution/ref_ng_0.01/RIF_1.png}        &
+		\centerbox{Simulation deconvolution/ref_ng_0.01/RL_10.png}        &
+		\centerbox{Simulation deconvolution/ref_ng_0.01/RL_50.png}
 		\\
-		Fig.~\ref{fig:sim:np0.01}                                                       &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RIF_0.01.png} &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RIF_1.png}    &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RL_10.png}    &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RL_50.png}
+		Poisson noise $\lambda = 0.01$, Fig.~\ref{fig:sim:np0.01}         &
+		\centerbox{Simulation deconvolution/ref_np_0.01/RIF_0.01.png}     &
+		\centerbox{Simulation deconvolution/ref_np_0.01/RIF_1.png}        &
+		\centerbox{Simulation deconvolution/ref_np_0.01/RL_10.png}        &
+		\centerbox{Simulation deconvolution/ref_np_0.01/RL_50.png}
 		\\
 	\end{tabular}
-	\caption{Matriz de los filtros realizados para recuperar las imágenes con ruido añadido simulado. Cada fila d se corresponde a una figura de \ref{fig:convolutions} (a--d), cada columna indica un método de recuperación.}
-\end{figure}
+	\caption{Matriz de los filtros realizados para recuperar las imágenes con ruido añadido simulado. Cada fila se corresponde a una figura de \ref{fig:convolutions} (a--d), cada columna indica un método de recuperación. Se observa que el método RL funciona especialmente bien para recuperar el contraste en una imagen con ruido de poisson, donde el ruido depende de la imagen inicial. Cuando hay mucho ruido Gaussiano, (Fig.~\ref{fig:sim:ng0.1}), el método RIF funciona mejor a la hora de extraer una imagen}
+	\begin{center}
+		\begin{tabular}{c c | c c c}
+			RIF 1                                                                                         &
+			RIF 0.01                                                                                      &
+			RL 10                                                                                         &
+			RL 50                                                                                         &
+			RL 100
+			\\
+			\includegraphics[width=0.13\textwidth]{Simulation deconvolution/ref_np_0.01/RIF_1}            &
+			\includegraphics[width=0.13\textwidth]{Simulation deconvolution/ref_np_0.01/RIF_0.01}         &
+			\includegraphics[width=0.13\textwidth]{Simulation deconvolution/ref_np_0.01/RL_10}            &
+			\includegraphics[width=0.13\textwidth]{Simulation deconvolution/ref_np_0.01/RL_50}            &
+			\includegraphics[width=0.13\textwidth]{Simulation deconvolution/ref_np_0.01/RL_100}
+			\\    \hline
+			                                                                                              &   & Comparacion &
+			$\frac{\textrm{RL 100}}{\textrm{RL 50}}$                                                      &
 
+			$\textrm{RL 100} - \textrm{RL 50}$
+			\\	                                                                                     & & &
+			\includegraphics[width=0.13\textwidth]{Simulation deconvolution/ref_np_0.01/RL_100_div_RL_50} &
 
-\begin{figure}
-	\begin{tabular}{c c | c c c}
-		RIF 1                                                                               &
-		RIF 0.01                                                                            &
-		RL 10                                                                               &
-		RL 50                                                                               &
-		RL 100
-		\\
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RIF_1}            &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RIF_0.01}         &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RL_10}            &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RL_50}            &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RL_100}
-		\\    \hline
-		                                                                                    &   & Comparacion &
-		$\frac{\textrm{RL 100}}{\textrm{RL 50}}$                                            &
-
-		$\textrm{RL 100} - \textrm{RL 50}$
-		\\	                                                                                     & & &
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RL_100_div_RL_50} &
-
-		\includegraphics[scale=0.25]{Simulation deconvolution/ref_np_0.01/RL_50_mins_RL_100}
-	\end{tabular}
-	\caption{Comparación exhaustiva de distintos métodos de tratar de filrar la imágen con filtro inicial de Poisson $\lambda = 0.01$ Se observa como a partir de RL 50, la diferencia entre ambos métodos no cambia mucho aunque se doblen las iteraciones. }\label{fig:filtros:comparacion}
-
+			\includegraphics[width=0.13\textwidth]{Simulation deconvolution/ref_np_0.01/RL_50_mins_RL_100}
+		\end{tabular}
+		\caption{Comparación exhaustiva de distintos métodos de tratar de filrar la imágen con filtro inicial de Poisson $\lambda = 0.01$ Se observa como a partir de RL 50, la diferencia entre ambos métodos no cambia mucho aunque se doblen las iteraciones. }\label{fig:filtros:comparacion}
+	\end{center}
 \end{figure}
 %%%%%%%%%% If using BibTeX:
 \bibliography{bibliography}
