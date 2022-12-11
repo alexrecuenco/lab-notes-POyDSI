@@ -1,0 +1,80 @@
+---
+title: 'Practica 3, Filtros FIR'
+author: "Carlos España Castaño & Alejandro G Recuenco"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  pdf_document:
+    fig_caption: yes
+    number_sections: yes
+    extra_dependencies:
+      microtype: null
+      amssymb: null
+      amsmath: null
+      physics: null
+      longtable: null
+      booktabs: null
+      hyperref: null
+  html_document:
+    df_print: paged
+geometry: a4paper
+subtitle: '**Procesado Óptico y Digital de Señales e Imágenes.**'
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+```
+
+# Filtros FIR
+
+## Representa y compara los diagramas de magnitud de la respuesta en frecuencia de filtros FIR
+
+```{r, figures-windows, fig.show="hold", out.width="50%", fig.cap="Representación de distintas ventanas, de órden 50. Desde arriba a la izquierda tenemos filtro triang, weibull, hanning y blackman respectivatement. (Nótese que para cualquier filtro ideal, su respuesta en frequencias sería su convolución con la ventana que se fuese a usar)."}
+knitr::include_graphics("./graphs-3.1/triang.jpg")
+knitr::include_graphics("./graphs-3.1/weibull.jpg")
+knitr::include_graphics("./graphs-3.1/hanning.jpg")
+knitr::include_graphics("./graphs-3.1/blackman.jpg")
+```
+
+- Se puede ver como para las ventanas, la weibull tiene un mejor borde, siendo su respuesta en frequencias altas muy plana. En otros filtros, la respuesta a frequencias altas disminuye.
+- A parte, los ripples son más anchos en la ventana triangular.
+
+## Compara Parks-McLelland con Least-Squares Error de orden 50
+
+```{r, figures-filters, fig.show="hold", out.width="50%", fig.cap="Representación de filtro obtenidos en órden 50. A la izquierda, un filtro obtenido de least squares, a la derecha, un filtro obtenido con el método de Parks-McLelland. Ambos tratan de modelizar un filtro con respuesta ideal en frequencias normalizadas 0 0.3 0.4 0.5 0.6 1 con amplitudes 0 0 1 1 0 0."}
+knitr::include_graphics("./graphs-3.1/filtro-fir-least-squares.png")
+knitr::include_graphics("./graphs-3.1/filtro-FIR-praks.png")
+```
+
+La miniminación de cuadrados crea un filtro que tiene una respuesta con mayor "curva", ya que al optimizando el cuadrado del error, optimiza con un cambio de fases mas suave y es más sensibles a todos los valores. Esto se diferencia claramente con el tipo de filtro que se genera con Parks-McLelland. Parks-McLelland genera filtros con un error constante con ripples que se mantienen prácticamente constantes.
+
+\pagebreak
+# Filtrar un pulso cuadrado
+
+Diseñamos un filtro stop-band usando `fir1` con una ventana de 20% la frequencia objetivo (800Hz) en ambas lados. 
+
+```{r, figures-hamming, fig.show="hold", out.width="70%", fig.cap="Representación de la respuesta en frequencias de un filtro en pasa banda alrededor de 800Hz modelado por una ventana de Hamming"}
+knitr::include_graphics("./graphs-3.2/hamming-filter-response-50.png")
+```
+
+Al aplicarlo a la señal podemos extraer la onda. Nótese como al principio existe un lag en la respuesta, con una velocidad de grupo, que disminuye despues de un número de muestras approximado al orden de nuetro filtro.
+
+```{r, figures-square-filter, fig.show="hold", out.width="70%", fig.cap="Filtro utilizando el filtro indicado anteriormente para obtener la frequencia principal de una onda cuadrada. Nótese el lag al principio del filtro."}
+knitr::include_graphics("./graphs-3.2/square-filtered.png")
+```
+
+Nótese como la velocidad de grupo se estabiliza, y existe un pequeño desfase.
+
+\pagebreak
+
+# Filtrar un canal de audio con ruído blanco en altas frequencias
+
+Al ver el espectro del sonido con el ruido, es claro que existe un sonido blanco que deja prácticamente intacta la region de $f<0.04$ (que es a su vez donde casualmente ocurre la mayor parte de la música). Por ello diseñamos un filtro de pasa baja. Al filtrar así si que vamos a perder la riqueza de los armónicos más altos en los instrumentos, pero entendemos este "trade-in."
+
+Por lo tanto, primero procedímos diseñando un filtro equiripple. Sin embargo, las frequencias altas terminan siendo bastante audíbles incluso con filtros en dB bastante altas. Por lo tanto, experimentando, utilizamos un diseño de Kaiserwin, tratando de usar $f_p=0.041$ y $f_{st}=0.043$ (Frequencias normalizadas con la frequencia Nyquist). Esto nos permite eliminar la mayor parte del ruido blanco, pero como ya dijimos, se pierde la riqueza del sonido.
+
+```{r, figures-filter-noise, fig.show="hold", out.width="100%", fig.cap="De arriba a abajo. Vemos el sonido original, el sonido con el ruido, y el sonido filtrado."}
+knitr::include_graphics("./graphs-3.3/filter-FIR-music.png")
+```
+
+
